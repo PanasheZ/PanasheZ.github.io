@@ -1,0 +1,1192 @@
+<!doctype html>
+<!--
+  Panashe Zowa, personal website
+  ==============================
+  The easiest way to edit this site is in your browser. Open the site
+  with ?edit at the end of the address (for example
+  https://yourname.github.io/?edit), click any text to change it, and
+  press Publish or Download. The README explains the one-time setup.
+
+  You can also edit this file by hand. The parts you are likely to
+  change are marked ✏️ EDIT, so search for "EDIT" to jump between them.
+  Placeholders and details worth confirming are marked CHECK.
+-->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panashe Zowa</title>
+<!-- ✏️ EDIT: the one-line description search engines and link previews show -->
+<meta name="description" content="Panashe Zowa is a lawyer and researcher working on African tech sovereignty, law and AI, cooperative AI and multi-agent safety.">
+<meta property="og:title" content="Panashe Zowa">
+<meta property="og:description" content="Panashe Zowa is a lawyer and researcher working on African tech sovereignty, law and AI, cooperative AI and multi-agent safety.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EDF1EA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='%23E6C7B0' stroke='%231C2A39' stroke-width='2.8' stroke-linejoin='round'%3E%3Cpath d='M6 38C5 32 13 29 24 29s19 3 18 8-9 8-18 8S7 43 6 38Z'/%3E%3Cpath d='M13 25c0-5 4-7 10-7s10 2 10 6-5 6-10 6-10-1-10-5Z'/%3E%3Cpath d='M19 12c0-4 3-6 7-6s6 2 5 6c0 3-3 5-6 5s-6-2-6-5Z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" data-fonts href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,800;1,400&amp;family=Shantell+Sans:wght,INFM@400..700,0..100&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,800;1,400&amp;family=Shantell+Sans:wght,INFM@400..700,0..100&amp;display=swap"></noscript>
+<style>
+/* ---------- Design tokens ---------- */
+:root {
+  --paper: #EDF1EA;
+  --paper-light: #F7F9F4;
+  --ink: #1C2A39;
+  --ink-soft: #4C5A68;
+  --ochre: #E6B95C;
+  --ochre-deep: #A97A2A;
+  --ochre-shadow: #D29F45;
+  --highlight: rgba(230, 185, 92, .5);
+  --flame: #C8323A;
+  --granite: #E6C7B0;
+  --stone: #D9C5B6;
+  --sage: #C3D6C8;
+  --sage-deep: #9DB8A6;
+  --river: #9FCFC7;
+  --rose: #E7B2A6;
+  --leaf: #4F7A55;
+
+  --serif: "Alegreya", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --hand: "Shantell Sans", "Segoe Print", "Bradley Hand", "Chalkboard SE", sans-serif;
+
+  --margin: 9.5rem;
+  --measure: 38rem;
+  --gap: 2.5rem;
+  --cols: [margin-start] var(--margin) [margin-end main-start] minmax(0, var(--measure)) [main-end aside-start] minmax(0, 1fr) [aside-end];
+  --pad: clamp(1.25rem, 4vw, 3rem);
+  --wobbly: 16px 4px 14px 6px / 6px 14px 5px 16px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  color: var(--ink);
+  background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .11 0 0 0 0 .16 0 0 0 0 .22 .2 0 0 0 -.05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  -webkit-text-size-adjust: 100%;
+}
+body { margin: 0; font-family: var(--serif); font-size: 1.25rem; line-height: 1.6; font-variant-numeric: oldstyle-nums; text-rendering: optimizeLegibility; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+p { margin: 0 0 1em; }
+strong { font-weight: 800; }
+img { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; }
+[id] { scroll-margin-top: 1.5rem; }
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: var(--ochre-deep);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: .18em;
+  background-image: linear-gradient(var(--highlight), var(--highlight));
+  background-repeat: no-repeat;
+  background-position: 0 90%;
+  background-size: 0% .5em;
+  transition: background-size .3s ease;
+}
+a:hover { background-size: 100% .5em; }
+:focus-visible { outline: 2px dashed var(--flame); outline-offset: 3px; border-radius: 3px; }
+.skip { position: absolute; left: -999px; top: .5rem; background: var(--paper-light); padding: .4rem .8rem; z-index: 10; }
+.skip:focus { left: .5rem; }
+
+/* ---------- Header ---------- */
+.site-header { max-width: 80rem; margin: 0 auto; padding: 1rem var(--pad) 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.home { display: inline-flex; background: none; }
+.home .icon { width: 2.4rem; height: 2.4rem; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: .2rem 1.4rem; justify-content: flex-end; }
+.site-header nav a { font-family: var(--hand); font-size: 1.02rem; font-weight: 500; font-variation-settings: "INFM" 70; text-decoration: none; }
+.site-header nav .play-link { color: var(--flame); }
+
+/* ---------- Page grid: a margin for handwritten notes, a column for reading ---------- */
+.page { max-width: 80rem; margin: 0 auto; padding: 0 var(--pad); }
+.section { display: grid; grid-template-columns: var(--cols); column-gap: var(--gap); padding-top: clamp(3rem, 7vw, 5.5rem); }
+.section > * { grid-column: main; }
+.note {
+  grid-column: margin;
+  font-family: var(--hand); font-size: .95rem; line-height: 1.3; font-weight: 450;
+  font-variation-settings: "INFM" 70;
+  color: var(--ink-soft); text-align: right; padding-top: .35rem;
+  transform: rotate(-1.5deg); transform-origin: right top;
+}
+h1 { margin: 0; font-weight: 800; font-size: clamp(3rem, 7.4vw, 6rem); line-height: .95; letter-spacing: -.012em; }
+h2 {
+  justify-self: start; margin: 0 0 1.4rem;
+  font-size: 2.25rem; font-weight: 800; line-height: 1.1; letter-spacing: -.005em; padding-bottom: .3em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 7C15 2 25 11 38 6s24-4 38 1 26 3 42-3' fill='none' stroke='%23E6B95C' stroke-width='3.5' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") no-repeat left bottom / 100% .42em;
+}
+h3 { margin: 0 0 .6rem; font-size: 1.5rem; font-weight: 700; line-height: 1.2; }
+.section-intro { color: var(--ink-soft); }
+.small { font-size: 1.05rem; color: var(--ink-soft); }
+
+/* ---------- Top: name, bio and photo ---------- */
+.intro { padding-top: clamp(1.5rem, 4vw, 3rem); }
+.intro h2 { grid-row: 1; }
+.intro .greeting { grid-row: 2; font-size: 1.2rem; color: var(--ink); padding-top: .1rem; font-variation-settings: "INFM" 90; }
+.intro .bio { grid-row: 2 / span 2; }
+.portrait {
+  grid-column: aside; grid-row: 1 / span 3; justify-self: center; align-self: start;
+  width: min(100%, 14rem); margin: .4rem 0 0; position: relative; transform: rotate(2deg);
+}
+.portrait img, .portrait-fallback {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+  border: 2px solid var(--ink); border-radius: 14px 4px 12px 5px / 5px 12px 4px 14px; background: var(--paper-light);
+}
+.portrait::before { content: ""; position: absolute; z-index: 1; top: -.7rem; left: 50%; width: 4.5rem; height: 1.4rem; background: rgba(230, 185, 92, .6); transform: translateX(-50%) rotate(-4deg); }
+.portrait-fallback { display: none; place-items: center; font-family: var(--hand); font-size: 3.6rem; font-weight: 600; font-variation-settings: "INFM" 100; }
+.portrait.no-photo img { display: none; }
+.portrait.no-photo .portrait-fallback { display: grid; }
+
+/* ---------- The research map, with the name written in its sky ---------- */
+.research-map { max-width: 80rem; margin: 0 auto; position: relative; container-type: inline-size; }
+.map-head { position: absolute; left: 4cqw; top: 2.2cqw; z-index: 1; width: 47cqw; }
+.map-head h1 { font-size: 7.4cqw; }
+.map-caption { margin: 1.1cqw 0 0; font-style: italic; font-size: clamp(1rem, 1.95cqw, 1.6rem); line-height: 1.35; color: var(--ink-soft); max-width: 40cqw; }
+.swipe-hint { display: none; }
+.map-wrap { position: relative; aspect-ratio: 1200 / 640; overflow: hidden; }
+.map { display: block; width: 100%; height: 100%; overflow: visible; }
+.map-labels { position: absolute; inset: 0; pointer-events: none; }
+.map .drawing { pointer-events: none; }
+.map-label { pointer-events: auto; }
+@container (max-width: 760px) {
+  .map-head { position: static; width: auto; padding: 1.2rem var(--pad) .7rem; }
+  .map-head h1 { font-size: clamp(2.6rem, 13cqw, 4.4rem); }
+  .map-caption { font-size: 1.05rem; margin-top: .5rem; max-width: 30rem; }
+  .swipe-hint { display: inline; }
+  .map-scroll { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; }
+  .map-wrap { width: 760px; }
+}
+
+.map .ink { fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.map .ink.thin { stroke-width: 1.5; }
+.map .ink.soft { stroke: var(--ink-soft); }
+.map .ink.stem { stroke-width: 2; }
+.map .ink.bird { stroke-width: 1.9; }
+.map .ink.grass { stroke: var(--ochre-deep); stroke-width: 1.6; }
+.map .ink.leafmark { stroke: #7A2E3B; stroke-width: 1.5; }
+.knock { fill: var(--paper); }
+.c-sun { fill: #F4D27A; }
+.c-ridge { fill: var(--sage); }
+.c-far { fill: var(--sage-deep); }
+.c-ground { fill: var(--ochre); }
+.c-shadow { fill: var(--ochre-shadow); }
+.c-river { fill: var(--river); }
+.ripple { fill: none; stroke: #F3F7F1; stroke-width: 2; stroke-linecap: round; }
+.c-rock { fill: var(--granite); }
+.c-stone { fill: var(--stone); }
+.c-soil { fill: #C49466; }
+.c-straw { fill: #D6B26C; }
+.c-weaver { fill: #F1C232; }
+.c-acacia { fill: #97AC6C; }
+.c-lichen { fill: #B98F2E; opacity: .55; }
+.c-flame { fill: var(--flame); }
+.c-flame-base { fill: #F2B53B; }
+.c-leaf { fill: var(--leaf); }
+.c-trunk { fill: #8C6A52; }
+.branch-ink { fill: none; stroke: var(--ink); stroke-width: 7; stroke-linecap: round; }
+.c-branch { fill: none; stroke: #8C6A52; stroke-width: 3.4; stroke-linecap: round; }
+.c-msasa { fill: #B04B57; }
+.c-msasa-light { fill: #DE8A62; opacity: .85; }
+.c-robot { fill: #F7F8F2; }
+.c-bolt, .c-hair { fill: var(--ink); }
+.c-shirt { fill: #86A9BE; }
+.c-skin { fill: #7A4E36; }
+.c-coin { fill: var(--ochre); }
+.c-tape-blue { fill: #9DBEDB; }
+.arm-ink { fill: none; stroke: var(--ink); stroke-width: 9.6; stroke-linecap: round; }
+.c-arm { fill: none; stroke: #86A9BE; stroke-width: 5.4; stroke-linecap: round; }
+.map-label { cursor: pointer; text-decoration: none; }
+.map-label text { font-family: var(--hand); font-size: 22px; font-weight: 500; font-variation-settings: "INFM" 80; fill: var(--ink); transition: fill .2s; }
+.map-label .arrow { fill: none; stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke .2s; }
+.map-label:hover text { fill: var(--flame); }
+.map-label:hover .arrow { stroke: var(--flame); }
+
+/* the one orchestrated moment: the map inks itself, then takes its colour */
+@media (prefers-reduced-motion: no-preference) {
+  .map .ink { stroke-dasharray: 1 2; stroke-dashoffset: 1.01; animation: ink-in .7s cubic-bezier(.5, 0, .3, 1) var(--d, 0s) forwards; }
+  .map .ink.detail { stroke-dasharray: none; stroke-dashoffset: 0; animation: fade-in .8s ease-out 1.15s both; }
+  .map .paint { animation: fade-in .8s ease-out 1.15s both; }
+  .map .c-ground, .map .c-ridge, .map .c-shadow, .map .c-sun { animation-delay: .05s; }
+  .map .labels { animation: fade-in .6s ease-out 1.9s both; }
+}
+@keyframes ink-in { to { stroke-dashoffset: 0; } }
+@keyframes fade-in { from { opacity: 0; } }
+
+/* ---------- Threads, works and logs ---------- */
+.thread { grid-column: margin-start / aside-end; display: grid; grid-template-columns: var(--cols); column-gap: var(--gap); margin-top: 3.6rem; }
+.thread > * { grid-column: main; }
+.thread > .note, .thread > .thread-icon { grid-column: margin; }
+.thread-icon { justify-self: end; }
+.thread-icon .icon { width: 3.1rem; height: 3.1rem; margin-top: -.5rem; }
+.works, .log { grid-column: margin-start / aside-end; list-style: none; margin: .4rem 0 0; padding: 0; }
+.works > li, .log > li { display: grid; grid-template-columns: var(--cols); column-gap: var(--gap); margin-top: 1rem; }
+.works > li > :not(.note), .log > li > :not(.note) { grid-column: main; }
+.work-title { font-weight: 700; }
+.works p { margin: .1rem 0 0; font-size: 1.1rem; line-height: 1.5; color: var(--ink-soft); }
+.log p { margin: 0; }
+.invite { margin-top: 1.6rem; }
+
+/* ---------- Music: mixes and tracks on cassettes ---------- */
+.tapes { grid-column: main-start / aside-end; list-style: none; margin: 1.4rem 0 0; padding: 0 .4rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1.8rem 1.5rem; align-items: start; }
+.tape { --body: var(--ochre); position: relative; background: var(--body); border: 2px solid var(--ink); border-radius: var(--wobbly); padding: .8rem .8rem .7rem; transform: rotate(var(--tilt, -.8deg)); transition: transform .25s ease; }
+.tape.blue { --body: #9DBEDB; }
+.tape.pink { --body: #EDB0C0; }
+.tape.sage { --body: var(--sage); }
+.tape:nth-child(4n+2) { --tilt: 1deg; }
+.tape:nth-child(4n+3) { --tilt: -.3deg; }
+.tape:nth-child(4n+4) { --tilt: .7deg; }
+.tape:hover { transform: rotate(0deg); }
+.tape-label { background: var(--paper-light); border: 1.5px solid var(--ink); border-radius: 6px 3px 7px 3px; padding: .45rem .7rem .4rem; }
+.tape-title { display: block; font-family: var(--hand); font-size: 1.05rem; font-weight: 600; line-height: 1.3; font-variation-settings: "INFM" 80; }
+.tape-meta { display: block; margin: 0; font-family: var(--hand); font-size: .85rem; color: var(--ink-soft); font-variation-settings: "INFM" 60; }
+.tape-reels { display: block; width: 100%; height: auto; margin: .5rem 0 .4rem; overflow: visible; }
+.tape-reels .window { fill: var(--paper-light); stroke: var(--ink); stroke-width: 1.6; }
+.tape-reels .tape-line { fill: none; stroke: #5B3A2E; stroke-width: 2; }
+.tape-actions { display: flex; justify-content: flex-end; }
+.tape-link { font-family: var(--hand); font-size: .95rem; font-weight: 600; text-decoration: none; padding: .25rem .9rem; background: var(--paper-light); border: 1.5px solid var(--ink); border-radius: 10px 4px 10px 4px; }
+.tape-link:hover { background-size: 0 0; background-color: #fff; }
+.tape-link[href="#"] { display: none; }
+
+/* ---------- Footer ---------- */
+.site-footer { max-width: 80rem; margin: clamp(4rem, 8vw, 6rem) auto 0; padding: 0 var(--pad) 2.5rem; }
+.footer-art { position: relative; }
+.horizon { display: block; width: 100%; height: 46px; overflow: visible; }
+.horizon .ink { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.footer-rocks { position: absolute; right: 6%; bottom: 3px; width: 3.4rem; height: 3.4rem; }
+.site-footer p { margin: 1rem 0 0; font-family: var(--hand); font-size: .95rem; color: var(--ink-soft); font-variation-settings: "INFM" 60; }
+
+/* ---------- Icons drawn in the same hand as the map ---------- */
+.icon { overflow: visible; }
+.icon .ink, symbol .ink { fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- The game ---------- */
+.game { width: min(26rem, calc(100vw - 1.5rem)); max-height: calc(100dvh - 1.5rem); padding: 1.1rem 1.1rem 1rem; color: var(--ink); background: var(--paper); border: 2px solid var(--ink); border-radius: var(--wobbly); overflow: auto; }
+.game::backdrop { background: rgba(28, 42, 57, .45); }
+.game-head { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
+.game h2 { font-size: 1.7rem; margin-bottom: .6rem; }
+.game-close { flex: none; width: 2.2rem; height: 2.2rem; font-size: 1.4rem; line-height: 1; background: var(--paper-light); border: 1.5px solid var(--ink); border-radius: 50% 45% 50% 48%; cursor: pointer; }
+.game-how { font-size: 1rem; line-height: 1.45; color: var(--ink-soft); margin-bottom: .8rem; }
+.game-stage { position: relative; border: 1.5px solid var(--ink); border-radius: 10px 4px 12px 5px; overflow: hidden; background: var(--paper); }
+.game canvas { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; touch-action: none; cursor: pointer; }
+.game-overlay { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: .8rem; padding: 1rem; text-align: center; background: rgba(237, 241, 234, .82); }
+.game-overlay[hidden] { display: none; }
+.game-msg { margin: 0; font-family: var(--hand); font-size: 1.25rem; font-weight: 600; font-variation-settings: "INFM" 80; }
+.game-start { font-family: var(--hand); font-size: 1.1rem; font-weight: 600; padding: .4rem 1.3rem; background: var(--ochre); border: 2px solid var(--ink); border-radius: 12px 5px 12px 5px; cursor: pointer; }
+.game-score { display: flex; justify-content: space-between; margin: .7rem 0 0; font-family: var(--hand); font-size: 1rem; font-variation-settings: "INFM" 60; }
+
+/* ---------- Tablets: the photo moves into the margin ---------- */
+@media (min-width: 761px) and (max-width: 1080px) {
+  :root { --margin: 7.5rem; --gap: 1.75rem; }
+  .portrait { grid-column: margin; grid-row: 3; justify-self: end; width: 100%; margin-top: 1.4rem; }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 760px) {
+  body { font-size: 1.125rem; }
+  :root { --cols: [margin-start main-start aside-start] minmax(0, 1fr) [margin-end main-end aside-end]; --gap: 0; }
+  .note { text-align: left; transform: none; padding-top: 0; font-size: .92rem; }
+  .intro h2, .intro .greeting, .intro .bio, .portrait { grid-row: auto; }
+  .portrait { order: -1; }
+  .intro .greeting { font-size: 1.15rem; margin-bottom: .4rem; }
+  .portrait { width: 9.5rem; justify-self: start; margin: 0 0 1.6rem .4rem; }
+  .portrait.no-photo { display: none; }
+  .works > li, .log > li { margin-top: 1.1rem; }
+  .thread-icon { justify-self: start; }
+  .thread-icon .icon { margin-top: 0; }
+  h2 { font-size: 1.9rem; }
+  .site-header nav a { font-size: .98rem; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Shared doodles used by the icons. No need to edit. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-rocks" viewBox="0 0 48 48">
+      <path class="c-rock" d="M6 38C5 32 13 29 24 29s19 3 18 8-9 8-18 8S7 43 6 38Z"/><path class="ink" d="M6 38C5 32 13 29 24 29s19 3 18 8-9 8-18 8S7 43 6 38Z"/>
+      <path class="c-rock" d="M13 25c0-5 4-7 10-7s10 2 10 6-5 6-10 6-10-1-10-5Z"/><path class="ink" d="M13 25c0-5 4-7 10-7s10 2 10 6-5 6-10 6-10-1-10-5Z"/>
+      <path class="c-rock" d="M19 12c0-4 3-6 7-6s6 2 5 6c0 3-3 5-6 5s-6-2-6-5Z"/><path class="ink" d="M19 12c0-4 3-6 7-6s6 2 5 6c0 3-3 5-6 5s-6-2-6-5Z"/>
+    </symbol>
+    <symbol id="i-flock" viewBox="0 0 48 48">
+      <path class="ink" d="M36 22q2-3 5 0q2-3 4-1M27 15q2-3 5 0q2-3 4-1M18 9q2-3 5 0q2-3 4-1M27 29q2-3 5 1q2-4 4-1M17 35q2-3 5 0q2-3 4-1M6 40q2-3 5 1q2-4 4-1"/>
+    </symbol>
+    <symbol id="i-weaver" viewBox="0 0 48 48">
+      <path class="c-acacia" d="M4 9c6-5 34-6 40-1-6 3-34 4-40 1Z"/><path class="ink" d="M4 9c6-5 34-6 40-1-6 3-34 4-40 1ZM22 10v6"/>
+      <path class="c-straw" d="M15 25c0-6 3-9 7-9s7 3 7 9-3 10-7 10-7-4-7-10Z"/>
+      <path class="ink" d="M15 25c0-6 3-9 7-9s7 3 7 9-3 10-7 10-7-4-7-10ZM16 22q6 4 12 0M16 28q6-4 12 0M20 34v6q2 2 4 0v-6"/>
+      <path class="c-weaver" d="M31 30c1-3 6-4 8-1 0 3-5 4-8 1Z"/><path class="ink" d="M31 30c1-3 6-4 8-1 0 3-5 4-8 1ZM39 29l3 1"/>
+    </symbol>
+    <symbol id="i-field" viewBox="0 0 48 48">
+      <path class="c-soil" d="M9 26h30l6 15H3Z"/><path class="ink" d="M9 26h30l6 15H3ZM7 31h34M5 36h38"/>
+      <path class="c-leaf" d="M14 26q-4-4-6-2 2 3 6 2Zm0 0q4-4 6-2-2 3-6 2Zm10 0q-4-4-6-2 2 3 6 2Zm0 0q4-4 6-2-2 3-6 2Zm10 0q-4-4-6-2 2 3 6 2Zm0 0q4-4 6-2-2 3-6 2Z"/>
+      <path class="ink" d="M14 29v-3m10 3v-3m10 3v-3"/>
+    </symbol>
+    <symbol id="i-river" viewBox="0 0 48 48">
+      <path class="c-river" d="M19 4C15 14 27 20 21 30 17 37 10 41 6 46h28c-2-6-2-10 1-16 4-10-8-16-6-26Z"/>
+      <path class="ink" d="M19 4C15 14 27 20 21 30 17 37 10 41 6 46M29 4c-2 10 10 16 6 26-3 6-3 10-1 16M17 39q3-2 6 0m4-14q2-2 4 0"/>
+    </symbol>
+    <symbol id="i-minds" viewBox="0 0 48 48">
+      <path class="c-robot" d="M10 23c0-4 3-6 7-6h14c4 0 7 2 7 6v12c0 4-3 6-7 6H17c-4 0-7-2-7-6Z"/>
+      <path class="ink" d="M10 23c0-4 3-6 7-6h14c4 0 7 2 7 6v12c0 4-3 6-7 6H17c-4 0-7-2-7-6ZM24 17c0-5 2-9 5-12"/>
+      <path class="c-leaf" d="M29 5c3-5 9-5 12-3-2 5-7 6-12 3Z"/><path class="ink" d="M29 5c3-5 9-5 12-3-2 5-7 6-12 3Z"/>
+      <path class="ink" d="M19 27v2m10-2v2M20 34q4 2 8 0"/>
+    </symbol>
+    <symbol id="i-coin" viewBox="0 0 48 48">
+      <path class="c-coin" d="M8 33c0-7 5-12 12-12s12 5 12 12-5 12-12 12S8 40 8 33Z"/>
+      <path class="ink" d="M8 33c0-7 5-12 12-12s12 5 12 12-5 12-12 12S8 40 8 33ZM13 33c0-4 3-7 7-7M20 21c0-6 2-10 7-13M21 15c-3-4-8-4-11-2 2 4 7 5 11 2Z"/>
+      <path class="c-leaf" d="M27 8c3-5 10-6 14-3-2 5-9 7-14 3Z"/><path class="ink" d="M27 8c3-5 10-6 14-3-2 5-9 7-14 3Z"/>
+    </symbol>
+    <symbol id="i-cassette" viewBox="0 0 48 48">
+      <path class="c-tape-blue" d="M4 13c0-2 2-4 4-4h32c2 0 4 2 4 4v22c0 2-2 4-4 4H8c-2 0-4-2-4-4Z"/>
+      <path class="ink" d="M4 13c0-2 2-4 4-4h32c2 0 4 2 4 4v22c0 2-2 4-4 4H8c-2 0-4-2-4-4ZM10 14h28v6H10ZM12 30a4 4 0 1 0 8 0 4 4 0 1 0-8 0M28 30a4 4 0 1 0 8 0 4 4 0 1 0-8 0M20 30h8"/>
+    </symbol>
+    <symbol id="i-reel" viewBox="0 0 40 40">
+      <path d="M2 20a18 18 0 1 0 36 0 18 18 0 1 0-36 0Z" fill="#5B3A2E"/>
+      <path d="M8 20a12 12 0 1 0 24 0 12 12 0 1 0-24 0Z" fill="#F7F9F4" stroke="#1C2A39" stroke-width="1.6"/>
+      <path d="M20 9v6M20 25v6M9.5 14l5 3M25.5 23l5 3M9.5 26l5-3M25.5 17l5-3" stroke="#1C2A39" stroke-width="2" stroke-linecap="round"/>
+      <path d="M16 20a4 4 0 1 0 8 0 4 4 0 1 0-8 0Z" fill="#1C2A39"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <a class="home" href="#top" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-rocks"/></svg></a>
+  <nav aria-label="Sections">
+    <a href="#research">Research</a>
+    <a href="#talks">Talks</a>
+    <a href="#about">About</a>
+    <a href="#interests">Interests</a>
+    <a href="#contact">Contact</a>
+    <a class="play-link" href="#play" data-open-game>Play</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- =====================================================================
+     ✏️ EDIT: YOUR NAME, AND MY RESEARCH MAP
+     The drawing is one long line of code below; scroll past it. You can
+     change the words on the map in edit mode by clicking a label.
+     ===================================================================== -->
+<section class="research-map" id="top" aria-label="My research map">
+  <div class="map-head">
+    <h1>Panashe Zowa</h1>
+    <!-- ✏️ EDIT: the line under your name -->
+    <p class="map-caption">My research map<span class="swipe-hint">. Swipe sideways to scroll through it.</span></p>
+  </div>
+  <div class="map-scroll">
+    <div class="map-wrap">
+<svg class="map" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+<g class="drawing"><g class="sky"><path class="paint c-sun" d="M964,146l-1,3 0,4 -1,3 -1,4 -1,4 -1,3 -1,3 -1,3 -1,2 -1,2 -1,3 -1,2 -1,2 -1,2 -2,2 -1,3 -2,2 -2,2 -2,1 -3,2 -3,1 -4,1 -4,1 -5,2 -4,2 -5,1 -4,1 -4,1 -3,1 -3,0 -2,-1 -3,0 -3,0 -3,-1 -3,-1 -3,-1 -3,-2 -3,-1 -2,-2 -2,-2 -2,-2 -2,-2 -2,-1 -2,-2 -1,-2 -2,-2 -2,-2 -2,-2 -2,-1 -2,-2 -1,-2 -2,-3 -1,-2 -1,-2 0,-3 -1,-3 0,-3 0,-3 0,-3 0,-3 0,-3 1,-3 0,-3 0,-3 0,-3 0,-2 0,-3 1,-3 1,-3 2,-3 2,-3 2,-4 3,-3 3,-3 2,-2 3,-2 2,-2 3,-2 2,-3 3,-2 2,-3 3,-1 4,-1 3,-1 3,0 4,0 3,1 4,0 2,1 3,0 2,0 3,0 2,0 2,0 2,0 2,1 3,0 2,1 3,1 3,2 2,2 3,2 3,3 2,2 2,3 2,2 3,3 2,2 2,3 2,2 2,3 1,2 2,3 1,2 0,2 1,2 0,2 1,2 0,3 0,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M895,92l1,0 2,0 3,0 3,0 2,0 3,0 2,0 2,1 1,0 2,0 2,0 2,0 2,1 2,0 2,1 3,1 2,1 2,2 2,1 2,1 2,2 1,2 2,1 1,2 1,1 1,2 1,1 1,2 1,1 1,2 1,2 1,1 1,2 2,2 1,1 1,2 2,2 1,2 1,2 1,2 1,1 1,2 1,2 0,2 1,2 0,3 0,2 0,2 0,2 0,3 -1,2 -1,3 0,2 -1,3 -1,2 -1,2 -1,2 0,2 -1,1 -1,2 -1,1 -1,1 -1,2 -1,1 -2,2 -1,2 -1,1 -2,2 -1,2 -2,1 -1,2 -2,1 -2,1 -1,1 -2,1 -2,1 -2,1 -3,1 -2,1 -2,1 -2,1 -2,1 -2,1 -3,1 -2,1 -2,1 -2,0 -2,1 -2,0 -2,0 -1,0 -2,0 -2,-1 -2,0 -2,0 -2,-1 -2,0 -2,-1 -3,0 -2,-1 -2,-1 -3,-1 -2,-2 -2,-1 -1,-2 -2,-1 -1,-2 -2,-1 -1,-2 -1,-1 -1,-2 -2,-1 -1,-2 -1,-1 -2,-1 -1,-2 -2,-1 -1,-2 -2,-1 -1,-2 -1,-2 -1,-2 -1,-1 -1,-3 -1,-2 0,-2 0,-2 -1,-3 0,-2 0,-3 0,-2 0,-2 0,-3 0,-2 0,-3 0,-2 0,-2 0,-1 1,-2 0,-2 1,-2 1,-1 1,-2 1,-2 1,-2 1,-2 2,-2 1,-2 2,-2 1,-2 2,-1 1,-2 1,-1 2,-1 1,-1 2,-1 1,-1 1,-1 2,-1 1,-2 2,-1 1,-2 2,-1 1,-2 2,-1 2,-2 2,-1 2,-1 3,0 2,-1 3,0 2,0 3,0 2,0 2,1 3,0 2,0 2,1 2,0 1,0" pathLength="1" style="--d:0.09s"/><path class="ink bird" d="M-12.8,-4.6l1.9,-0.7 2,-0.1 1.9,0.4 2,1.1 1.9,1.5 1.9,2.2 1.7,2.6 1.4,-2.7 1.5,-2.1 1.6,-1.6 1.6,-1.1 1.6,-0.5 1.6,-0.1 1.5,0.4" pathLength="1" transform="translate(806 122) rotate(-9)" style="--d:0.14s"/><path class="ink bird" d="M-10.9,-4.8l1.9,-0.6 2,0.2 2,0.8 1.9,1.5 1.8,2.2 1.8,2.8 1.4,-2.8 1.5,-2.2 1.6,-1.6 1.6,-0.8 1.6,-0.3 1.6,0.3" pathLength="1" transform="translate(782.5 112) rotate(-8.6)" style="--d:0.16s"/><path class="ink bird" d="M-9.7,-0.4l2.2,-0.5 2.1,-0.1 2.1,0.5 1.9,1 1.9,1.5 1.6,-1.5 1.7,-1.1 1.7,-0.6 1.7,0 1.7,0.3" pathLength="1" transform="translate(754 98.7) rotate(-22.5)" style="--d:0.18s"/><path class="ink bird" d="M-11.5,-5.3l1.7,-0.5 1.8,0 1.8,0.5 1.8,1.1 1.7,1.6 1.6,2.1 1.6,2.6 1.2,-2.6 1.3,-2.2 1.5,-1.6 1.4,-1.1 1.5,-0.6 1.5,-0.1 1.4,0.4" pathLength="1" transform="translate(734.2 96.1) rotate(-7.8)" style="--d:0.20s"/><path class="ink bird" d="M-9.6,-2.5l2.1,-0.5 2.1,0.2 2.1,0.9 1.9,1.6 1.9,2.3 1.5,-2.3 1.6,-1.7 1.8,-1 1.7,-0.3 1.6,0.3" pathLength="1" transform="translate(700.7 78.9) rotate(-24.2)" style="--d:0.21s"/><path class="ink bird" d="M-10.6,-2.9l1.9,-0.5 1.9,0 1.9,0.6 1.9,1.1 1.8,1.7 1.7,2.1 1.4,-2.2 1.5,-1.7 1.5,-1.1 1.6,-0.7 1.5,-0.1 1.5,0.3" pathLength="1" transform="translate(676.2 68.7) rotate(-6.5)" style="--d:0.23s"/><path class="ink bird" d="M-11.7,-4.8l1.8,-0.6 1.8,0 1.8,0.5 1.8,1 1.7,1.6 1.7,2 1.6,2.6 1.2,-2.6 1.4,-2.1 1.4,-1.6 1.5,-1 1.5,-0.6 1.5,-0.1 1.4,0.4" pathLength="1" transform="translate(782.8 143.5) rotate(-16.2)" style="--d:0.25s"/><path class="ink bird" d="M-11.7,0.4l2.2,-0.5 2.1,-0.3 2.1,0.1 2.1,0.5 1.9,0.9 1.8,1.2 1.6,-1.3 1.6,-0.8 1.7,-0.6 1.7,-0.2 1.7,0.1 1.6,0.3" pathLength="1" transform="translate(762.1 154.2) rotate(-14.2)" style="--d:0.26s"/><path class="ink bird" d="M-10.5,-3.2l1.9,-0.5 1.9,0 1.9,0.6 1.8,1.2 1.8,1.7 1.7,2.3 1.3,-2.3 1.5,-1.8 1.5,-1.3 1.6,-0.6 1.6,-0.2 1.5,0.4" pathLength="1" transform="translate(738.9 171.7) rotate(2.5)" style="--d:0.28s"/><path class="ink bird" d="M-8.6,0.6l2.4,-0.6 2.4,0 2.2,0.7 2.1,1.2 1.8,-1.2 1.9,-0.7 2,-0.2 1.9,0.5" pathLength="1" transform="translate(721.4 185.8) rotate(-15.7)" style="--d:0.30s"/><path class="ink bird" d="M-9,-4l1.9,-0.4 2,0.3 1.9,1.2 1.9,2 1.8,2.8 1.4,-2.8 1.5,-2 1.6,-1.3 1.7,-0.4 1.6,0.3" pathLength="1" transform="translate(699.1 200.6) rotate(-2.7)" style="--d:0.32s"/><path class="ink bird" d="M-9.4,-4.5l1.7,-0.5 1.7,0.2 1.7,0.7 1.7,1.4 1.6,2 1.5,2.6 1.1,-2.6 1.4,-2 1.3,-1.4 1.5,-0.8 1.4,-0.3 1.4,0.3" pathLength="1" transform="translate(679.2 225.1) rotate(-7)" style="--d:0.33s"/><path class="ink bird" d="M-11.3,-1l2.1,-0.5 2,-0.2 2.1,0.3 1.9,0.8 1.9,1.2 1.8,1.7 1.5,-1.7 1.6,-1.3 1.6,-0.8 1.7,-0.4 1.6,-0.1 1.6,0.4" pathLength="1" transform="translate(784 86) rotate(10)" style="--d:0.35s"/></g><g class="land"><path class="paint c-ridge" d="M19,421l2,-1 1,-2 2,-1 3,-2 2,-2 2,-1 3,-3 3,-2 4,-2 4,-2 4,-1 5,-1 5,0 6,-1 4,-1 5,-1 6,-1 6,0 8,-1 7,0 5,-1 4,0 5,0 4,1 5,1 6,2 6,0 6,0 6,-1 4,0 6,0 6,1 7,1 7,0 6,0 6,0 4,1 6,0 6,-1 7,-1 6,-1 6,-1 5,0 5,1 6,1 6,-1 7,-1 6,-2 6,-1 5,0 5,0 5,1 7,0 6,0 7,-1 6,0 5,0 6,0 7,0 8,0 7,0 6,2 6,1 5,1 7,0 6,-1 7,0 5,0 4,1 4,0 5,0 4,0 7,-1 6,0 5,-1 4,-1 3,-2 3,-1 3,-2 3,-2 3,-1 4,-1 4,-1 4,-1 4,-1 4,-2 4,-1 4,-1 3,-1 4,-1 3,-1 3,-1 3,0 4,1 4,0 4,1 4,2 4,1 4,2 3,1 3,1 4,1 3,1 4,1 5,1 4,2 4,2 5,2 4,1 4,1 5,0 7,0 5,1 6,1 5,2 5,0 5,1 6,0 6,-1 7,1 7,0 6,-1 5,0 6,-1 5,1 6,0 6,1 6,1 6,-1 5,-2 6,-2 7,0 7,0 7,1 6,-1 6,-1 5,-1 4,-2 5,-1 5,-1 5,0 5,-1 3,-2 3,-1 3,-1 2,-2 2,-1 3,-2 2,-1 3,-1 3,0 4,0 4,1 4,0 5,1 4,1 4,0 3,1 4,1 3,2 3,2 4,1 3,2 3,1 3,2 4,1 4,1 4,1 5,1 7,1 5,0 5,-1 5,0 6,-1 5,0 4,0 5,2 6,0 6,0 7,-1 7,-1 5,-1 6,0 5,0 7,1 7,0 7,-1 6,0 5,0 5,0 6,0 7,-1 7,0 7,1 5,1 5,1 6,1 6,0 7,0 6,-1 6,1 5,0 5,1 5,0 6,0 7,1 5,1 5,1 5,0 5,0 6,-1 7,-1 8,-1 6,1 6,0 6,1 6,-1 6,-1 7,-1 6,-1 5,0 5,0 4,0 4,-1 4,0 4,1 6,1 5,1 4,2 3,1 2,1 2,1 1,1 2,2 1,1 2,1 2,1 2,2 1,2 1,2 1,2 0,1 1,1 0,2 0,1 0,2 0,1 -7,0 -6,0 -6,1 -6,0 -5,1 -6,-1 -7,0 -7,0 -6,0 -6,0 -5,-1 -5,0 -6,0 -7,1 -7,1 -5,1 -6,-1 -5,-1 -5,-1 -6,0 -7,0 -7,1 -6,0 -5,0 -5,0 -7,0 -7,1 -7,0 -6,-1 -5,-1 -5,0 -6,0 -6,1 -7,1 -6,1 -6,-1 -5,-1 -5,-1 -6,0 -6,0 -7,1 -6,0 -6,0 -5,0 -6,1 -6,0 -7,0 -7,-1 -6,-1 -6,-1 -5,1 -6,1 -6,1 -7,0 -6,0 -6,-1 -5,-1 -5,0 -6,1 -6,0 -7,0 -6,0 -5,0 -5,1 -6,0 -7,0 -7,-1 -7,-1 -5,-1 -6,1 -5,1 -6,1 -7,0 -7,-1 -6,0 -5,0 -5,0 -5,0 -7,-1 -6,0 -7,1 -5,0 -6,1 -5,0 -6,0 -7,-2 -7,0 -6,0 -6,1 -5,1 -6,0 -6,0 -7,-1 -7,0 -5,0 -6,0 -5,0 -5,-1 -7,0 -6,1 -7,1 -5,0 -5,0 -5,-1 -6,-1 -7,0 -7,0 -6,1 -6,0 -5,1 -6,-1 -7,0 -7,0 -6,0 -6,0 -5,-1 -5,0 -6,0 -7,1 -6,1 -6,1 -5,-1 -5,-1 -6,-1 -6,0 -7,0 -7,1 -6,0 -5,0 -5,0 -7,0 -6,1 -7,0 -7,-1 -5,-1 -5,0 -6,0 -6,1 -7,1 -6,1 -6,-1 -5,-1 -5,-1 -6,0 -6,0 -7,1 -6,0 -6,0 -5,0 -6,1 -6,0 -7,0 -7,-1 -6,-1 -5,-1 -6,1 -5,1 -7,1 -7,0 -6,0 -6,-1 -4,-1 -6,0 -6,1 -6,0 -7,0 -6,0 -5,0 -5,1 -6,0 -7,0 -7,-1 -6,-1 -6,-1 -6,1 -5,1 -6,1 -7,0 -7,0 -6,-1 -5,0 -5,0 -5,0 -6,-1 -7,0 -7,1 -5,0 -6,1 -5,0 -6,0 -6,-2 -7,0 -7,0 -6,0 -5,1z" transform="translate(3.2 2.6)"/><path class="ink soft thin" d="M19,421l2,-1 1,-2 2,-1 3,-2 2,-2 2,-1 3,-3 3,-2 4,-2 4,-2 4,-1 5,-1 5,0 6,-1 4,-1 5,-1 6,-1 6,0 8,-1 7,0 5,-1 4,0 5,0 4,1 5,1 6,2 6,0 6,0 6,-1 4,0 6,0 6,1 7,1 7,0 6,0 6,0 4,1 6,0 6,-1 7,-1 6,-1 6,-1 5,0 5,1 6,1 6,-1 7,-1 6,-2 6,-1 5,0 5,0 5,1 7,0 6,0 7,-1 6,0 5,0 6,0 7,0 8,0 7,0 6,2 6,1 5,1 7,0 6,-1 7,0 5,0 4,1 4,0 5,0 4,0 7,-1 6,0 5,-1 4,-1 3,-2 3,-1 3,-2 3,-2 3,-1 4,-1 4,-1 4,-1 4,-1 4,-2 4,-1 4,-1 3,-1 4,-1 3,-1 3,-1 3,0 4,1 4,0 4,1 4,2 4,1 4,2 3,1 3,1 4,1 3,1 4,1 5,1 4,2 4,2 5,2 4,1 4,1 5,0 7,0 5,1 6,1 5,2 5,0 5,1 6,0 6,-1 7,1 7,0 6,-1 5,0 6,-1 5,1 6,0 6,1 6,1 6,-1 5,-2 6,-2 7,0 7,0 7,1 6,-1 6,-1 5,-1 4,-2 5,-1 5,-1 5,0 5,-1 3,-2 3,-1 3,-1 2,-2 2,-1 3,-2 2,-1 3,-1 3,0 4,0 4,1 4,0 5,1 4,1 4,0 3,1 4,1 3,2 3,2 4,1 3,2 3,1 3,2 4,1 4,1 4,1 5,1 7,1 5,0 5,-1 5,0 6,-1 5,0 4,0 5,2 6,0 6,0 7,-1 7,-1 5,-1 6,0 5,0 7,1 7,0 7,-1 6,0 5,0 5,0 6,0 7,-1 7,0 7,1 5,1 5,1 6,1 6,0 7,0 6,-1 6,1 5,0 5,1 5,0 6,0 7,1 5,1 5,1 5,0 5,0 6,-1 7,-1 8,-1 6,1 6,0 6,1 6,-1 6,-1 7,-1 6,-1 5,0 5,0 4,0 4,-1 4,0 4,1 6,1 5,1 4,2 3,1 2,1 2,1 1,1 2,2 1,1 2,1 2,1 2,2 1,2 1,2 1,2 0,1 1,1" pathLength="1" style="--d:0.37s"/><path class="ink soft thin" d="M127.6,398.2l-0.1,-2.1 -0.1,-2.3 -0.1,-2.3 0,-2.5 0,-2.5 0.1,-2.5M127.6,388.7l-1.6,-1.5 -1.5,-1.5 -1.4,-1.4 -1.3,-1.4M127.5,387.5l1.3,-1.5 1.2,-1.4 1.4,-1.5 1.3,-1.4" pathLength="1" style="--d:0.41s"/><path class="paint c-far" d="M136.6,381l-1,1.4 -1.9,1.2 -1.6,0.6 -1.8,0.5 -2,0.2 -1.8,-0.1 -1.8,-0.2 -1.7,-0.4 -1.3,-0.5 -1.4,-0.9 -1,-1 -0.4,-1.1 0.7,-1.2 1.3,-1.1 1.5,-1 1.4,-0.7 1.4,-0.5 1.8,-0.2 1.8,0.1 2.2,0.2 2.1,0.5 1.7,0.5 1.6,1.8 0.2,1.9z" transform="translate(3.2 2.6)"/><path class="ink soft thin" d="M136.6,381l-1,1.4 -1.9,1.2 -1.6,0.6 -1.8,0.5 -2,0.2 -1.8,-0.1 -1.8,-0.2 -1.7,-0.4 -1.3,-0.5 -1.4,-0.9 -1,-1 -0.4,-1.1 0.7,-1.2 1.3,-1.1 1.5,-1 1.4,-0.7 1.4,-0.5 1.8,-0.2 1.8,0.1 2.2,0.2 2.1,0.5 1.7,0.5 1.6,1.8 0.2,1.9z" pathLength="1" style="--d:0.43s"/><path class="paint c-ground" d="M13,421l3,0 3,-1 4,0 3,-1 3,0 4,0 5,0 5,1 5,0 5,1 5,-1 4,-1 4,-1 5,0 6,0 6,1 7,1 6,0 5,0 5,0 6,-1 7,0 8,0 7,0 6,0 6,0 6,1 8,1 7,1 7,-1 6,-1 6,-1 6,1 8,1 8,1 6,0 6,0 6,0 7,0 8,0 8,-1 6,-1 6,1 6,1 7,1 8,0 7,-1 6,-1 5,0 5,0 6,1 6,0 7,0 5,0 5,0 5,1 6,0 6,-1 6,-1 7,-1 6,0 6,1 5,1 6,1 7,0 7,-1 6,-1 6,-1 5,0 6,1 6,0 6,0 7,0 6,0 5,1 5,-1 6,-1 7,-1 7,0 6,0 6,1 5,1 6,0 6,0 7,-1 7,-1 7,0 5,0 5,0 6,0 6,0 7,1 6,0 5,0 5,0 5,-1 6,-1 6,0 6,0 6,1 6,1 5,0 5,0 6,-1 8,0 7,0 7,0 5,0 6,-1 5,1 7,0 7,1 6,0 6,0 5,-1 5,-1 6,0 7,1 6,1 6,0 5,0 5,0 6,0 7,0 6,0 7,0 6,-1 5,0 5,0 6,1 7,1 6,1 6,-1 6,-1 4,-1 5,0 6,1 7,1 6,0 6,0 5,0 5,0 6,0 6,0 7,0 7,-1 6,0 5,0 5,1 7,1 6,1 7,-1 7,-1 5,-1 5,0 6,0 7,1 7,0 7,0 6,0 6,0 6,0 7,-1 8,-1 7,-1 7,1 6,2 7,0 7,-1 8,-1 7,-1 6,0 6,1 6,0 8,0 7,0 6,0 6,0 5,0 6,-1 7,-1 7,0 6,0 6,2 5,0 5,0 5,0 6,-1 6,-1 6,0 5,1 4,0 3,0 4,1 4,0 4,0 4,0 4,1 3,1 11,2 6,2 4,2 0,3 -2,4 -4,3 -4,3 -4,4 -4,4 -1,5 -1,4 0,5 0,5 -1,4 -1,4 0,4 -1,6 -1,5 -1,6 0,5 1,5 1,5 2,4 1,5 2,5 0,5 0,6 0,6 0,5 0,5 1,5 0,5 0,5 0,5 0,6 -1,6 -2,5 -1,4 -2,3 -2,3 -2,3 -3,3 -3,3 -3,3 -4,2 -4,2 -4,2 -3,1 -4,1 -5,1 -4,1 -5,0 -6,1 -7,1 -6,1 -5,0 -5,-1 -5,-1 -6,-1 -6,0 -6,1 -6,1 -5,1 -4,0 -5,0 -5,-1 -7,0 -6,0 -6,0 -6,0 -5,0 -5,0 -5,1 -6,1 -6,1 -7,1 -5,-1 -5,-1 -4,0 -5,-1 -6,1 -6,1 -6,0 -5,0 -5,-1 -5,-1 -5,-1 -6,0 -6,0 -6,-1 -6,0 -5,0 -5,1 -5,1 -6,2 -6,1 -7,0 -6,-1 -5,-1 -4,-1 -5,-1 -6,0 -6,-2 -6,-2 -6,-2 -4,-2 -5,-2 -6,-1 -6,0 -6,-1 -6,-1 -4,-1 -5,0 -5,1 -5,1 -6,2 -6,2 -7,1 -5,1 -6,0 -4,1 -6,1 -5,1 -6,1 -6,2 -6,1 -5,1 -5,1 -5,0 -5,0 -5,0 -6,-1 -7,-1 -5,-1 -5,1 -5,0 -5,-1 -6,0 -7,-2 -6,0 -5,-1 -5,1 -5,1 -6,1 -5,1 -7,0 -6,1 -5,1 -5,0 -5,0 -4,-1 -6,-2 -6,-3 -7,-2 -5,-1 -5,-1 -4,-2 -6,-1 -6,-2 -6,0 -6,0 -5,1 -5,1 -5,0 -5,0 -6,0 -7,1 -6,2 -6,2 -5,1 -5,0 -5,-1 -5,-2 -7,-1 -6,0 -5,-1 -5,0 -4,0 -5,-1 -6,0 -6,1 -6,1 -6,1 -5,0 -5,-1 -5,0 -5,1 -7,1 -6,2 -6,1 -6,1 -5,-1 -4,-1 -6,0 -5,0 -7,0 -6,1 -5,0 -5,0 -4,0 -5,-1 -6,0 -6,-1 -6,-2 -6,-2 -4,-2 -5,-2 -6,-1 -6,0 -6,0 -6,0 -5,0 -5,1 -5,0 -6,1 -6,0 -7,1 -6,0 -5,0 -5,0 -4,1 -5,1 -6,1 -6,0 -6,-1 -6,-1 -4,-1 -5,0 -5,1 -6,1 -6,2 -6,1 -6,1 -6,0 -5,1 -5,2 -5,1 -6,2 -6,1 -6,1 -5,0 -5,0 -5,1 -5,0 -6,-1 -7,-1 -6,-1 -5,0 -5,0 -4,0 -4,-1 -5,-2 -6,-2 -6,-3 -4,-2 -4,-3 -3,-2 -3,-3 -2,-3 -3,-4 -2,-4 -1,-5 0,-6 1,-5 1,-5 2,-4 2,-5 1,-6 0,-6 0,-6 0,-5 -1,-5 -1,-4 -1,-5 -1,-4 0,-5 -2,-4 -1,-5 -1,-5 -1,-5 -1,-5 0,-5 0,-5 1,-4 1,-5 1,-5 2,-5 1,-6 1,-4 0,-4 -1,-4 -3,-4 -4,-4 -6,-4 -5,-3 -3,-3 -1,-2 3,-3 8,-2 13,-2z"/><path class="ink thin" d="M13,421l3,0 3,0 4,0 3,-1 3,0 4,0 5,1 5,0 5,1 5,1 5,0 4,-1 4,-1 5,-1 6,0 6,1 7,1 6,0 5,0 5,0 6,0 7,0 8,0 7,-1 6,0 6,0 6,1 8,1 7,0 7,0 6,-2 6,0 7,0 7,1 8,0 6,0 6,0 6,1 7,0 8,-1 7,-1 7,0 6,0 6,1 7,1 8,0 7,-1 6,-1 5,0 5,0 6,1 6,0 7,0 5,0 5,0 5,1 6,0 6,-1 6,-1 7,-1 6,0 6,1 5,1 6,1 7,0 7,-1 6,-1 6,-1 5,0 6,1 6,0 6,0 7,0 6,0 5,1 5,-1 6,-1 7,-1 7,0 6,0 6,1 5,1 6,0 6,0 7,-1 7,-1 7,0 5,0 5,0 6,0 6,0 7,1 6,0 5,0 5,0 5,-1 6,-1 6,0 6,0 6,1 6,1 5,0 5,0 6,-1 8,0 7,0 7,0 5,0 6,-1 5,1 7,0 7,1 6,0 6,0 5,-1 5,-1 6,0 7,1 6,1 6,0 5,0 5,0 6,0 7,0 6,0 7,0 6,-1 5,0 5,0 6,1 7,1 6,1 6,-1 6,-1 4,-1 5,0 6,1 7,1 6,0 6,0 5,0 5,0 6,0 6,0 7,0 7,-1 6,0 5,0 5,1 7,1 6,1 7,-1 7,-1 5,-1 5,0 6,1 7,0 7,0 7,0 6,0 6,1 6,0 7,-1 8,-1 7,-1 7,1 6,2 7,0 8,0 8,-1 6,-1 6,0 6,0 7,1 7,-1 7,1 7,0 5,1 5,-1 6,-1 7,-1 7,0 6,1 6,1 5,1 5,0 6,-1 6,-1 6,0 5,0 5,0 4,0 3,0 4,0 4,0 4,0 4,0 4,0 3,1" pathLength="1" style="--d:0.44s"/><path class="paint c-shadow" d="M403,472l-1,1 -1,1 -2,0 -4,0 -3,0 -5,0 -6,1 -8,1 -8,1 -8,1 -3,0 -4,0 -4,1 -5,0 -6,0 -6,0 -6,0 -6,1 -5,1 -6,2 -7,0 -7,0 -8,-1 -6,0 -6,1 -6,1 -6,1 -7,1 -7,-1 -6,0 -5,0 -5,0 -5,0 -6,0 -7,0 -7,0 -6,1 -6,1 -5,-1 -7,-1 -6,-1 -8,-1 -6,1 -6,1 -5,0 -5,0 -7,0 -6,-1 -6,0 -6,0 -6,0 -5,-1 -7,-1 -7,0 -7,1 -7,1 -6,0 -5,-1 -7,-2 -7,-1 -7,0 -6,0 -5,0 -4,0 -5,-1 -5,0 -4,0 -7,0 -6,-1 -4,0 -3,-2 -3,-1 -2,-1 -1,-2 -1,-1 -1,0 0,-1 1,-1 1,-1 2,0 2,-1 2,0 3,-1 4,-1 5,-2 5,-2 8,-1 4,0 5,0 4,1 4,0 4,0 5,-1 5,-2 6,-1 7,-1 6,1 6,0 6,0 6,0 6,-1 8,0 7,-1 7,0 6,-1 6,0 5,0 5,1 7,1 6,0 5,0 5,-1 5,-2 6,0 7,1 7,1 7,0 5,0 6,0 6,0 7,0 7,0 6,0 6,-1 5,0 5,1 5,1 6,1 5,1 5,0 7,-1 6,-1 6,0 7,1 7,0 6,1 5,0 5,1 4,0 5,1 5,1 6,0 5,0 5,0 7,0 6,1 7,2 8,1 7,2 6,1 4,1 3,1 3,1 1,1z"/><path class="paint c-shadow" d="M1124,476l0,1 0,1 -1,1 -1,0 -2,2 -2,1 -3,1 -3,1 -4,1 -3,0 -4,0 -4,-1 -5,0 -5,0 -7,1 -7,1 -7,0 -6,1 -6,0 -5,1 -6,0 -7,0 -6,-1 -6,0 -5,0 -5,0 -4,1 -5,2 -6,0 -6,-1 -6,-1 -6,-1 -4,0 -5,0 -6,0 -7,0 -7,-1 -6,0 -5,0 -4,0 -5,0 -4,-1 -5,-1 -4,-1 -5,-2 -4,-1 -3,-1 -2,-1 -2,0 -1,-1 -1,0 0,-1 1,-1 2,-1 2,0 2,0 3,-1 3,0 4,0 5,0 4,0 5,-1 5,-1 4,-1 5,-1 4,0 6,0 6,1 7,1 7,-1 5,-1 5,-1 5,0 6,0 7,0 7,0 6,0 6,0 5,1 6,0 6,0 6,-1 6,-1 6,0 6,0 5,2 5,1 7,1 6,0 5,0 5,0 4,0 3,1 3,1 3,0 3,0 3,1 3,0 2,0 1,1 2,0 0,1z"/><path class="ink grass detail" d="M949.7,521.9l-1.1,-2 -1.2,-2 -1.2,-2 -1.2,-2M949.7,521.9l0,-2 -0.1,-2 -0.1,-1.9 -0.1,-1.8 -0.1,-1.8M949.7,521.9l1,-1.8 0.9,-1.7 0.9,-1.6 0.9,-1.5" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M407.6,520.7l-0.7,-1.6 -0.8,-1.7 -0.9,-1.7M407.6,520.7l0.2,-1.5 0.2,-1.6 0.2,-1.7 0.1,-1.7M407.6,520.7l1.1,-1.5 1.2,-1.7 1,-1.7" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1112.6,499.4l-1.1,-1.6 -1.2,-1.7 -1.2,-1.7M1112.6,499.4l0.1,-1.5 0,-1.5 0,-1.5 -0.1,-1.5M1112.6,499.4l1.2,-1.4 1.2,-1.4 1.2,-1.5" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1083.6,512.8l-0.6,-1.7 -0.7,-1.7 -0.7,-1.7 -0.7,-1.7M1083.6,512.8l0.2,-1.7 0.2,-1.8 0.3,-1.9 0.2,-1.9 0.4,-2M1083.6,512.8l1,-1.6 1,-1.7 1.1,-1.7 1.1,-1.9" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M421.9,517.2l-1,-2.1 -0.9,-2.1 -0.8,-2M421.9,517.2l0,-2.1 0.1,-2 0,-2.1 0.1,-2M421.9,517.2l1,-2 1,-2.1 1,-1.9" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M76.1,577.6l-0.6,-1.3 -0.6,-1.4 -0.5,-1.4 -0.7,-1.3M76.1,577.6l0.2,-1.5 0.1,-1.6 0.1,-1.6 0.1,-1.7M76.1,577.6l1.1,-1.3 1,-1.3 1,-1.4" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1130.3,584.3l-0.6,-1.6 -0.7,-1.6 -0.7,-1.6 -0.7,-1.7 -0.7,-1.7M1130.3,584.3l0.1,-2.1 0.1,-2.2 0.2,-2.3 0.2,-2.2 0.3,-2.3M1130.3,584.3l1,-2.1 1,-2.2 1.1,-2.2 1.2,-2.3" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1039.8,505.5l-0.9,-1.6 -0.9,-1.7 -1,-1.7 -1,-1.6M1039.8,505.5l0,-2.2 -0.1,-2.2 0,-2.2 0,-2M1039.8,505.5l0.8,-1.7 0.8,-1.8 0.8,-1.6 0.8,-1.6" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1161,500.4l-0.9,-1.6 -0.9,-1.6 -1,-1.5M1161,500.4l0,-2.1 0,-1.9 0.1,-1.9M1161,500.4l0.8,-1.5 0.9,-1.4 0.9,-1.3" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1158.5,519.7l-0.6,-1.8 -0.6,-1.8 -0.6,-1.8 -0.8,-1.7M1158.5,519.7l0.4,-2.3 0.3,-2.5 0.3,-2.4 0.2,-2.5M1158.5,519.7l1.1,-1.8 1,-1.8 1,-1.9 1,-1.9" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M427,587.9l-0.6,-1.3 -0.5,-1.4 -0.5,-1.4 -0.5,-1.4M427,587.9l0.3,-1.7 0.4,-1.7 0.3,-1.6 0.4,-1.7M427,587.9l1,-1.2 1.1,-1.2 1.1,-1.2 1,-1.2" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M953.9,563.3l-0.9,-1.5 -0.9,-1.6 -0.9,-1.5 -0.7,-1.5M953.9,563.3l0,-2.1 0,-1.9 0,-1.9 0.1,-1.8M953.9,563.3l0.9,-1.6 0.9,-1.5 0.9,-1.4 1,-1.3" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1050.2,593l-0.6,-1.6 -0.6,-1.7 -0.6,-1.7 -0.5,-1.7M1050.2,593l0.2,-2.1 0.3,-2.1 0.4,-2 0.3,-1.8M1050.2,593l0.9,-1.6 1,-1.5 1.1,-1.5 1.1,-1.3" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1154.4,594.4l-1.1,-2.1 -1.2,-2.2 -1.3,-2.1 -1.2,-2.2M1154.4,594.4l0,-2.1 -0.1,-2.2 0,-2.1 0,-2.1 0,-2M1154.4,594.4l1,-1.9 1,-1.9 1,-1.9 1,-1.8" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M911.5,517.4l-1,-1.6 -1.1,-1.7 -1,-1.6 -1.1,-1.7 -1.2,-1.6M911.5,517.4l0.1,-1.8 0,-1.8 0,-2 -0.1,-2 -0.1,-2.1M911.5,517.4l1,-1.1 1.1,-1.2 0.9,-1.2 1,-1.3 0.9,-1.5" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M362.7,506.7l-1.1,-2.1 -1,-2.1 -1.2,-2M362.7,506.7l0.2,-1.9 0.1,-1.8 0.2,-1.8 0.1,-1.7M362.7,506.7l1.4,-1.8 1.3,-1.6 1.3,-1.5" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1050.5,597.4l-0.7,-1.6 -0.6,-1.7 -0.6,-1.7 -0.6,-1.6 -0.5,-1.7M1050.5,597.4l0.1,-2.2 0.2,-2.1 0.2,-2.1 0.3,-2 0.3,-1.8M1050.5,597.4l1.1,-2.1 1.1,-2 1.2,-1.9 1.3,-1.8" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1118.5,523.4l-0.6,-1.7 -0.6,-1.7 -0.5,-1.6 -0.6,-1.6 -0.6,-1.6M1118.5,523.4l0.2,-2.3 0.3,-2.2 0.3,-2.2 0.3,-2 0.4,-2M1118.5,523.4l1.1,-2.2 1.1,-2 1.2,-2 1.3,-1.8" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M981.9,568.4l-0.6,-1.6 -0.6,-1.6 -0.6,-1.6 -0.6,-1.7 -0.6,-1.8M981.9,568.4l0.3,-1.9 0.3,-2 0.4,-2.1 0.4,-2.2 0.4,-2.3M981.9,568.4l1,-1.4 1,-1.4 1.1,-1.6 1.1,-1.6 1.1,-1.8" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M381.1,524.4l-0.7,-1.7 -0.8,-1.6 -0.6,-1.6 -0.6,-1.5M381.1,524.4l0.2,-2.1 0.2,-2.1 0.3,-2 0.3,-1.9M381.1,524.4l1,-1.6 1.1,-1.5 1.1,-1.4 1.1,-1.3" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M903.8,441.2l-1.2,-1.9 -1.2,-1.9 -1.2,-1.9 -1.2,-1.8M903.8,441.2l0,-2 0.1,-1.8 0.1,-1.8 0.1,-1.7 0.1,-1.7M903.8,441.2l1.2,-1.9 1.2,-1.7 1.3,-1.5 1.3,-1.5" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1120.4,585.7l-1.1,-1.9 -1.2,-1.8 -1.3,-1.9M1120.4,585.7l0,-1.6 -0.1,-1.5 -0.1,-1.7 -0.1,-1.7M1120.4,585.7l1,-1.4 0.9,-1.4 0.9,-1.5" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M910.1,566.3l-0.7,-1.6 -0.7,-1.5 -0.6,-1.5M910.1,566.3l0.2,-1.9 0.2,-1.8 0.2,-1.8M910.1,566.3l1,-1.4 1,-1.2 1,-1.3" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M822.3,491l-0.6,-1.5 -0.5,-1.5 -0.6,-1.6M822.3,491l0.4,-1.9 0.3,-2.1 0.4,-2.2M822.3,491l1.1,-1.5 1.1,-1.5 1.1,-1.7" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M865.4,595.9l-0.9,-1.6 -0.8,-1.7 -0.9,-1.7 -0.8,-1.7M865.4,595.9l0.1,-2.1 0,-2.3 0,-2.2 0,-2.2M865.4,595.9l1,-1.6 0.9,-1.7 0.9,-1.8 0.9,-1.7" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M826.7,524.1l-1.3,-1.9 -1.2,-1.9 -1.3,-1.9 -1.3,-1.9M826.7,524.1l-0.1,-2 -0.2,-2.1 -0.1,-2.1 -0.1,-2.1 -0.2,-2M826.7,524.1l1,-1.8 0.9,-2 1,-1.9 0.9,-1.9" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1139.1,497l-0.9,-1.8 -0.8,-1.8 -0.8,-1.9 -0.7,-1.8M1139.1,497l-0.1,-2.2 0,-2.3 0,-2.1 0,-2.1M1139.1,497l0.8,-1.6 0.8,-1.6 0.8,-1.5 0.8,-1.5" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M852,513.9l-0.6,-1.3 -0.5,-1.3 -0.5,-1.3 -0.4,-1.4M852,513.9l0.2,-1.7 0.4,-1.7 0.3,-1.8 0.4,-1.9M852,513.9l1.2,-1.7 1.4,-1.8 1.3,-2" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1042.8,565.2l-1.2,-2 -1.3,-1.9 -1.2,-1.9 -1.2,-1.9M1042.8,565.2l0,-1.9 0,-1.9 -0.1,-2 -0.1,-2.1 -0.2,-2.1M1042.8,565.2l1.2,-1.6 1.1,-1.7 1,-1.8 1.1,-2" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1071.6,503.4l-1.1,-1.9 -1.1,-1.9 -1.1,-1.9 -1.1,-2.1M1071.6,503.4l0.1,-1.9 0.1,-1.9 0.2,-2 0.1,-2 0.2,-2.1M1071.6,503.4l1.2,-1.7 1.3,-1.8 1.3,-2 1.4,-2" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M968.1,595.3l-0.5,-1.9 -0.6,-1.9 -0.7,-1.9 -0.7,-2 -0.8,-2M968.1,595.3l0.4,-1.8 0.3,-1.9 0.3,-2 0.3,-2.1 0.2,-2.1 0.1,-2.2M968.1,595.3l1.2,-1.5 1.1,-1.6 1.1,-1.7 1.1,-1.8 1,-1.9" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M386.6,502.9l-0.8,-1.8 -0.8,-1.9 -0.8,-1.8M386.6,502.9l0.1,-1.7 0.1,-1.8 0,-1.9 0.1,-1.9M386.6,502.9l1,-1.6 0.9,-1.8 1,-1.8" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M377.5,590.7l-0.8,-1.6 -0.8,-1.6 -0.8,-1.6 -1,-1.6 -0.9,-1.5M377.5,590.7l0,-1.8 0,-1.7 0,-1.8 0,-1.8 0.1,-1.8M377.5,590.7l0.9,-1.4 1,-1.3 1,-1.4 1,-1.5" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M1115.6,551.1l-0.8,-2 -0.9,-1.8 -0.8,-1.8M1115.6,551.1l0.3,-1.8 0.2,-1.7 0.1,-1.6 0.2,-1.6M1115.6,551.1l1.4,-1.6 1.2,-1.4 1.3,-1.4" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M412,541.1l-1,-1.9 -0.9,-1.8 -0.8,-1.8 -0.7,-1.8M412,541.1l0.1,-1.9 0.2,-1.9 0.2,-1.8 0.2,-1.7 0.3,-1.7M412,541.1l1.2,-1.7 1.2,-1.6 1.3,-1.5 1.3,-1.4" pathLength="1" style="--d:0.47s"/><path class="ink grass detail" d="M330.3,591.9l-0.8,-1.4 -0.8,-1.5 -0.9,-1.4 -0.9,-1.4M330.3,591.9l0.2,-1.7 0.2,-1.8 0.2,-1.8 0.1,-2M330.3,591.9l1.1,-1.1 1.1,-1.2 1.1,-1.3 1,-1.4" pathLength="1" style="--d:0.47s"/><path class="paint c-river" d="M573,421l-1,1 0,2 -1,1 -1,1 0,1 -1,1 -1,1 0,1 -1,1 -1,1 0,1 -1,1 0,1 -1,1 0,1 0,1 0,1 0,1 0,1 0,2 0,1 1,1 0,2 0,1 1,1 0,2 1,1 0,1 1,2 0,1 1,2 1,1 1,1 1,2 1,1 2,2 1,1 1,2 1,1 2,2 1,2 0,1 1,2 1,1 0,2 1,1 0,2 0,1 0,2 0,1 0,2 0,1 -1,1 0,2 -1,1 0,2 -1,2 -1,1 -1,2 -1,2 -1,2 -1,2 -1,1 -1,2 -1,1 -1,1 -1,1 -1,1 -1,1 -2,1 -1,1 -1,1 -2,1 -1,2 -2,1 -2,2 -2,1 -1,1 -2,2 -1,1 -2,1 -2,2 -1,1 -2,1 -2,1 -1,1 -2,0 -2,1 -1,1 -2,0 -2,1 -1,0 -2,1 -1,0 -2,1 -1,1 -2,1 -1,1 -2,2 -1,1 -2,1 -1,2 -2,1 -1,1 -2,1 -1,1 -2,1 -2,1 -2,0 -2,1 -1,1 -2,0 -2,1 -2,1 -2,0 -2,1 -1,1 -2,2 -2,1 -2,2 -2,1 -2,2 -1,1 -1,1 -2,2 -1,1 -1,1 -1,1 -1,1 -1,1 -1,1 -1,1 -1,2 0,1 -1,2 -1,1 -1,2 0,1 -1,2 -1,2 0,1 -1,2 0,2 0,1 -1,2 0,1 0,2 1,2 0,1 1,2 0,2 1,1 1,2 1,2 2,2 1,2 1,1 1,2 1,2 1,2 1,2 1,2 1,2 0,2 1,1 0,2 1,2 5,0 6,-1 6,0 7,0 6,1 5,1 5,1 5,-1 6,-1 7,-1 7,0 6,0 5,1 5,0 6,0 7,0 7,0 6,1 6,0 5,-1 6,-1 6,0 6,0 7,1 6,1 5,1 5,-1 5,-1 7,-1 6,0 7,0 5,1 6,0 5,0 6,0 7,1 6,0 -2,-1 -2,-2 -2,-1 -2,-1 -1,-1 -2,-1 -1,-1 -2,0 -1,-1 -2,-1 -1,-1 -2,-1 -1,-1 -2,-1 -1,0 -2,-1 -1,-2 -2,-1 -2,-1 -2,-1 -2,-1 -2,-1 -2,-2 -2,-1 -1,-1 -2,-1 -1,-1 -2,-1 -1,0 -1,-1 -1,-1 -2,-1 -1,-1 -2,-1 -1,-1 -2,-1 -2,-2 -1,-1 -2,-2 -2,-1 -2,-2 -2,-1 -1,-2 -2,-2 -1,-1 -1,-2 -1,-1 -1,-1 0,-2 -1,-1 -1,-1 0,-2 -1,-2 0,-2 0,-2 -1,-2 0,-2 0,-2 0,-2 1,-2 0,-2 1,-1 1,-2 1,-2 1,-1 1,-1 1,-1 1,-1 1,-1 1,-1 1,-2 1,-1 1,-2 1,-1 1,-2 1,-1 1,-2 0,-1 1,-2 1,-2 1,-2 1,-1 1,-2 1,-1 1,-2 1,-1 1,-2 0,-2 1,-2 1,-2 1,-2 1,-2 0,-2 1,-2 0,-2 0,-2 0,-2 -1,-2 0,-2 -1,-2 -1,-1 -1,-2 -1,-1 -2,-2 -1,-1 -2,-2 -1,-1 -2,-1 -2,-2 -1,-1 -2,-1 -1,-2 -2,-1 0,-2 -1,-1 -1,-1 -1,-1 -1,-1 -1,-1 -2,-1 -1,-2 -1,-1 -2,-1 -2,-1 -1,-1 -2,-1 -2,-1 -1,-1 -2,0 -1,-1 -2,-1 -1,-1 -1,-1 -1,-1 -1,0 -1,-1 -1,-1 -1,-2 -2,-1 -1,-2 -1,-1 -1,-2 -2,-1 -1,-1 -2,-2 -1,-1 -2,-1 -1,-1 -1,-1 -1,-1 -1,-1 -1,-1 -1,-1 0,-1 -1,-1 0,-1 0,-2 0,-1 0,-1 1,-1 0,-1 0,-2 0,-1 1,-2 0,-2 1,-1z" transform="translate(3.2 2.6)"/><path class="ink" d="M573,421l-1,1 0,2 -1,1 -1,1 0,1 -1,1 -1,1 0,1 -1,1 -1,1 0,1 -1,1 0,1 -1,1 0,1 0,1 0,1 0,1 0,1 0,2 0,1 1,1 0,2 0,1 1,1 0,2 1,1 0,1 1,2 0,1 1,2 1,1 1,1 1,2 1,1 2,2 1,1 1,2 1,1 2,2 1,2 0,1 1,2 1,1 0,2 1,1 0,2 0,1 0,2 0,1 0,2 0,1 -1,1 0,2 -1,1 0,2 -1,2 -1,1 -1,2 -1,2 -1,2 -1,2 -1,1 -1,2 -1,1 -1,1 -1,1 -1,1 -1,1 -2,1 -1,1 -1,1 -2,1 -1,2 -2,1 -2,2 -2,1 -1,1 -2,2 -1,1 -2,1 -2,2 -1,1 -2,1 -2,1 -1,1 -2,0 -2,1 -1,1 -2,0 -2,1 -1,0 -2,1 -1,0 -2,1 -1,1 -2,1 -1,1 -2,2 -1,1 -2,1 -1,2 -2,1 -1,1 -2,1 -1,1 -2,1 -2,1 -2,0 -2,1 -1,1 -2,0 -2,1 -2,1 -2,0 -2,1 -1,1 -2,2 -2,1 -2,2 -2,1 -2,2 -1,1 -1,1 -2,2 -1,1 -1,1 -1,1 -1,1 -1,1 -1,1 -1,1 -1,2 0,1 -1,2 -1,1 -1,2 0,1 -1,2 -1,2 0,1 -1,2 0,2 0,1 -1,2 0,1 0,2 1,2 0,1 1,2 0,2 1,1 1,2 1,2 2,2 1,2 1,1 1,2 1,2 1,2 1,2 1,2 1,2 0,2 1,1 0,2 1,2" pathLength="1" style="--d:0.53s"/><path class="ink" d="M580,420l-1,1 0,2 -1,2 0,1 0,2 0,1 -1,1 0,1 0,1 0,2 0,1 1,1 0,1 1,1 1,1 1,1 1,1 1,1 1,1 2,1 1,1 2,2 1,1 2,1 1,2 1,1 1,2 2,1 1,2 1,1 1,1 1,0 1,1 1,1 1,1 2,1 1,1 2,0 1,1 2,1 2,1 1,1 2,1 2,1 1,1 1,2 2,1 1,1 1,1 1,1 1,1 1,1 0,2 2,1 1,2 2,1 1,1 2,2 2,1 1,1 2,2 1,1 2,2 1,1 1,2 1,1 1,2 0,2 1,2 0,2 0,2 0,2 -1,2 0,2 -1,2 -1,2 -1,2 -1,2 0,2 -1,2 -1,1 -1,2 -1,1 -1,2 -1,1 -1,2 -1,2 -1,2 0,1 -1,2 -1,1 -1,2 -1,1 -1,2 -1,1 -1,2 -1,1 -1,1 -1,1 -1,1 -1,1 -1,1 -1,2 -1,2 -1,1 0,2 -1,2 0,2 0,2 0,2 1,2 0,2 0,2 1,2 0,2 1,1 1,1 0,2 1,1 1,1 1,2 1,1 2,2 1,2 2,1 2,2 2,1 2,2 1,1 2,2 2,1 1,1 2,1 1,1 2,1 1,1 1,1 1,0 2,1 1,1 2,1 1,1 2,1 2,2 2,1 2,1 2,1 2,1 2,1 1,2 2,1 1,0 2,1 1,1 2,1 1,1 2,1 1,1 2,0 1,1 2,1 1,1 2,1 2,1 2,2 2,1" pathLength="1" style="--d:0.56s"/><path class="paint ripple" d="M572.7,443.5l1.3,-1.5 1.2,0 1.2,1.5 1.3,1.5 1.4,0 1.4,-1.5"/><path class="paint ripple" d="M591.4,474.6l1.2,-1.8 1.3,-0.6 1.3,0.4 1.5,1.5 1.5,1.5 1.6,0.3 1.5,-0.8 1.5,-1.8"/><path class="paint ripple" d="M579.5,513l1.7,-1.5 1.8,-0.8 1.9,-0.1 2,0.6 2.1,1.2 2.1,1.1 2.1,0.4 2.1,-0.4 2,-1 2,-1.6"/><path class="paint ripple" d="M554.7,548l1.6,-0.9 1.6,-0.6 1.6,-0.2 1.6,0.3 1.7,0.7 1.7,1.3 1.8,1.3 2,0.9 2,0.3 2.1,-0.1 2.1,-0.8 2.2,-1.3"/><path class="paint ripple" d="M535.4,582.1l1.9,-0.8 1.8,-0.4 1.7,-0.3 1.6,0 1.6,0.3 1.6,0.5 1.5,0.8 1.7,0.9 1.8,0.7 2,0.4 2,0.2 2.2,-0.2 2.2,-0.6 2.2,-0.9"/><path class="paint ripple" d="M565.6,616l1.6,-1.2 1.5,-0.8 1.5,-0.6 1.6,-0.3 1.7,0 1.7,0.2 1.9,0.6 2,0.8 2.1,0.9 2.2,0.8 2.1,0.6 2.1,0.5 2.1,0.3 2,0 1.9,-0.2 1.8,-0.4"/><path class="ink thin" d="M602.3,494.8l1.6,-1.4 1.7,-0.1 1.8,1.2 1.6,1.2 1.6,0 1.5,-1.5" pathLength="1" style="--d:0.60s"/><path class="ink thin" d="M530.6,567.1l1.7,-1 1.7,-0.3 1.7,0.5 1.7,1.2 1.6,1.2 1.6,0.3 1.5,-0.5 1.4,-1.5" pathLength="1" style="--d:0.61s"/><path class="ink thin" d="M592.8,599.9l2.1,-1.3 2,-0.4 2.1,0.4 1.9,1.3 1.8,1.2 1.8,0.3 1.8,-0.5 1.7,-1.3" pathLength="1" style="--d:0.63s"/><path class="paint c-shadow" d="M860,477l0,1 -1,0 -1,0 -2,1 -3,0 -3,0 -3,0 -4,0 -5,0 -4,1 -5,1 -4,1 -5,1 -5,0 -7,-1 -7,-1 -7,0 -7,1 -5,1 -6,0 -5,0 -7,0 -7,0 -6,0 -5,0 -5,-1 -5,0 -5,-1 -6,-1 -5,1 -5,0 -4,1 -3,0 -3,-1 -3,0 -3,-1 -3,-1 -3,-1 -2,-1 -1,-1 -1,0 1,-1 1,0 2,0 2,-1 3,0 3,0 3,-1 3,-1 3,0 4,-1 4,-1 5,-1 7,1 6,1 6,0 6,0 5,-1 7,-1 7,-1 7,0 6,1 6,1 5,0 6,0 6,0 7,0 6,0 6,0 4,0 4,-1 3,1 5,0 4,1 4,1 4,2 4,1 2,0 2,1 1,1 1,0z"/><path class="paint knock" d="M793,472l0,-5 1,-6 0,-7 0,-6 0,-6 1,-5 0,-5 1,-5 0,-5 -1,-6 0,-7 0,-6 0,-5 0,-4 1,-5 2,0 2,1 2,0 2,0 0,4 0,5 0,4 1,5 0,6 1,6 0,6 -1,6 0,5 0,5 0,5 0,6 1,6 2,7 1,7z"/><path class="paint c-trunk" d="M793,472l0,-5 1,-6 0,-7 0,-6 0,-6 1,-5 0,-5 1,-5 0,-5 -1,-6 0,-7 0,-6 0,-5 0,-4 1,-5 2,0 2,1 2,0 2,0 0,4 0,5 0,4 1,5 0,6 1,6 0,6 -1,6 0,5 0,5 0,5 0,6 1,6 2,7 1,7z" transform="translate(3.2 2.6)"/><path class="ink" d="M793,472l0,-5 1,-6 0,-7 0,-6 0,-6 1,-5 0,-5 1,-5 0,-5 -1,-6 0,-7 0,-6 0,-5 0,-4 1,-5 2,0 2,1 2,0 2,0 0,4 0,5 0,4 1,5 0,6 1,6 0,6 -1,6 0,5 0,5 0,5 0,6 1,6 2,7 1,7z" pathLength="1" style="--d:0.64s"/><path class="paint branch-ink" d="M799,393l-4,-3 -4,-4 -4,-3 -4,-3 -5,-2 -6,-2 -6,-2 -6,-2 -6,-3 -5,-1 -6,-1" style="stroke-width:5.5"/><path class="paint c-branch" d="M799,393l-4,-3 -4,-4 -4,-3 -4,-3 -5,-2 -6,-2 -6,-2 -6,-2 -6,-3 -5,-1 -6,-1" style="stroke-width:2.4"/><path class="paint branch-ink" d="M801,391l5,-3 5,-4 4,-4 5,-3 4,-2 5,-1 4,-1 4,-1 6,-2 6,-3 7,-2" style="stroke-width:5.5"/><path class="paint c-branch" d="M801,391l5,-3 5,-4 4,-4 5,-3 4,-2 5,-1 4,-1 4,-1 6,-2 6,-3 7,-2" style="stroke-width:2.4"/><path class="paint branch-ink" d="M799.4,389.5l0.4,-2.8 0.5,-2.8 0.4,-2.7 0.3,-2.6 0.4,-2.5 0.3,-2.4 0.3,-2.2 0.4,-2.1 0.3,-2 0.4,-1.8" style="stroke-width:5.5"/><path class="paint c-branch" d="M799.4,389.5l0.4,-2.8 0.5,-2.8 0.4,-2.7 0.3,-2.6 0.4,-2.5 0.3,-2.4 0.3,-2.2 0.4,-2.1 0.3,-2 0.4,-1.8" style="stroke-width:2.4"/><path class="paint knock" d="M825,361l1,2 0,1 -1,1 -1,1 -3,1 -3,1 -2,0 -4,0 -3,1 -4,0 -4,1 -3,0 -4,0 -3,1 -3,0 -3,1 -4,0 -5,0 -4,0 -5,0 -4,-1 -4,0 -4,-1 -3,0 -3,0 -3,0 -3,0 -4,1 -3,0 -4,0 -3,0 -3,0 -3,-1 -3,0 -2,-1 -3,0 -2,-1 -2,0 -3,-1 -3,0 -2,0 -3,-1 -2,0 -2,-1 -1,0 -2,-1 1,-1 1,-1 2,-1 2,-1 3,-1 2,-1 3,-1 2,0 3,-1 3,-1 3,-1 3,-1 2,0 3,-1 2,0 3,0 2,0 2,-1 2,0 2,0 3,-1 2,0 3,-1 3,0 3,0 3,-1 3,0 3,0 4,1 4,0 4,0 5,0 4,0 4,0 4,0 2,1 3,1 2,0 1,1 2,1 1,1 2,0 1,1 2,1 2,0 2,1 3,0 2,1 3,0 2,1 2,1 1,0 1,1z"/><path class="paint c-acacia" d="M825,361l1,2 0,1 -1,1 -1,1 -3,1 -3,1 -2,0 -4,0 -3,1 -4,0 -4,1 -3,0 -4,0 -3,1 -3,0 -3,1 -4,0 -5,0 -4,0 -5,0 -4,-1 -4,0 -4,-1 -3,0 -3,0 -3,0 -3,0 -4,1 -3,0 -4,0 -3,0 -3,0 -3,-1 -3,0 -2,-1 -3,0 -2,-1 -2,0 -3,-1 -3,0 -2,0 -3,-1 -2,0 -2,-1 -1,0 -2,-1 1,-1 1,-1 2,-1 2,-1 3,-1 2,-1 3,-1 2,0 3,-1 3,-1 3,-1 3,-1 2,0 3,-1 2,0 3,0 2,0 2,-1 2,0 2,0 3,-1 2,0 3,-1 3,0 3,0 3,-1 3,0 3,0 4,1 4,0 4,0 5,0 4,0 4,0 4,0 2,1 3,1 2,0 1,1 2,1 1,1 2,0 1,1 2,1 2,0 2,1 3,0 2,1 3,0 2,1 2,1 1,0 1,1z" transform="translate(3.2 2.6)"/><path class="ink" d="M825,361l1,2 0,1 -1,1 -1,1 -3,1 -3,1 -2,0 -4,0 -3,1 -4,0 -4,1 -3,0 -4,0 -3,1 -3,0 -3,1 -4,0 -5,0 -4,0 -5,0 -4,-1 -4,0 -4,-1 -3,0 -3,0 -3,0 -3,0 -4,1 -3,0 -4,0 -3,0 -3,0 -3,-1 -3,0 -2,-1 -3,0 -2,-1 -2,0 -3,-1 -3,0 -2,0 -3,-1 -2,0 -2,-1 -1,0 -2,-1 1,-1 1,-1 2,-1 2,-1 3,-1 2,-1 3,-1 2,0 3,-1 3,-1 3,-1 3,-1 2,0 3,-1 2,0 3,0 2,0 2,-1 2,0 2,0 3,-1 2,0 3,-1 3,0 3,0 3,-1 3,0 3,0 4,1 4,0 4,0 5,0 4,0 4,0 4,0 2,1 3,1 2,0 1,1 2,1 1,1 2,0 1,1 2,1 2,0 2,1 3,0 2,1 3,0 2,1 2,1 1,0 1,1z" pathLength="1" style="--d:0.66s"/><path class="paint knock" d="M898,358l1,2 0,1 -1,2 -4,1 -3,1 -3,1 -3,1 -4,0 -3,0 -4,0 -3,-1 -4,0 -3,0 -4,0 -3,1 -4,1 -4,1 -4,0 -3,1 -3,0 -3,0 -3,0 -3,-1 -2,0 -4,-1 -3,0 -4,0 -4,-1 -4,0 -4,0 -3,-1 -3,0 -3,-1 -2,0 -2,-1 -3,0 -2,0 -1,0 -2,-1 -1,0 -1,-1 -2,-1 -1,-1 -1,-2 1,-2 0,-2 1,-1 2,-1 1,-1 2,0 2,-1 3,0 2,-1 3,0 2,0 2,0 2,1 3,0 2,0 3,0 4,-1 3,0 4,-1 4,-1 4,-1 5,0 4,0 3,1 4,1 4,0 4,1 4,0 5,0 4,0 3,0 4,0 3,1 3,0 2,0 2,0 3,0 2,1 2,0 2,0 3,1 2,1 1,2 1,2 0,1z"/><path class="paint c-acacia" d="M898,358l1,2 0,1 -1,2 -4,1 -3,1 -3,1 -3,1 -4,0 -3,0 -4,0 -3,-1 -4,0 -3,0 -4,0 -3,1 -4,1 -4,1 -4,0 -3,1 -3,0 -3,0 -3,0 -3,-1 -2,0 -4,-1 -3,0 -4,0 -4,-1 -4,0 -4,0 -3,-1 -3,0 -3,-1 -2,0 -2,-1 -3,0 -2,0 -1,0 -2,-1 -1,0 -1,-1 -2,-1 -1,-1 -1,-2 1,-2 0,-2 1,-1 2,-1 1,-1 2,0 2,-1 3,0 2,-1 3,0 2,0 2,0 2,1 3,0 2,0 3,0 4,-1 3,0 4,-1 4,-1 4,-1 5,0 4,0 3,1 4,1 4,0 4,1 4,0 5,0 4,0 3,0 4,0 3,1 3,0 2,0 2,0 3,0 2,1 2,0 2,0 3,1 2,1 1,2 1,2 0,1z" transform="translate(3.2 2.6)"/><path class="ink" d="M898,358l1,2 0,1 -1,2 -4,1 -3,1 -3,1 -3,1 -4,0 -3,0 -4,0 -3,-1 -4,0 -3,0 -4,0 -3,1 -4,1 -4,1 -4,0 -3,1 -3,0 -3,0 -3,0 -3,-1 -2,0 -4,-1 -3,0 -4,0 -4,-1 -4,0 -4,0 -3,-1 -3,0 -3,-1 -2,0 -2,-1 -3,0 -2,0 -1,0 -2,-1 -1,0 -1,-1 -2,-1 -1,-1 -1,-2 1,-2 0,-2 1,-1 2,-1 1,-1 2,0 2,-1 3,0 2,-1 3,0 2,0 2,0 2,1 3,0 2,0 3,0 4,-1 3,0 4,-1 4,-1 4,-1 5,0 4,0 3,1 4,1 4,0 4,1 4,0 5,0 4,0 3,0 4,0 3,1 3,0 2,0 2,0 3,0 2,1 2,0 2,0 3,1 2,1 1,2 1,2 0,1z" pathLength="1" style="--d:0.68s"/><path class="paint knock" d="M843,351l-1,1 -1,1 -2,1 -2,1 -2,1 -2,0 -2,1 -2,0 -3,1 -3,0 -2,1 -3,0 -3,1 -3,0 -2,0 -3,0 -2,0 -2,0 -2,-1 -2,0 -2,0 -2,0 -1,-1 -2,0 -3,0 -2,0 -3,1 -3,0 -3,0 -3,0 -3,0 -3,0 -2,0 -2,0 -2,-1 -2,-1 -2,0 -2,-1 -1,0 -1,-1 -1,0 -1,-2 1,-1 2,-2 1,-1 2,-1 1,-1 1,-1 2,-1 2,0 2,-1 2,0 2,0 2,-1 3,0 2,0 3,0 3,0 3,-1 3,0 3,0 3,0 2,0 2,0 3,0 2,1 2,0 2,-1 2,0 3,0 2,0 3,0 3,0 2,0 3,0 3,1 2,0 2,1 2,1 2,1 1,0 2,2 1,1 1,1 0,1z"/><path class="paint c-acacia" d="M843,351l-1,1 -1,1 -2,1 -2,1 -2,1 -2,0 -2,1 -2,0 -3,1 -3,0 -2,1 -3,0 -3,1 -3,0 -2,0 -3,0 -2,0 -2,0 -2,-1 -2,0 -2,0 -2,0 -1,-1 -2,0 -3,0 -2,0 -3,1 -3,0 -3,0 -3,0 -3,0 -3,0 -2,0 -2,0 -2,-1 -2,-1 -2,0 -2,-1 -1,0 -1,-1 -1,0 -1,-2 1,-1 2,-2 1,-1 2,-1 1,-1 1,-1 2,-1 2,0 2,-1 2,0 2,0 2,-1 3,0 2,0 3,0 3,0 3,-1 3,0 3,0 3,0 2,0 2,0 3,0 2,1 2,0 2,-1 2,0 3,0 2,0 3,0 3,0 2,0 3,0 3,1 2,0 2,1 2,1 2,1 1,0 2,2 1,1 1,1 0,1z" transform="translate(3.2 2.6)"/><path class="ink" d="M843,351l-1,1 -1,1 -2,1 -2,1 -2,1 -2,0 -2,1 -2,0 -3,1 -3,0 -2,1 -3,0 -3,1 -3,0 -2,0 -3,0 -2,0 -2,0 -2,-1 -2,0 -2,0 -2,0 -1,-1 -2,0 -3,0 -2,0 -3,1 -3,0 -3,0 -3,0 -3,0 -3,0 -2,0 -2,0 -2,-1 -2,-1 -2,0 -2,-1 -1,0 -1,-1 -1,0 -1,-2 1,-1 2,-2 1,-1 2,-1 1,-1 1,-1 2,-1 2,0 2,-1 2,0 2,0 2,-1 3,0 2,0 3,0 3,0 3,-1 3,0 3,0 3,0 2,0 2,0 3,0 2,1 2,0 2,-1 2,0 3,0 2,0 3,0 3,0 2,0 3,0 3,1 2,0 2,1 2,1 2,1 1,0 2,2 1,1 1,1 0,1z" pathLength="1" style="--d:0.71s"/><path class="ink thin" d="M733.6,373.1l0.1,2 0.1,1.9 0.2,1.9 0.2,1.7 0.1,1.7" pathLength="1" style="--d:0.73s"/><path class="paint knock" d="M742,390l0,2 -1,2 0,1 -1,1 -2,1 -1,1 -2,1 -2,-1 -1,-1 -2,-2 -1,-1 0,-2 -1,-2 0,-1 0,-2 0,-1 0,-2 2,-1 2,-1 2,0 1,0 2,0 2,1 1,1 1,1 0,2 1,2 0,1z"/><path class="paint c-straw" d="M742,390l0,2 -1,2 0,1 -1,1 -2,1 -1,1 -2,1 -2,-1 -1,-1 -2,-2 -1,-1 0,-2 -1,-2 0,-1 0,-2 0,-1 0,-2 2,-1 2,-1 2,0 1,0 2,0 2,1 1,1 1,1 0,2 1,2 0,1z" transform="translate(3.2 2.6)"/><path class="ink" d="M742,390l0,2 -1,2 0,1 -1,1 -2,1 -1,1 -2,1 -2,-1 -1,-1 -2,-2 -1,-1 0,-2 -1,-2 0,-1 0,-2 0,-1 0,-2 2,-1 2,-1 2,0 1,0 2,0 2,1 1,1 1,1 0,2 1,2 0,1z" pathLength="1" style="--d:0.74s"/><path class="ink thin detail" d="M728.6,387.3l2.3,1.1 2.2,0.6 2.1,0.2 1.9,-0.2 1.8,-0.5 1.7,-1M729.3,392.7l2,-1 2.1,-0.6 1.9,-0.2 1.9,0.2 1.8,0.5 1.8,1" pathLength="1"/><path class="paint c-straw" d="M732.6,396.4l0,2 -0.1,2.1 -0.1,2.1 -0.2,2.2 1.2,1 1.3,0.1 1.4,-0.7 1.5,-1.4 0.2,-2.1 0.2,-2 0.1,-1.9 0.1,-1.8z"/><path class="ink" d="M732.6,396.4l0,2 -0.1,2.1 -0.1,2.1 -0.2,2.2 1.2,1 1.3,0.1 1.4,-0.7 1.5,-1.4 0.2,-2.1 0.2,-2 0.1,-1.9 0.1,-1.8z" pathLength="1" style="--d:0.75s"/><path class="ink thin" d="M765.5,372.4l-0.1,1.8 -0.1,2 0,2 0,2.1 0,2.1 0.1,2.3 0.1,2.4" pathLength="1" style="--d:0.75s"/><path class="paint knock" d="M774,395l0,2 -1,2 0,2 -1,2 -1,2 -2,1 -2,0 -2,0 -2,-1 -2,-1 -1,-1 -1,-2 0,-2 -1,-1 0,-2 1,-2 0,-3 1,-1 2,-2 2,-1 2,-1 2,1 2,0 1,1 1,2 1,1 1,2 0,2z"/><path class="paint c-straw" d="M774,395l0,2 -1,2 0,2 -1,2 -1,2 -2,1 -2,0 -2,0 -2,-1 -2,-1 -1,-1 -1,-2 0,-2 -1,-1 0,-2 1,-2 0,-3 1,-1 2,-2 2,-1 2,-1 2,1 2,0 1,1 1,2 1,1 1,2 0,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M774,395l0,2 -1,2 0,2 -1,2 -1,2 -2,1 -2,0 -2,0 -2,-1 -2,-1 -1,-1 -1,-2 0,-2 -1,-1 0,-2 1,-2 0,-3 1,-1 2,-2 2,-1 2,-1 2,1 2,0 1,1 1,2 1,1 1,2 0,2z" pathLength="1" style="--d:0.76s"/><path class="ink thin detail" d="M759.4,394.3l2.4,1.2 2.3,0.6 2.2,0 2.2,-0.6 2,-1.2 1.9,-1.6M760.2,400.5l2.1,-1 2.1,-0.8 2.2,-0.4 2.1,-0.1 2.1,0.3 1.9,0.9" pathLength="1"/><path class="paint c-hair" d="M769.7,403l-0.4,1.1 -0.8,0.9 -1.2,0.3 -1.3,-0.2 -1,-0.7 -0.6,-1 1,-1.5 1.6,-0.3 1.4,-0.1 1.3,1.5z"/><path class="ink thin" d="M803.7,371.9l0.1,2.5 0.2,2.5 0.1,2.5 0,2.5 0,2.5" pathLength="1" style="--d:0.77s"/><path class="paint knock" d="M812,393l0,2 -1,2 -1,1 -1,2 -1,1 -1,0 -2,1 -2,-1 -2,0 -1,-2 -2,-1 -1,-1 -1,-2 0,-1 -1,-2 1,-1 0,-2 1,-1 1,-1 2,-1 2,-1 2,-1 2,0 3,1 1,1 1,1 1,2 0,2 0,2z"/><path class="paint c-straw" d="M812,393l0,2 -1,2 -1,1 -1,2 -1,1 -1,0 -2,1 -2,-1 -2,0 -1,-2 -2,-1 -1,-1 -1,-2 0,-1 -1,-2 1,-1 0,-2 1,-1 1,-1 2,-1 2,-1 2,-1 2,0 3,1 1,1 1,1 1,2 0,2 0,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M812,393l0,2 -1,2 -1,1 -1,2 -1,1 -1,0 -2,1 -2,-1 -2,0 -1,-2 -2,-1 -1,-1 -1,-2 0,-1 -1,-2 1,-1 0,-2 1,-1 1,-1 2,-1 2,-1 2,-1 2,0 3,1 1,1 1,1 1,2 0,2 0,2z" pathLength="1" style="--d:0.78s"/><path class="ink thin detail" d="M797.1,390.2l2.3,1.2 2.3,0.7 2.4,0.3 2.3,-0.3 2.3,-0.8 2.3,-1.4M797,395.4l2.3,-0.7 2.4,-0.4 2.3,-0.1 2.4,0.2 2.2,0.5 2.1,0.9" pathLength="1"/><path class="paint c-straw" d="M800.7,399.2l0.1,1.7 0.1,1.8 0.2,1.9 0.2,1.9 1.7,1 1.6,0.2 1.4,-0.5 1.4,-1.1 0,-1.7 -0.1,-1.8 0,-1.6 0,-1.7z"/><path class="ink" d="M800.7,399.2l0.1,1.7 0.1,1.8 0.2,1.9 0.2,1.9 1.7,1 1.6,0.2 1.4,-0.5 1.4,-1.1 0,-1.7 -0.1,-1.8 0,-1.6 0,-1.7z" pathLength="1" style="--d:0.79s"/><path class="ink thin" d="M836.7,373.4l0.1,2.1 0.1,1.9 0.2,1.9 0.2,1.9 0.2,1.8 0.2,1.9 0.1,1.9 0.2,2" pathLength="1" style="--d:0.79s"/><path class="paint knock" d="M846,397l0,2 0,2 -1,2 -1,2 -2,2 -2,1 -3,0 -2,0 -1,-1 -2,-1 -1,-1 0,-2 -1,-2 0,-2 0,-2 1,-3 1,-2 0,-1 2,-2 1,-1 2,0 2,0 2,1 1,1 2,1 1,1 1,2 0,1 0,2z"/><path class="paint c-straw" d="M846,397l0,2 0,2 -1,2 -1,2 -2,2 -2,1 -3,0 -2,0 -1,-1 -2,-1 -1,-1 0,-2 -1,-2 0,-2 0,-2 1,-3 1,-2 0,-1 2,-2 1,-1 2,0 2,0 2,1 1,1 2,1 1,1 1,2 0,1 0,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M846,397l0,2 0,2 -1,2 -1,2 -2,2 -2,1 -3,0 -2,0 -1,-1 -2,-1 -1,-1 0,-2 -1,-2 0,-2 0,-2 1,-3 1,-2 0,-1 2,-2 1,-1 2,0 2,0 2,1 1,1 2,1 1,1 1,2 0,1 0,2z" pathLength="1" style="--d:0.80s"/><path class="ink thin detail" d="M831.5,395.1l2.1,1.2 2.3,0.6 2.3,0 2.4,-0.4 2.3,-0.9 2.3,-1.3M831.2,402l2.3,-1.4 2.3,-0.9 2.4,-0.5 2.4,-0.1 2.3,0.4 2.2,0.9" pathLength="1"/><path class="paint c-hair" d="M841.2,404.2l-0.7,1.3 -1,1.1 -1.5,0.4 -1.4,-0.1 -1,-0.8 -0.5,-1.1 1.3,-1.8 1.7,-0.5 1.7,-0.1 1.4,1.6z"/><path class="ink thin" d="M866,370.7l-0.1,1.9 -0.2,1.9 -0.1,2 -0.1,2" pathLength="1" style="--d:0.81s"/><path class="paint knock" d="M872,390l0,2 0,2 -1,2 -1,1 -2,0 -1,1 -2,0 -1,-1 -2,0 -1,-2 0,-1 -1,-2 0,-2 0,-2 0,-2 0,-2 1,-2 0,-1 2,-2 1,0 2,-1 1,0 1,1 2,1 0,2 1,3 0,2 1,3z"/><path class="paint c-straw" d="M872,390l0,2 0,2 -1,2 -1,1 -2,0 -1,1 -2,0 -1,-1 -2,0 -1,-2 0,-1 -1,-2 0,-2 0,-2 0,-2 0,-2 1,-2 0,-1 2,-2 1,0 2,-1 1,0 1,1 2,1 0,2 1,3 0,2 1,3z" transform="translate(3.2 2.6)"/><path class="ink" d="M872,390l0,2 0,2 -1,2 -1,1 -2,0 -1,1 -2,0 -1,-1 -2,0 -1,-2 0,-1 -1,-2 0,-2 0,-2 0,-2 0,-2 1,-2 0,-1 2,-2 1,0 2,-1 1,0 1,1 2,1 0,2 1,3 0,2 1,3z" pathLength="1" style="--d:0.82s"/><path class="ink thin detail" d="M860.5,385.3l1.6,1.3 1.7,0.8 1.6,0.3 1.7,-0.2 1.7,-0.7 1.8,-1.3M860.6,391.3l1.6,-0.9 1.6,-0.4 1.7,-0.1 1.7,0.4 1.8,0.8 2,1.2" pathLength="1"/><path class="paint c-straw" d="M863,395.4l0,1.8 -0.1,1.8 0,1.8 -0.2,1.8 1.4,1.3 1.5,0.6 1.6,-0.1 1.6,-0.7 -0.1,-1.7 -0.1,-1.8 0,-1.9 -0.2,-1.9z"/><path class="ink" d="M863,395.4l0,1.8 -0.1,1.8 0,1.8 -0.2,1.8 1.4,1.3 1.5,0.6 1.6,-0.1 1.6,-0.7 -0.1,-1.7 -0.1,-1.8 0,-1.9 -0.2,-1.9z" pathLength="1" style="--d:0.83s"/><path class="paint c-weaver" d="M809.7,394.9l0.6,-1.8 1.4,-1.5 1.8,-1.2 2.1,-0.7 2,0 1.7,0.6 1.2,1.5 -0.2,1.8 -0.8,1.6 -1.3,1.1 -1.7,0.6 -2,0 -2.3,-0.6 -2.5,-1.4z"/><path class="ink" d="M809.7,394.9l0.6,-1.8 1.4,-1.5 1.8,-1.2 2.1,-0.7 2,0 1.7,0.6 1.2,1.5 -0.2,1.8 -0.8,1.6 -1.3,1.1 -1.7,0.6 -2,0 -2.3,-0.6 -2.5,-1.4z" pathLength="1" style="--d:0.83s"/><path class="paint c-hair" d="M823,389.6l-0.3,1.2 -0.9,0.9 -1.3,0.3 -1.2,-0.1 -0.7,-0.9 -0.1,-1.3 0.5,-1.4 0.9,-1 1.2,-0.5 1.1,0.2 0.7,1.1 0.1,1.5z"/><path class="ink thin" d="M822.5,389.4l1.3,0.5 1.2,0.5M809.7,394.9l-1.9,0.7 -1.9,0.6 -1.9,0.6" pathLength="1" style="--d:0.84s"/><path class="paint knock" d="M157,438l-1,3 -1,2 -1,3 -1,2 -2,2 -2,2 -2,2 -2,1 -3,1 -2,1 -3,1 -4,2 -3,1 -4,2 -3,2 -4,2 -3,1 -4,1 -5,0 -4,0 -4,-1 -5,0 -4,1 -4,0 -4,0 -3,0 -4,0 -4,0 -4,-1 -5,-1 -4,0 -4,-1 -4,-1 -3,-1 -3,-1 -3,-2 -3,-2 -3,-2 -3,-2 -2,-2 -2,-2 -2,-2 -1,-2 0,-2 0,-2 0,-3 0,-2 1,-3 2,-3 1,-3 1,-3 2,-2 2,-3 2,-2 3,-3 2,-3 3,-3 3,-3 3,-3 3,-1 4,-1 5,-1 4,0 4,0 4,0 4,0 5,1 6,0 5,1 6,0 5,-1 5,0 5,1 6,1 7,2 7,2 6,1 4,1 3,1 3,2 3,2 2,3 2,3 1,2 0,3 0,2 0,3 -1,2 0,3 -1,2z"/><path class="paint c-rock" d="M157,438l-1,3 -1,2 -1,3 -1,2 -2,2 -2,2 -2,2 -2,1 -3,1 -2,1 -3,1 -4,2 -3,1 -4,2 -3,2 -4,2 -3,1 -4,1 -5,0 -4,0 -4,-1 -5,0 -4,1 -4,0 -4,0 -3,0 -4,0 -4,0 -4,-1 -5,-1 -4,0 -4,-1 -4,-1 -3,-1 -3,-1 -3,-2 -3,-2 -3,-2 -3,-2 -2,-2 -2,-2 -2,-2 -1,-2 0,-2 0,-2 0,-3 0,-2 1,-3 2,-3 1,-3 1,-3 2,-2 2,-3 2,-2 3,-3 2,-3 3,-3 3,-3 3,-3 3,-1 4,-1 5,-1 4,0 4,0 4,0 4,0 5,1 6,0 5,1 6,0 5,-1 5,0 5,1 6,1 7,2 7,2 6,1 4,1 3,1 3,2 3,2 2,3 2,3 1,2 0,3 0,2 0,3 -1,2 0,3 -1,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M157,438l-1,3 -1,2 -1,3 -1,2 -2,2 -2,2 -2,2 -2,1 -3,1 -2,1 -3,1 -4,2 -3,1 -4,2 -3,2 -4,2 -3,1 -4,1 -5,0 -4,0 -4,-1 -5,0 -4,1 -4,0 -4,0 -3,0 -4,0 -4,0 -4,-1 -5,-1 -4,0 -4,-1 -4,-1 -3,-1 -3,-1 -3,-2 -3,-2 -3,-2 -3,-2 -2,-2 -2,-2 -2,-2 -1,-2 0,-2 0,-2 0,-3 0,-2 1,-3 2,-3 1,-3 1,-3 2,-2 2,-3 2,-2 3,-3 2,-3 3,-3 3,-3 3,-3 3,-1 4,-1 5,-1 4,0 4,0 4,0 4,0 5,1 6,0 5,1 6,0 5,-1 5,0 5,1 6,1 7,2 7,2 6,1 4,1 3,1 3,2 3,2 2,3 2,3 1,2 0,3 0,2 0,3 -1,2 0,3 -1,2z" pathLength="1" style="--d:0.84s"/><path class="ink thin" d="M62,466l-1,-1 -2,0 -2,-1 -3,0 -2,-1 -2,-1 -1,0 -2,-1 -1,-1 -1,-2 -1,-1 -2,-1 -1,-2 -1,-1 -1,-2 -1,-2 -1,-2 -1,-2 0,-2 0,-3 0,-2 1,-2 1,-2 1,-2 2,-2 1,-1 1,-1" pathLength="1" style="--d:0.87s"/><path class="ink thin" d="M60,456.3l-1.6,-0.7 -2.1,-0.9 -1.8,-1 -1.3,-1 -1.2,-1.1 -0.9,-1.1 -0.7,-1.3 -0.7,-1.4 -0.5,-1.4 -0.3,-2.1 0,-2.2 0.5,-2.4 0.6,-1.7" pathLength="1" style="--d:0.88s"/><path class="paint knock" d="M417,449l1,2 0,1 1,2 -1,2 0,1 -1,2 -2,1 -2,2 -2,1 -3,2 -2,1 -3,1 -3,1 -3,0 -3,1 -4,0 -3,0 -4,0 -5,0 -4,0 -5,0 -5,-1 -4,-1 -4,0 -4,0 -3,0 -4,0 -4,0 -4,-1 -3,-1 -4,-1 -2,-2 -3,-1 -2,-1 -1,-1 -2,-1 -1,-1 -1,-1 -1,-1 -1,-2 0,-2 0,-1 0,-2 1,-2 1,-3 2,-2 2,-3 2,-2 2,-3 2,-2 2,-2 3,-1 2,-2 3,-1 2,-1 3,-1 3,-1 3,-1 4,-1 4,-1 4,-1 4,0 4,0 4,1 2,1 3,1 3,1 2,1 3,1 3,0 3,1 2,1 3,0 3,1 2,1 2,1 2,2 2,2 1,2 1,2 2,2 1,2 1,3 1,1 2,2 0,2z"/><path class="paint c-rock" d="M417,449l1,2 0,1 1,2 -1,2 0,1 -1,2 -2,1 -2,2 -2,1 -3,2 -2,1 -3,1 -3,1 -3,0 -3,1 -4,0 -3,0 -4,0 -5,0 -4,0 -5,0 -5,-1 -4,-1 -4,0 -4,0 -3,0 -4,0 -4,0 -4,-1 -3,-1 -4,-1 -2,-2 -3,-1 -2,-1 -1,-1 -2,-1 -1,-1 -1,-1 -1,-1 -1,-2 0,-2 0,-1 0,-2 1,-2 1,-3 2,-2 2,-3 2,-2 2,-3 2,-2 2,-2 3,-1 2,-2 3,-1 2,-1 3,-1 3,-1 3,-1 4,-1 4,-1 4,-1 4,0 4,0 4,1 2,1 3,1 3,1 2,1 3,1 3,0 3,1 2,1 3,0 3,1 2,1 2,1 2,2 2,2 1,2 1,2 2,2 1,2 1,3 1,1 2,2 0,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M417,449l1,2 0,1 1,2 -1,2 0,1 -1,2 -2,1 -2,2 -2,1 -3,2 -2,1 -3,1 -3,1 -3,0 -3,1 -4,0 -3,0 -4,0 -5,0 -4,0 -5,0 -5,-1 -4,-1 -4,0 -4,0 -3,0 -4,0 -4,0 -4,-1 -3,-1 -4,-1 -2,-2 -3,-1 -2,-1 -1,-1 -2,-1 -1,-1 -1,-1 -1,-1 -1,-2 0,-2 0,-1 0,-2 1,-2 1,-3 2,-2 2,-3 2,-2 2,-3 2,-2 2,-2 3,-1 2,-2 3,-1 2,-1 3,-1 3,-1 3,-1 4,-1 4,-1 4,-1 4,0 4,0 4,1 2,1 3,1 3,1 2,1 3,1 3,0 3,1 2,1 3,0 3,1 2,1 2,1 2,2 2,2 1,2 1,2 2,2 1,2 1,3 1,1 2,2 0,2z" pathLength="1" style="--d:0.90s"/><path class="ink thin" d="M346.3,468.4l-1.4,-0.4 -2.1,-0.5 -2.5,-0.8 -2.6,-1 -2.2,-1 -2.3,-1.4 -1.9,-1.5 -1.7,-1.6 -1.2,-1.6 -1.1,-1.6 -0.7,-1.7 -0.4,-1.7 -0.2,-1.7 0,-2.2 0.5,-2.4 0.7,-2.4 1.1,-2 1.3,-2 1.2,-1.7 0.9,-1.1" pathLength="1" style="--d:0.92s"/><path class="ink thin" d="M345.4,461.7l-1.2,-0.5 -1.7,-0.8 -1.6,-0.9 -1.9,-1.4 -1.6,-1.5 -1.2,-1.7 -0.7,-1.7 -0.5,-1.8 -0.1,-1.8 0.3,-2.1 0.4,-1.4" pathLength="1" style="--d:0.94s"/><path class="paint knock" d="M381,420l-1,3 -2,2 -1,3 -2,3 -3,3 -2,4 -3,3 -4,3 -5,2 -7,1 -5,2 -5,1 -6,1 -5,1 -5,1 -6,1 -6,1 -6,0 -8,0 -6,0 -6,0 -6,2 -5,1 -7,1 -7,0 -6,-1 -6,-1 -6,1 -5,1 -6,2 -7,1 -7,0 -7,0 -6,0 -5,0 -5,0 -5,1 -6,-1 -6,0 -6,0 -5,0 -4,1 -5,-1 -7,-2 -7,-2 -7,-3 -6,-2 -5,-2 -5,-2 -5,-3 -6,-3 -5,-2 -4,-3 -3,-2 -3,-3 -2,-4 -2,-3 -2,-4 -1,-4 0,-4 0,-4 2,-4 2,-5 4,-4 3,-3 3,-2 4,-2 4,-3 5,-2 4,-3 5,-3 6,-2 7,-1 8,-1 7,-2 6,-1 6,-2 4,-1 5,-1 6,0 6,-1 6,0 6,0 5,1 5,0 6,0 6,-1 8,-1 6,0 6,1 5,1 6,2 7,0 6,0 7,0 6,1 6,0 6,1 6,-1 8,0 7,1 5,2 6,2 5,2 6,0 6,1 6,0 5,2 3,1 4,2 5,2 5,3 5,3 4,4 3,4 2,4 1,5 0,4 0,4 0,3z"/><path class="paint c-rock" d="M381,420l-1,3 -2,2 -1,3 -2,3 -3,3 -2,4 -3,3 -4,3 -5,2 -7,1 -5,2 -5,1 -6,1 -5,1 -5,1 -6,1 -6,1 -6,0 -8,0 -6,0 -6,0 -6,2 -5,1 -7,1 -7,0 -6,-1 -6,-1 -6,1 -5,1 -6,2 -7,1 -7,0 -7,0 -6,0 -5,0 -5,0 -5,1 -6,-1 -6,0 -6,0 -5,0 -4,1 -5,-1 -7,-2 -7,-2 -7,-3 -6,-2 -5,-2 -5,-2 -5,-3 -6,-3 -5,-2 -4,-3 -3,-2 -3,-3 -2,-4 -2,-3 -2,-4 -1,-4 0,-4 0,-4 2,-4 2,-5 4,-4 3,-3 3,-2 4,-2 4,-3 5,-2 4,-3 5,-3 6,-2 7,-1 8,-1 7,-2 6,-1 6,-2 4,-1 5,-1 6,0 6,-1 6,0 6,0 5,1 5,0 6,0 6,-1 8,-1 6,0 6,1 5,1 6,2 7,0 6,0 7,0 6,1 6,0 6,1 6,-1 8,0 7,1 5,2 6,2 5,2 6,0 6,1 6,0 5,2 3,1 4,2 5,2 5,3 5,3 4,4 3,4 2,4 1,5 0,4 0,4 0,3z" transform="translate(3.2 2.6)"/><path class="ink" d="M381,420l-1,3 -2,2 -1,3 -2,3 -3,3 -2,4 -3,3 -4,3 -5,2 -7,1 -5,2 -5,1 -6,1 -5,1 -5,1 -6,1 -6,1 -6,0 -8,0 -6,0 -6,0 -6,2 -5,1 -7,1 -7,0 -6,-1 -6,-1 -6,1 -5,1 -6,2 -7,1 -7,0 -7,0 -6,0 -5,0 -5,0 -5,1 -6,-1 -6,0 -6,0 -5,0 -4,1 -5,-1 -7,-2 -7,-2 -7,-3 -6,-2 -5,-2 -5,-2 -5,-3 -6,-3 -5,-2 -4,-3 -3,-2 -3,-3 -2,-4 -2,-3 -2,-4 -1,-4 0,-4 0,-4 2,-4 2,-5 4,-4 3,-3 3,-2 4,-2 4,-3 5,-2 4,-3 5,-3 6,-2 7,-1 8,-1 7,-2 6,-1 6,-2 4,-1 5,-1 6,0 6,-1 6,0 6,0 5,1 5,0 6,0 6,-1 8,-1 6,0 6,1 5,1 6,2 7,0 6,0 7,0 6,1 6,0 6,1 6,-1 8,0 7,1 5,2 6,2 5,2 6,0 6,1 6,0 5,2 3,1 4,2 5,2 5,3 5,3 4,4 3,4 2,4 1,5 0,4 0,4 0,3z" pathLength="1" style="--d:0.95s"/><path class="ink thin" d="M166,459l-1,0 -2,-1 -2,0 -3,0 -3,-1 -3,-2 -4,-1 -4,-1 -3,-1 -2,-1 -3,-1 -2,-1 -2,-1 -1,-1 -2,-1 -2,0 -1,-1 -2,-1 -1,-2 -2,-1 -2,-1 -2,-2 -2,-2 -2,-2 -2,-1 -1,-2 -1,-2 0,-1 -1,-2 1,-2 0,-2 1,-2 1,-3 1,-1 2,-2 2,-2 2,-2 2,-1 1,-2 2,0 1,-1" pathLength="1" style="--d:0.99s"/><path class="ink thin" d="M164.3,446.2l-1.1,-0.3 -1.7,-0.6 -2.1,-0.6 -2.4,-0.9 -2.4,-1 -2.2,-0.9 -2.3,-1.2 -2.1,-1.2 -2,-1.2 -1.7,-1.2 -1.5,-1.1 -1.6,-1.3 -1.2,-1.4 -1.1,-1.4 -0.8,-1.4 -0.6,-1.9 -0.4,-2 0.1,-2.1 0.5,-2.2 0.9,-2.1 0.6,-1.5" pathLength="1" style="--d:1.00s"/><path class="paint knock" d="M308,339l0,2 0,2 -2,3 -1,3 -2,2 -2,3 -3,2 -2,1 -3,2 -2,1 -3,0 -3,1 -3,0 -3,0 -4,1 -5,1 -5,1 -5,1 -5,0 -4,0 -4,0 -4,-1 -4,-1 -5,0 -5,0 -5,1 -6,0 -4,0 -4,0 -4,-1 -3,-1 -4,-1 -4,-1 -4,-1 -4,-1 -4,-2 -3,-1 -3,-2 -2,-2 -2,-2 -1,-1 -1,-2 0,-2 0,-2 0,-2 1,-2 1,-2 1,-2 1,-2 2,-2 1,-2 2,-2 2,-1 2,-1 2,-1 2,-1 3,-1 3,-2 4,-1 4,-2 6,-2 6,-1 6,0 6,0 5,0 6,0 6,0 6,-1 5,0 5,1 3,0 3,1 3,0 2,1 2,1 3,1 2,0 3,2 3,1 4,2 3,2 4,2 3,2 2,2 3,2 2,2 2,2 1,1 1,2z"/><path class="paint c-rock" d="M308,339l0,2 0,2 -2,3 -1,3 -2,2 -2,3 -3,2 -2,1 -3,2 -2,1 -3,0 -3,1 -3,0 -3,0 -4,1 -5,1 -5,1 -5,1 -5,0 -4,0 -4,0 -4,-1 -4,-1 -5,0 -5,0 -5,1 -6,0 -4,0 -4,0 -4,-1 -3,-1 -4,-1 -4,-1 -4,-1 -4,-1 -4,-2 -3,-1 -3,-2 -2,-2 -2,-2 -1,-1 -1,-2 0,-2 0,-2 0,-2 1,-2 1,-2 1,-2 1,-2 2,-2 1,-2 2,-2 2,-1 2,-1 2,-1 2,-1 3,-1 3,-2 4,-1 4,-2 6,-2 6,-1 6,0 6,0 5,0 6,0 6,0 6,-1 5,0 5,1 3,0 3,1 3,0 2,1 2,1 3,1 2,0 3,2 3,1 4,2 3,2 4,2 3,2 2,2 3,2 2,2 2,2 1,1 1,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M308,339l0,2 0,2 -2,3 -1,3 -2,2 -2,3 -3,2 -2,1 -3,2 -2,1 -3,0 -3,1 -3,0 -3,0 -4,1 -5,1 -5,1 -5,1 -5,0 -4,0 -4,0 -4,-1 -4,-1 -5,0 -5,0 -5,1 -6,0 -4,0 -4,0 -4,-1 -3,-1 -4,-1 -4,-1 -4,-1 -4,-1 -4,-2 -3,-1 -3,-2 -2,-2 -2,-2 -1,-1 -1,-2 0,-2 0,-2 0,-2 1,-2 1,-2 1,-2 1,-2 2,-2 1,-2 2,-2 2,-1 2,-1 2,-1 2,-1 3,-1 3,-2 4,-1 4,-2 6,-2 6,-1 6,0 6,0 5,0 6,0 6,0 6,-1 5,0 5,1 3,0 3,1 3,0 2,1 2,1 3,1 2,0 3,2 3,1 4,2 3,2 4,2 3,2 2,2 3,2 2,2 2,2 1,1 1,2z" pathLength="1" style="--d:1.01s"/><path class="ink thin" d="M206,362l-1,0 -2,-1 -1,0 -2,-1 -2,-1 -2,0 -2,-1 -3,-1 -2,0 -2,-1 -2,-1 -2,-1 -1,-2 -1,-1 -1,-2 -1,-2 0,-2 1,-3 1,-2 1,-2 2,-2 1,-2 1,-1" pathLength="1" style="--d:1.05s"/><path class="ink thin" d="M205.6,354.7l-1.2,-0.7 -1.8,-0.9 -1.9,-0.9 -1.5,-0.9 -1.4,-0.9 -1.3,-0.9 -1.7,-1.4 -1.2,-1.5 -0.7,-1.6 -0.4,-1.7 0.4,-2 0.5,-1.6" pathLength="1" style="--d:1.06s"/><path class="paint knock" d="M258,292l0,1 -1,1 -1,2 -2,1 -1,1 -2,2 -3,1 -2,2 -2,2 -2,1 -2,2 -2,1 -2,1 -3,1 -2,1 -2,0 -2,0 -2,0 -3,0 -2,0 -3,0 -2,0 -4,-1 -3,0 -3,-1 -3,0 -3,0 -2,0 -2,-1 -2,0 -2,-1 -2,0 -2,-1 -2,-1 -2,-1 -2,-1 -2,-1 -1,-1 -1,-1 -1,-2 -1,-2 0,-2 -1,-2 1,-3 0,-2 0,-3 1,-2 1,-1 1,-2 1,-1 2,-1 1,-1 2,-1 2,0 2,-1 2,0 2,-1 2,-1 3,-1 3,-1 2,-1 3,-1 3,-2 3,-1 3,0 4,0 3,0 3,0 3,1 4,1 3,1 3,1 2,1 2,1 2,0 2,1 2,1 1,1 1,1 2,2 1,2 2,1 1,2 1,2 1,2 1,2 0,1 0,2z"/><path class="paint c-rock" d="M258,292l0,1 -1,1 -1,2 -2,1 -1,1 -2,2 -3,1 -2,2 -2,2 -2,1 -2,2 -2,1 -2,1 -3,1 -2,1 -2,0 -2,0 -2,0 -3,0 -2,0 -3,0 -2,0 -4,-1 -3,0 -3,-1 -3,0 -3,0 -2,0 -2,-1 -2,0 -2,-1 -2,0 -2,-1 -2,-1 -2,-1 -2,-1 -2,-1 -1,-1 -1,-1 -1,-2 -1,-2 0,-2 -1,-2 1,-3 0,-2 0,-3 1,-2 1,-1 1,-2 1,-1 2,-1 1,-1 2,-1 2,0 2,-1 2,0 2,-1 2,-1 3,-1 3,-1 2,-1 3,-1 3,-2 3,-1 3,0 4,0 3,0 3,0 3,1 4,1 3,1 3,1 2,1 2,1 2,0 2,1 2,1 1,1 1,1 2,2 1,2 2,1 1,2 1,2 1,2 1,2 0,1 0,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M258,292l0,1 -1,1 -1,2 -2,1 -1,1 -2,2 -3,1 -2,2 -2,2 -2,1 -2,2 -2,1 -2,1 -3,1 -2,1 -2,0 -2,0 -2,0 -3,0 -2,0 -3,0 -2,0 -4,-1 -3,0 -3,-1 -3,0 -3,0 -2,0 -2,-1 -2,0 -2,-1 -2,0 -2,-1 -2,-1 -2,-1 -2,-1 -2,-1 -1,-1 -1,-1 -1,-2 -1,-2 0,-2 -1,-2 1,-3 0,-2 0,-3 1,-2 1,-1 1,-2 1,-1 2,-1 1,-1 2,-1 2,0 2,-1 2,0 2,-1 2,-1 3,-1 3,-1 2,-1 3,-1 3,-2 3,-1 3,0 4,0 3,0 3,0 3,1 4,1 3,1 3,1 2,1 2,1 2,0 2,1 2,1 1,1 1,1 2,2 1,2 2,1 1,2 1,2 1,2 1,2 0,1 0,2z" pathLength="1" style="--d:1.07s"/><path class="ink thin" d="M194.9,308.7l-1.2,-0.4 -1.7,-0.7 -1.8,-1 -1.6,-1 -1.3,-1.2 -1.3,-1.3 -1.2,-1.4 -1,-1.4 -1.2,-1.9 -0.9,-2 -0.6,-2 -0.2,-2 0.2,-2 0.5,-1.9 1.2,-1.9 1.5,-1.8 1.1,-1" pathLength="1" style="--d:1.11s"/><path class="ink thin" d="M195,302.8l-1.2,-0.8 -1.3,-1.1 -1,-1.2 -0.9,-1.3 -0.6,-1.4 -0.5,-1.4 -0.2,-1.5 0,-1.4 0.2,-1.5 0.3,-1.2" pathLength="1" style="--d:1.13s"/><path class="paint knock" d="M261,257l0,2 -1,1 -1,2 -2,1 -2,1 -2,2 -1,1 -2,1 -2,1 -2,1 -1,1 -2,1 -2,0 -2,-1 -2,0 -2,-1 -2,-1 -2,-1 -2,-2 -2,-1 -1,-1 -3,-1 -1,-2 -2,-1 -1,-1 -1,-2 -1,-1 0,-2 0,-2 0,-2 1,-2 1,-2 1,-2 1,-1 1,-2 2,-1 1,-2 2,0 2,-1 1,0 2,0 3,0 2,1 3,0 2,1 2,0 2,1 2,1 2,1 1,1 2,1 1,1 1,2 1,1 1,1 1,2 1,2 1,1 1,2 0,1z"/><path class="paint c-rock" d="M261,257l0,2 -1,1 -1,2 -2,1 -2,1 -2,2 -1,1 -2,1 -2,1 -2,1 -1,1 -2,1 -2,0 -2,-1 -2,0 -2,-1 -2,-1 -2,-1 -2,-2 -2,-1 -1,-1 -3,-1 -1,-2 -2,-1 -1,-1 -1,-2 -1,-1 0,-2 0,-2 0,-2 1,-2 1,-2 1,-2 1,-1 1,-2 2,-1 1,-2 2,0 2,-1 1,0 2,0 3,0 2,1 3,0 2,1 2,0 2,1 2,1 2,1 1,1 2,1 1,1 1,2 1,1 1,1 1,2 1,2 1,1 1,2 0,1z" transform="translate(3.2 2.6)"/><path class="ink" d="M261,257l0,2 -1,1 -1,2 -2,1 -2,1 -2,2 -1,1 -2,1 -2,1 -2,1 -1,1 -2,1 -2,0 -2,-1 -2,0 -2,-1 -2,-1 -2,-1 -2,-2 -2,-1 -1,-1 -3,-1 -1,-2 -2,-1 -1,-1 -1,-2 -1,-1 0,-2 0,-2 0,-2 1,-2 1,-2 1,-2 1,-1 1,-2 2,-1 1,-2 2,0 2,-1 1,0 2,0 3,0 2,1 3,0 2,1 2,0 2,1 2,1 2,1 1,1 2,1 1,1 1,2 1,1 1,1 1,2 1,2 1,1 1,2 0,1z" pathLength="1" style="--d:1.14s"/><path class="paint c-lichen" d="M176.4,404.6l-0.7,1 -1.5,1 -1.6,0.8 -2.3,0.5 -2.3,-0.2 -1.8,-0.6 -1.7,-1 -1,-1.1 0,-1.4 0.7,-1.5 1.3,-0.9 1.9,-0.2 2.5,0.2 2.2,0.5 1.9,0.9 1.7,1 0.7,1z"/><path class="paint c-lichen" d="M303.6,395.3l-0.3,1.1 -1,0.7 -2,0.3 -1.8,-0.1 -0.9,-0.9 -0.2,-1 0.4,-1.1 1,-0.9 1.6,-0.3 1.5,0.2 1.2,0.9 0.5,1.1z"/><path class="paint c-lichen" d="M259.5,331.2l-0.8,0.8 -1.4,0.5 -1.6,0 -1.5,-0.5 -1.1,-1 -0.4,-1.1 0.6,-0.9 1.2,-0.7 1.6,0.2 1.5,0.6 1.3,1.1 0.6,1z"/><path class="paint c-lichen" d="M63.2,430.7l-0.4,1.2 -0.8,0.9 -1.4,0.2 -1.5,-0.2 -1,-0.8 -0.5,-0.9 0.7,-1 1.1,-0.8 1.2,-0.2 1.1,0.1 0.9,0.6 0.6,0.9z"/><path class="paint c-lichen" d="M201.7,287l-0.3,1 -0.9,0.8 -1.3,-0.1 -1.3,-0.6 -0.9,-0.6 -0.5,-0.7 0.3,-1 0.9,-0.8 1.2,0 1.1,0.4 1.1,0.7 0.6,0.9z"/><path class="paint knock" d="M85,486l2,-2 4,-2 3,-1 5,0 4,0 4,1 4,0 3,1 3,0 3,0 4,0 3,0 4,0 4,0 4,0 4,0 3,0 3,0 3,0 3,0 3,-1 4,0 4,0 4,0 4,0 4,1 4,1 4,1 3,0 3,0 3,-1 3,-1 3,0 3,-1 4,-1 3,0 4,-1 4,0 3,1 4,0 3,0 3,0 3,0 3,0 4,0 4,0 4,1 4,0 4,0 4,0 4,-1 4,-1 3,0 4,-1 3,0 4,0 4,1 4,1 4,1 2,1 2,2 2,2 0,2 0,2 1,2 0,2 -1,3 1,3 0,2 1,3 1,3 1,3 1,3 2,3 2,4 2,3 1,3 2,3 1,3 1,3 1,3 1,3 1,3 1,3 1,3 1,2 1,2 0,3 0,2 -1,1 -2,2 -2,1 -3,1 -4,0 -3,0 -4,-1 -5,0 -5,-1 -5,0 -5,0 -4,0 -3,-1 -3,0 -4,-1 -3,0 -4,0 -4,0 -5,1 -4,0 -5,1 -4,1 -4,0 -3,-1 -4,0 -4,-1 -4,0 -5,0 -5,1 -4,1 -4,0 -4,1 -3,0 -4,0 -3,-1 -3,0 -4,0 -4,0 -4,0 -5,0 -4,-1 -3,0 -4,-1 -3,0 -3,0 -3,0 -4,1 -4,1 -4,1 -5,0 -4,1 -4,0 -4,-1 -4,-1 -3,0 -4,-1 -3,0 -5,0 -4,1 -5,0 -4,1 -5,0 -4,0 -4,1 -4,0 -4,0 -5,1 -5,-1 -4,0 -3,-1 -2,-2 -1,-1 0,-2 0,-2 1,-2 1,-3 2,-3 2,-3 3,-4 2,-3 1,-3 2,-3 1,-3 1,-2 1,-2 1,-2 1,-3 0,-2 1,-3 1,-3 1,-3 1,-4 1,-3 0,-3 1,-3 2,-2 1,-3 1,-2 2,-2 1,-2 3,-2z"/><path class="paint c-soil" d="M85,486l2,-2 4,-2 3,-1 5,0 4,0 4,1 4,0 3,1 3,0 3,0 4,0 3,0 4,0 4,0 4,0 4,0 3,0 3,0 3,0 3,0 3,-1 4,0 4,0 4,0 4,0 4,1 4,1 4,1 3,0 3,0 3,-1 3,-1 3,0 3,-1 4,-1 3,0 4,-1 4,0 3,1 4,0 3,0 3,0 3,0 3,0 4,0 4,0 4,1 4,0 4,0 4,0 4,-1 4,-1 3,0 4,-1 3,0 4,0 4,1 4,1 4,1 2,1 2,2 2,2 0,2 0,2 1,2 0,2 -1,3 1,3 0,2 1,3 1,3 1,3 1,3 2,3 2,4 2,3 1,3 2,3 1,3 1,3 1,3 1,3 1,3 1,3 1,3 1,2 1,2 0,3 0,2 -1,1 -2,2 -2,1 -3,1 -4,0 -3,0 -4,-1 -5,0 -5,-1 -5,0 -5,0 -4,0 -3,-1 -3,0 -4,-1 -3,0 -4,0 -4,0 -5,1 -4,0 -5,1 -4,1 -4,0 -3,-1 -4,0 -4,-1 -4,0 -5,0 -5,1 -4,1 -4,0 -4,1 -3,0 -4,0 -3,-1 -3,0 -4,0 -4,0 -4,0 -5,0 -4,-1 -3,0 -4,-1 -3,0 -3,0 -3,0 -4,1 -4,1 -4,1 -5,0 -4,1 -4,0 -4,-1 -4,-1 -3,0 -4,-1 -3,0 -5,0 -4,1 -5,0 -4,1 -5,0 -4,0 -4,1 -4,0 -4,0 -5,1 -5,-1 -4,0 -3,-1 -2,-2 -1,-1 0,-2 0,-2 1,-2 1,-3 2,-3 2,-3 3,-4 2,-3 1,-3 2,-3 1,-3 1,-2 1,-2 1,-2 1,-3 0,-2 1,-3 1,-3 1,-3 1,-4 1,-3 0,-3 1,-3 2,-2 1,-3 1,-2 2,-2 1,-2 3,-2z" transform="translate(3.2 2.6)"/><path class="ink" d="M85,486l2,-2 4,-2 3,-1 5,0 4,0 4,1 4,0 3,1 3,0 3,0 4,0 3,0 4,0 4,0 4,0 4,0 3,0 3,0 3,0 3,0 3,-1 4,0 4,0 4,0 4,0 4,1 4,1 4,1 3,0 3,0 3,-1 3,-1 3,0 3,-1 4,-1 3,0 4,-1 4,0 3,1 4,0 3,0 3,0 3,0 3,0 4,0 4,0 4,1 4,0 4,0 4,0 4,-1 4,-1 3,0 4,-1 3,0 4,0 4,1 4,1 4,1 2,1 2,2 2,2 0,2 0,2 1,2 0,2 -1,3 1,3 0,2 1,3 1,3 1,3 1,3 2,3 2,4 2,3 1,3 2,3 1,3 1,3 1,3 1,3 1,3 1,3 1,3 1,2 1,2 0,3 0,2 -1,1 -2,2 -2,1 -3,1 -4,0 -3,0 -4,-1 -5,0 -5,-1 -5,0 -5,0 -4,0 -3,-1 -3,0 -4,-1 -3,0 -4,0 -4,0 -5,1 -4,0 -5,1 -4,1 -4,0 -3,-1 -4,0 -4,-1 -4,0 -5,0 -5,1 -4,1 -4,0 -4,1 -3,0 -4,0 -3,-1 -3,0 -4,0 -4,0 -4,0 -5,0 -4,-1 -3,0 -4,-1 -3,0 -3,0 -3,0 -4,1 -4,1 -4,1 -5,0 -4,1 -4,0 -4,-1 -4,-1 -3,0 -4,-1 -3,0 -5,0 -4,1 -5,0 -4,1 -5,0 -4,0 -4,1 -4,0 -4,0 -5,1 -5,-1 -4,0 -3,-1 -2,-2 -1,-1 0,-2 0,-2 1,-2 1,-3 2,-3 2,-3 3,-4 2,-3 1,-3 2,-3 1,-3 1,-2 1,-2 1,-2 1,-3 0,-2 1,-3 1,-3 1,-3 1,-4 1,-3 0,-3 1,-3 2,-2 1,-3 1,-2 2,-2 1,-2 3,-2z" pathLength="1" style="--d:1.18s"/><path class="ink thin soft detail" d="M84,503l7,1 6,1 6,1 5,0 6,0 6,-1 7,-1 7,-1 6,1 5,1 4,0 6,0 6,-1 7,0 6,0 5,0 5,-1 5,-1 6,0 6,0 7,1 6,0 6,1 5,-1 6,-1 6,-2 6,0 7,0 6,1 5,1 5,0 6,0 6,-1 6,1 7,0 6,-1" pathLength="1" style="--d:1.21s"/><path class="ink thin soft detail" d="M76,526l7,-1 5,0 5,0 5,0 5,0 6,0 7,0 6,0 6,0 5,1 6,0 5,0 7,-2 7,-1 7,0 5,1 6,0 5,1 6,0 6,-1 7,-1 6,0 5,0 5,-1 5,0 6,0 7,0 7,1 6,0 5,0 5,-1 6,-1 6,-1 7,0 7,1 5,1 5,1 5,0 6,-1" pathLength="1" style="--d:1.21s"/><path class="ink thin soft detail" d="M67,545l6,0 6,-1 5,1 5,1 6,1 6,0 6,0 7,-1 6,-1 5,0 5,0 6,0 6,0 7,0 7,0 5,0 6,1 5,-1 7,-1 7,-1 7,-1 7,1 5,1 6,1 6,-1 7,-1 7,-1 7,0 5,0 5,0 6,0 6,0 6,0 7,1 5,0 5,0 5,-1 6,-1 6,0 6,0 6,1" pathLength="1" style="--d:1.22s"/><path class="ink thin detail" d="M103.4,496.3 L103.4,491.1 M123.9,496 L123.9,490 M145.2,495.7 L145.2,490.3 M170.5,495.4 L170.5,490.6 M191,495.1 L191,489.5 M210.7,494.8 L210.7,489.6 M235.2,494.5 L235.2,489.1 M257.1,494.2 L257.1,489.3 M276.9,493.9 L276.9,489.1 M99.3,517 L99.3,510.2 M125.6,516.7 L125.6,510.1 M150.8,516.4 L150.8,509.8 M175.7,516 L175.7,510.3 M203.9,515.7 L203.9,509.2 M228.9,515.4 L228.9,510 M254.3,515 L254.3,509.5 M280.4,514.7 L280.4,508 M91.3,537.8 L91.3,530.2 M121.8,537.5 L121.8,531.6 M147.6,537.2 L147.6,530.4 M174,536.8 L174,530.2 M205.3,536.5 L205.3,530.5 M231.8,536.2 L231.8,530.1 M259.5,535.8 L259.5,528.2 M285.8,535.5 L285.8,529.7 M84.1,558.6 L84.1,551 M113.4,558.3 L113.4,551.7 M144.9,558 L144.9,549.5 M174.2,557.6 L174.2,550.4 M204.6,557.3 L204.6,550.7 M233.9,557 L233.9,550.2 M263.6,556.6 L263.6,548.1 M290.9,556.3 L290.9,548.7"/><path class="paint c-leaf" d="M103.4,491.1 Q100.3,487.2 98,489.5 Q100.3,491.8 103.4,491.1 Z M103.4,491.1 Q106.5,487.2 108.8,489.5 Q106.5,491.8 103.4,491.1 Z M123.9,490 Q120.8,486.1 118.5,488.4 Q120.8,490.7 123.9,490 Z M123.9,490 Q127,486.1 129.3,488.4 Q127,490.7 123.9,490 Z M145.2,490.3 Q142.1,486.4 139.8,488.7 Q142.1,491 145.2,490.3 Z M145.2,490.3 Q148.3,486.4 150.6,488.7 Q148.3,491 145.2,490.3 Z M170.5,490.6 Q167.5,486.8 165.2,489.1 Q167.5,491.4 170.5,490.6 Z M170.5,490.6 Q173.6,486.8 175.9,489.1 Q173.6,491.4 170.5,490.6 Z M191,489.5 Q187.9,485.6 185.6,487.9 Q187.9,490.3 191,489.5 Z M191,489.5 Q194,485.6 196.4,487.9 Q194,490.3 191,489.5 Z M210.7,489.6 Q207.6,485.7 205.3,488 Q207.6,490.3 210.7,489.6 Z M210.7,489.6 Q213.8,485.7 216.1,488 Q213.8,490.3 210.7,489.6 Z M235.2,489.1 Q232.1,485.3 229.8,487.6 Q232.1,489.9 235.2,489.1 Z M235.2,489.1 Q238.2,485.3 240.6,487.6 Q238.2,489.9 235.2,489.1 Z M257.1,489.3 Q254,485.5 251.7,487.8 Q254,490.1 257.1,489.3 Z M257.1,489.3 Q260.1,485.5 262.4,487.8 Q260.1,490.1 257.1,489.3 Z M276.9,489.1 Q273.8,485.2 271.5,487.6 Q273.8,489.9 276.9,489.1 Z M276.9,489.1 Q280,485.2 282.3,487.6 Q280,489.9 276.9,489.1 Z M99.3,510.2 Q95.8,505.8 93.2,508.4 Q95.8,511 99.3,510.2 Z M99.3,510.2 Q102.8,505.8 105.4,508.4 Q102.8,511 99.3,510.2 Z M125.6,510.1 Q122.1,505.8 119.5,508.4 Q122.1,511 125.6,510.1 Z M125.6,510.1 Q129.1,505.8 131.7,508.4 Q129.1,511 125.6,510.1 Z M150.8,509.8 Q147.3,505.5 144.7,508.1 Q147.3,510.7 150.8,509.8 Z M150.8,509.8 Q154.3,505.5 156.9,508.1 Q154.3,510.7 150.8,509.8 Z M175.7,510.3 Q172.2,506 169.6,508.6 Q172.2,511.2 175.7,510.3 Z M175.7,510.3 Q179.1,506 181.7,508.6 Q179.1,511.2 175.7,510.3 Z M203.9,509.2 Q200.5,504.8 197.9,507.5 Q200.5,510.1 203.9,509.2 Z M203.9,509.2 Q207.4,504.8 210,507.5 Q207.4,510.1 203.9,509.2 Z M228.9,510 Q225.5,505.7 222.8,508.3 Q225.5,510.9 228.9,510 Z M228.9,510 Q232.4,505.7 235,508.3 Q232.4,510.9 228.9,510 Z M254.3,509.5 Q250.8,505.1 248.2,507.7 Q250.8,510.3 254.3,509.5 Z M254.3,509.5 Q257.8,505.1 260.4,507.7 Q257.8,510.3 254.3,509.5 Z M280.4,508 Q276.9,503.7 274.3,506.3 Q276.9,508.9 280.4,508 Z M280.4,508 Q283.9,503.7 286.5,506.3 Q283.9,508.9 280.4,508 Z M91.3,530.2 Q87.4,525.4 84.5,528.3 Q87.4,531.2 91.3,530.2 Z M91.3,530.2 Q95.2,525.4 98.1,528.3 Q95.2,531.2 91.3,530.2 Z M121.8,531.6 Q117.9,526.8 115,529.7 Q117.9,532.6 121.8,531.6 Z M121.8,531.6 Q125.7,526.8 128.6,529.7 Q125.7,532.6 121.8,531.6 Z M147.6,530.4 Q143.7,525.5 140.8,528.4 Q143.7,531.4 147.6,530.4 Z M147.6,530.4 Q151.5,525.5 154.4,528.4 Q151.5,531.4 147.6,530.4 Z M174,530.2 Q170.1,525.3 167.2,528.3 Q170.1,531.2 174,530.2 Z M174,530.2 Q177.8,525.3 180.7,528.3 Q177.8,531.2 174,530.2 Z M205.3,530.5 Q201.4,525.6 198.5,528.6 Q201.4,531.5 205.3,530.5 Z M205.3,530.5 Q209.1,525.6 212.1,528.6 Q209.1,531.5 205.3,530.5 Z M231.8,530.1 Q227.9,525.3 225,528.2 Q227.9,531.1 231.8,530.1 Z M231.8,530.1 Q235.7,525.3 238.6,528.2 Q235.7,531.1 231.8,530.1 Z M259.5,528.2 Q255.6,523.4 252.7,526.3 Q255.6,529.2 259.5,528.2 Z M259.5,528.2 Q263.4,523.4 266.3,526.3 Q263.4,529.2 259.5,528.2 Z M285.8,529.7 Q281.9,524.9 279,527.8 Q281.9,530.7 285.8,529.7 Z M285.8,529.7 Q289.7,524.9 292.6,527.8 Q289.7,530.7 285.8,529.7 Z M84.1,551 Q79.9,545.7 76.6,548.9 Q79.9,552.1 84.1,551 Z M84.1,551 Q88.4,545.7 91.6,548.9 Q88.4,552.1 84.1,551 Z M113.4,551.7 Q109.2,546.4 105.9,549.6 Q109.2,552.8 113.4,551.7 Z M113.4,551.7 Q117.7,546.4 120.9,549.6 Q117.7,552.8 113.4,551.7 Z M144.9,549.5 Q140.6,544.2 137.4,547.4 Q140.6,550.6 144.9,549.5 Z M144.9,549.5 Q149.2,544.2 152.4,547.4 Q149.2,550.6 144.9,549.5 Z M174.2,550.4 Q169.9,545 166.7,548.2 Q169.9,551.4 174.2,550.4 Z M174.2,550.4 Q178.4,545 181.6,548.2 Q178.4,551.4 174.2,550.4 Z M204.6,550.7 Q200.3,545.4 197.1,548.6 Q200.3,551.8 204.6,550.7 Z M204.6,550.7 Q208.9,545.4 212.1,548.6 Q208.9,551.8 204.6,550.7 Z M233.9,550.2 Q229.6,544.9 226.4,548.1 Q229.6,551.3 233.9,550.2 Z M233.9,550.2 Q238.2,544.9 241.4,548.1 Q238.2,551.3 233.9,550.2 Z M263.6,548.1 Q259.3,542.8 256.1,546 Q259.3,549.2 263.6,548.1 Z M263.6,548.1 Q267.9,542.8 271.1,546 Q267.9,549.2 263.6,548.1 Z M290.9,548.7 Q286.6,543.3 283.4,546.5 Q286.6,549.7 290.9,548.7 Z M290.9,548.7 Q295.2,543.3 298.4,546.5 Q295.2,549.7 290.9,548.7 Z"/><path class="paint knock" d="M1106,453l1,-5 1,-5 0,-5 1,-7 0,-6 0,-5 1,-5 0,-5 1,-5 0,-6 0,-6 0,-7 -1,-6 0,-5 1,-6 0,-6 1,-7 0,-8 2,-1 2,0 1,-1 2,-1 2,0 1,0 1,7 1,7 0,8 1,7 1,5 1,6 1,5 0,6 1,6 0,6 0,6 0,5 -1,5 1,4 0,5 1,4 2,5 1,6 1,6z"/><path class="paint c-trunk" d="M1106,453l1,-5 1,-5 0,-5 1,-7 0,-6 0,-5 1,-5 0,-5 1,-5 0,-6 0,-6 0,-7 -1,-6 0,-5 1,-6 0,-6 1,-7 0,-8 2,-1 2,0 1,-1 2,-1 2,0 1,0 1,7 1,7 0,8 1,7 1,5 1,6 1,5 0,6 1,6 0,6 0,6 0,5 -1,5 1,4 0,5 1,4 2,5 1,6 1,6z" transform="translate(3.2 2.6)"/><path class="ink" d="M1106,453l1,-5 1,-5 0,-5 1,-7 0,-6 0,-5 1,-5 0,-5 1,-5 0,-6 0,-6 0,-7 -1,-6 0,-5 1,-6 0,-6 1,-7 0,-8 2,-1 2,0 1,-1 2,-1 2,0 1,0 1,7 1,7 0,8 1,7 1,5 1,6 1,5 0,6 1,6 0,6 0,6 0,5 -1,5 1,4 0,5 1,4 2,5 1,6 1,6z" pathLength="1" style="--d:1.22s"/><path class="paint branch-ink" d="M1115,372l-4,-3 -2,-3 -3,-4 -4,-3 -4,-4 -5,-4 -5,-4 -4,-3 -4,-3 -4,-3 -5,-3 -6,-4 -6,-4 -6,-3 -4,-2 -6,-3"/><path class="paint c-branch" d="M1115,372l-4,-3 -2,-3 -3,-4 -4,-3 -4,-4 -5,-4 -5,-4 -4,-3 -4,-3 -4,-3 -5,-3 -6,-4 -6,-4 -6,-3 -4,-2 -6,-3"/><path class="paint branch-ink" d="M1120,385l4,-4 4,-3 5,-4 5,-5 4,-5 4,-4 4,-3 3,-3 3,-5 4,-4 4,-5 5,-3 4,-2 5,-3 4,-3"/><path class="paint c-branch" d="M1120,385l4,-4 4,-3 5,-4 5,-5 4,-5 4,-4 4,-3 3,-3 3,-5 4,-4 4,-5 5,-3 4,-2 5,-3 4,-3"/><path class="paint branch-ink" d="M1117,356l1,-7 0,-6 0,-5 0,-5 1,-5 1,-5 0,-6 1,-6 1,-6 0,-5"/><path class="paint c-branch" d="M1117,356l1,-7 0,-6 0,-5 0,-5 1,-5 1,-5 0,-6 1,-6 1,-6 0,-5"/><path class="paint knock" d="M1187,301l0,2 0,3 -1,2 0,2 0,2 -1,3 0,2 -1,3 -1,2 -1,2 -2,2 -1,1 -2,1 -2,1 -2,0 -2,1 -2,0 -2,0 -2,0 -2,1 -2,0 -2,0 -2,0 -2,1 -2,0 -3,0 -3,0 -2,0 -3,-1 -3,0 -2,-1 -3,-1 -2,-1 -3,0 -2,-1 -2,-1 -1,-1 -2,-1 -2,-1 -2,-1 -1,-1 -2,-2 -1,-2 -2,-2 -1,-2 -2,-2 -1,-2 0,-3 -1,-2 0,-3 0,-2 1,-2 0,-2 1,-2 1,-2 1,-2 1,-2 1,-2 1,-1 2,-2 1,-3 2,-2 1,-3 2,-2 2,-3 2,-2 2,-1 2,-2 2,-1 3,-1 2,-1 3,0 3,-1 3,0 3,0 2,0 3,1 2,0 2,1 2,0 3,1 2,1 3,0 3,1 2,1 3,1 2,2 2,1 2,2 1,2 1,2 1,3 1,3 0,3 1,3 0,3 0,3 0,3 0,2 0,2z"/><path class="paint c-msasa" d="M1187,301l0,2 0,3 -1,2 0,2 0,2 -1,3 0,2 -1,3 -1,2 -1,2 -2,2 -1,1 -2,1 -2,1 -2,0 -2,1 -2,0 -2,0 -2,0 -2,1 -2,0 -2,0 -2,0 -2,1 -2,0 -3,0 -3,0 -2,0 -3,-1 -3,0 -2,-1 -3,-1 -2,-1 -3,0 -2,-1 -2,-1 -1,-1 -2,-1 -2,-1 -2,-1 -1,-1 -2,-2 -1,-2 -2,-2 -1,-2 -2,-2 -1,-2 0,-3 -1,-2 0,-3 0,-2 1,-2 0,-2 1,-2 1,-2 1,-2 1,-2 1,-2 1,-1 2,-2 1,-3 2,-2 1,-3 2,-2 2,-3 2,-2 2,-1 2,-2 2,-1 3,-1 2,-1 3,0 3,-1 3,0 3,0 2,0 3,1 2,0 2,1 2,0 3,1 2,1 3,0 3,1 2,1 3,1 2,2 2,1 2,2 1,2 1,2 1,3 1,3 0,3 1,3 0,3 0,3 0,3 0,2 0,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M1187,301l0,2 0,3 -1,2 0,2 0,2 -1,3 0,2 -1,3 -1,2 -1,2 -2,2 -1,1 -2,1 -2,1 -2,0 -2,1 -2,0 -2,0 -2,0 -2,1 -2,0 -2,0 -2,0 -2,1 -2,0 -3,0 -3,0 -2,0 -3,-1 -3,0 -2,-1 -3,-1 -2,-1 -3,0 -2,-1 -2,-1 -1,-1 -2,-1 -2,-1 -2,-1 -1,-1 -2,-2 -1,-2 -2,-2 -1,-2 -2,-2 -1,-2 0,-3 -1,-2 0,-3 0,-2 1,-2 0,-2 1,-2 1,-2 1,-2 1,-2 1,-2 1,-1 2,-2 1,-3 2,-2 1,-3 2,-2 2,-3 2,-2 2,-1 2,-2 2,-1 3,-1 2,-1 3,0 3,-1 3,0 3,0 2,0 3,1 2,0 2,1 2,0 3,1 2,1 3,0 3,1 2,1 3,1 2,2 2,1 2,2 1,2 1,2 1,3 1,3 0,3 1,3 0,3 0,3 0,3 0,2 0,2z" pathLength="1" style="--d:1.25s"/><path class="paint knock" d="M1053,320l0,2 0,2 -1,2 0,1 -1,2 -1,2 -1,2 -2,1 -2,2 -2,2 -2,2 -2,2 -3,2 -3,1 -3,1 -3,1 -3,0 -3,0 -4,0 -3,0 -3,1 -3,0 -3,1 -3,0 -3,1 -2,0 -2,0 -3,0 -2,-1 -3,0 -3,-1 -2,-1 -3,0 -2,-1 -2,-1 -2,0 -2,-1 -2,-1 -1,-1 -2,-2 -1,-1 -1,-2 -2,-2 -1,-2 -1,-2 -1,-2 -2,-3 0,-2 -1,-3 0,-2 0,-3 1,-3 1,-2 1,-2 1,-2 2,-2 2,-2 2,-1 1,-1 2,-2 2,-1 3,-1 2,-1 2,-2 2,-1 2,-1 2,-1 2,-1 2,0 2,-1 3,0 2,0 3,0 3,0 3,0 3,0 3,0 3,0 3,0 3,0 3,1 2,0 3,2 3,2 3,2 3,2 4,2 2,2 3,2 2,1 1,2 2,2 0,2 1,1 1,2 0,2 0,2 1,2z"/><path class="paint c-msasa" d="M1053,320l0,2 0,2 -1,2 0,1 -1,2 -1,2 -1,2 -2,1 -2,2 -2,2 -2,2 -2,2 -3,2 -3,1 -3,1 -3,1 -3,0 -3,0 -4,0 -3,0 -3,1 -3,0 -3,1 -3,0 -3,1 -2,0 -2,0 -3,0 -2,-1 -3,0 -3,-1 -2,-1 -3,0 -2,-1 -2,-1 -2,0 -2,-1 -2,-1 -1,-1 -2,-2 -1,-1 -1,-2 -2,-2 -1,-2 -1,-2 -1,-2 -2,-3 0,-2 -1,-3 0,-2 0,-3 1,-3 1,-2 1,-2 1,-2 2,-2 2,-2 2,-1 1,-1 2,-2 2,-1 3,-1 2,-1 2,-2 2,-1 2,-1 2,-1 2,-1 2,0 2,-1 3,0 2,0 3,0 3,0 3,0 3,0 3,0 3,0 3,0 3,0 3,1 2,0 3,2 3,2 3,2 3,2 4,2 2,2 3,2 2,1 1,2 2,2 0,2 1,1 1,2 0,2 0,2 1,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M1053,320l0,2 0,2 -1,2 0,1 -1,2 -1,2 -1,2 -2,1 -2,2 -2,2 -2,2 -2,2 -3,2 -3,1 -3,1 -3,1 -3,0 -3,0 -4,0 -3,0 -3,1 -3,0 -3,1 -3,0 -3,1 -2,0 -2,0 -3,0 -2,-1 -3,0 -3,-1 -2,-1 -3,0 -2,-1 -2,-1 -2,0 -2,-1 -2,-1 -1,-1 -2,-2 -1,-1 -1,-2 -2,-2 -1,-2 -1,-2 -1,-2 -2,-3 0,-2 -1,-3 0,-2 0,-3 1,-3 1,-2 1,-2 1,-2 2,-2 2,-2 2,-1 1,-1 2,-2 2,-1 3,-1 2,-1 2,-2 2,-1 2,-1 2,-1 2,-1 2,0 2,-1 3,0 2,0 3,0 3,0 3,0 3,0 3,0 3,0 3,0 3,0 3,1 2,0 3,2 3,2 3,2 3,2 4,2 2,2 3,2 2,1 1,2 2,2 0,2 1,1 1,2 0,2 0,2 1,2z" pathLength="1" style="--d:1.28s"/><path class="paint knock" d="M1169,265l1,3 -1,3 0,3 -1,2 -1,2 -1,2 -2,2 -2,1 -2,1 -2,1 -3,1 -2,1 -3,1 -2,1 -3,1 -3,1 -2,1 -3,1 -3,1 -3,0 -3,1 -4,0 -5,0 -4,0 -4,-1 -4,0 -4,0 -3,0 -4,0 -3,0 -4,0 -4,0 -4,0 -4,-1 -4,-1 -3,-1 -3,-1 -2,-2 -2,-1 -2,-1 -1,-2 -2,-2 -1,-2 -1,-3 -1,-3 -1,-3 -1,-4 0,-3 0,-3 -1,-2 0,-3 0,-2 0,-1 1,-2 0,-2 1,-1 1,-2 1,-1 2,-2 3,-1 2,-3 4,-2 3,-3 4,-3 4,-3 4,-1 4,-1 3,-1 3,0 3,-1 3,-1 3,-1 3,-1 3,-1 3,-1 3,0 3,0 4,0 3,1 2,1 3,1 3,1 3,1 3,1 3,1 4,1 4,1 3,2 3,1 3,3 2,2 1,3 2,3 1,4 1,3 1,3 1,4 1,3 1,3 1,3z"/><path class="paint c-msasa" d="M1169,265l1,3 -1,3 0,3 -1,2 -1,2 -1,2 -2,2 -2,1 -2,1 -2,1 -3,1 -2,1 -3,1 -2,1 -3,1 -3,1 -2,1 -3,1 -3,1 -3,0 -3,1 -4,0 -5,0 -4,0 -4,-1 -4,0 -4,0 -3,0 -4,0 -3,0 -4,0 -4,0 -4,0 -4,-1 -4,-1 -3,-1 -3,-1 -2,-2 -2,-1 -2,-1 -1,-2 -2,-2 -1,-2 -1,-3 -1,-3 -1,-3 -1,-4 0,-3 0,-3 -1,-2 0,-3 0,-2 0,-1 1,-2 0,-2 1,-1 1,-2 1,-1 2,-2 3,-1 2,-3 4,-2 3,-3 4,-3 4,-3 4,-1 4,-1 3,-1 3,0 3,-1 3,-1 3,-1 3,-1 3,-1 3,-1 3,0 3,0 4,0 3,1 2,1 3,1 3,1 3,1 3,1 3,1 4,1 4,1 3,2 3,1 3,3 2,2 1,3 2,3 1,4 1,3 1,3 1,4 1,3 1,3 1,3z" transform="translate(3.2 2.6)"/><path class="ink" d="M1169,265l1,3 -1,3 0,3 -1,2 -1,2 -1,2 -2,2 -2,1 -2,1 -2,1 -3,1 -2,1 -3,1 -2,1 -3,1 -3,1 -2,1 -3,1 -3,1 -3,0 -3,1 -4,0 -5,0 -4,0 -4,-1 -4,0 -4,0 -3,0 -4,0 -3,0 -4,0 -4,0 -4,0 -4,-1 -4,-1 -3,-1 -3,-1 -2,-2 -2,-1 -2,-1 -1,-2 -2,-2 -1,-2 -1,-3 -1,-3 -1,-3 -1,-4 0,-3 0,-3 -1,-2 0,-3 0,-2 0,-1 1,-2 0,-2 1,-1 1,-2 1,-1 2,-2 3,-1 2,-3 4,-2 3,-3 4,-3 4,-3 4,-1 4,-1 3,-1 3,0 3,-1 3,-1 3,-1 3,-1 3,-1 3,-1 3,0 3,0 4,0 3,1 2,1 3,1 3,1 3,1 3,1 3,1 4,1 4,1 3,2 3,1 3,3 2,2 1,3 2,3 1,4 1,3 1,3 1,4 1,3 1,3 1,3z" pathLength="1" style="--d:1.31s"/><path class="paint knock" d="M1098,281l-1,1 -1,2 -1,2 -1,2 -2,3 -2,2 -3,2 -2,2 -3,2 -2,1 -2,1 -3,2 -2,1 -3,0 -2,1 -2,1 -3,1 -2,2 -3,1 -2,1 -3,1 -3,1 -4,0 -4,0 -5,-1 -5,-1 -5,-2 -4,-1 -3,-1 -3,0 -3,0 -3,0 -3,-1 -3,0 -3,-1 -3,0 -3,-1 -3,-1 -2,-1 -2,-2 -2,-1 -2,-2 -1,-1 -2,-2 -1,-2 -1,-3 -1,-2 -1,-2 0,-2 -1,-3 0,-2 0,-2 1,-2 0,-3 1,-2 2,-3 1,-3 2,-3 2,-4 2,-2 3,-3 3,-2 3,-2 3,-2 3,-1 3,-2 4,-1 3,-2 4,-1 4,-1 4,-1 3,-1 4,0 3,0 3,0 3,1 3,0 3,1 2,2 3,1 3,1 4,1 4,1 4,1 4,1 3,1 3,2 3,2 2,2 2,3 2,2 2,3 2,3 2,3 1,3 2,2 1,3 1,2 0,3 1,2z"/><path class="paint c-msasa" d="M1098,281l-1,1 -1,2 -1,2 -1,2 -2,3 -2,2 -3,2 -2,2 -3,2 -2,1 -2,1 -3,2 -2,1 -3,0 -2,1 -2,1 -3,1 -2,2 -3,1 -2,1 -3,1 -3,1 -4,0 -4,0 -5,-1 -5,-1 -5,-2 -4,-1 -3,-1 -3,0 -3,0 -3,0 -3,-1 -3,0 -3,-1 -3,0 -3,-1 -3,-1 -2,-1 -2,-2 -2,-1 -2,-2 -1,-1 -2,-2 -1,-2 -1,-3 -1,-2 -1,-2 0,-2 -1,-3 0,-2 0,-2 1,-2 0,-3 1,-2 2,-3 1,-3 2,-3 2,-4 2,-2 3,-3 3,-2 3,-2 3,-2 3,-1 3,-2 4,-1 3,-2 4,-1 4,-1 4,-1 3,-1 4,0 3,0 3,0 3,1 3,0 3,1 2,2 3,1 3,1 4,1 4,1 4,1 4,1 3,1 3,2 3,2 2,2 2,3 2,2 2,3 2,3 2,3 1,3 2,2 1,3 1,2 0,3 1,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M1098,281l-1,1 -1,2 -1,2 -1,2 -2,3 -2,2 -3,2 -2,2 -3,2 -2,1 -2,1 -3,2 -2,1 -3,0 -2,1 -2,1 -3,1 -2,2 -3,1 -2,1 -3,1 -3,1 -4,0 -4,0 -5,-1 -5,-1 -5,-2 -4,-1 -3,-1 -3,0 -3,0 -3,0 -3,-1 -3,0 -3,-1 -3,0 -3,-1 -3,-1 -2,-1 -2,-2 -2,-1 -2,-2 -1,-1 -2,-2 -1,-2 -1,-3 -1,-2 -1,-2 0,-2 -1,-3 0,-2 0,-2 1,-2 0,-3 1,-2 2,-3 1,-3 2,-3 2,-4 2,-2 3,-3 3,-2 3,-2 3,-2 3,-1 3,-2 4,-1 3,-2 4,-1 4,-1 4,-1 3,-1 4,0 3,0 3,0 3,1 3,0 3,1 2,2 3,1 3,1 4,1 4,1 4,1 4,1 3,1 3,2 3,2 2,2 2,3 2,2 2,3 2,3 2,3 1,3 2,2 1,3 1,2 0,3 1,2z" pathLength="1" style="--d:1.34s"/><path class="paint knock" d="M1147,320l0,2 -1,2 0,2 -1,2 -1,2 -2,2 -1,2 -2,2 -2,2 -2,1 -3,1 -2,0 -3,1 -2,0 -3,1 -2,0 -3,1 -2,1 -3,1 -3,1 -4,0 -3,0 -5,0 -4,0 -4,-1 -4,0 -3,0 -3,0 -3,-1 -4,0 -3,-1 -4,-1 -4,-2 -4,-1 -4,-1 -3,-1 -3,0 -3,-1 -1,-1 -2,-1 -2,-1 -1,-1 -2,-2 -1,-2 -1,-2 -1,-1 -1,-2 0,-2 0,-2 0,-1 0,-2 1,-2 1,-1 1,-2 2,-2 1,-2 2,-2 2,-3 2,-2 3,-2 2,-2 3,-2 3,-1 2,-1 3,-2 3,-1 3,-1 2,0 3,-1 4,-1 3,-1 4,-1 4,-1 5,0 4,-1 3,0 4,0 3,1 2,1 3,1 4,2 3,2 4,2 4,1 3,2 3,2 3,2 2,1 2,2 1,2 2,2 1,2 1,2 1,2 1,2 1,2 0,2 1,1 0,2z"/><path class="paint c-msasa" d="M1147,320l0,2 -1,2 0,2 -1,2 -1,2 -2,2 -1,2 -2,2 -2,2 -2,1 -3,1 -2,0 -3,1 -2,0 -3,1 -2,0 -3,1 -2,1 -3,1 -3,1 -4,0 -3,0 -5,0 -4,0 -4,-1 -4,0 -3,0 -3,0 -3,-1 -4,0 -3,-1 -4,-1 -4,-2 -4,-1 -4,-1 -3,-1 -3,0 -3,-1 -1,-1 -2,-1 -2,-1 -1,-1 -2,-2 -1,-2 -1,-2 -1,-1 -1,-2 0,-2 0,-2 0,-1 0,-2 1,-2 1,-1 1,-2 2,-2 1,-2 2,-2 2,-3 2,-2 3,-2 2,-2 3,-2 3,-1 2,-1 3,-2 3,-1 3,-1 2,0 3,-1 4,-1 3,-1 4,-1 4,-1 5,0 4,-1 3,0 4,0 3,1 2,1 3,1 4,2 3,2 4,2 4,1 3,2 3,2 3,2 2,1 2,2 1,2 2,2 1,2 1,2 1,2 1,2 1,2 0,2 1,1 0,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M1147,320l0,2 -1,2 0,2 -1,2 -1,2 -2,2 -1,2 -2,2 -2,2 -2,1 -3,1 -2,0 -3,1 -2,0 -3,1 -2,0 -3,1 -2,1 -3,1 -3,1 -4,0 -3,0 -5,0 -4,0 -4,-1 -4,0 -3,0 -3,0 -3,-1 -4,0 -3,-1 -4,-1 -4,-2 -4,-1 -4,-1 -3,-1 -3,0 -3,-1 -1,-1 -2,-1 -2,-1 -1,-1 -2,-2 -1,-2 -1,-2 -1,-1 -1,-2 0,-2 0,-2 0,-1 0,-2 1,-2 1,-1 1,-2 2,-2 1,-2 2,-2 2,-3 2,-2 3,-2 2,-2 3,-2 3,-1 2,-1 3,-2 3,-1 3,-1 2,0 3,-1 4,-1 3,-1 4,-1 4,-1 5,0 4,-1 3,0 4,0 3,1 2,1 3,1 4,2 3,2 4,2 4,1 3,2 3,2 3,2 2,1 2,2 1,2 2,2 1,2 1,2 1,2 1,2 1,2 0,2 1,1 0,2z" pathLength="1" style="--d:1.37s"/><path class="paint knock" d="M1056,300l0,2 0,2 -1,2 0,2 -1,2 -2,2 -1,2 -2,1 -2,2 -2,1 -3,0 -3,1 -4,0 -3,1 -4,0 -4,0 -3,1 -3,1 -2,1 -3,1 -2,0 -3,1 -2,1 -3,0 -2,0 -2,0 -3,-1 -2,-1 -3,0 -2,-1 -2,-1 -3,-1 -2,-1 -1,-1 -2,-1 -1,-1 -2,-1 -1,-1 -1,-1 0,-1 -1,-2 -1,-2 0,-1 0,-2 0,-2 0,-2 0,-2 0,-2 1,-2 0,-2 1,-3 0,-2 1,-3 1,-2 1,-2 1,-1 2,-1 2,-1 2,-1 2,-1 2,-1 3,-1 2,-1 2,-1 3,-1 2,0 3,-1 2,0 3,0 3,0 2,0 3,0 3,0 2,0 2,1 3,0 2,0 1,1 2,0 2,1 2,1 2,1 2,2 2,1 2,1 2,2 2,1 2,2 1,2 2,2 1,2 1,2 1,2 0,1 1,2 0,2z"/><path class="paint c-msasa" d="M1056,300l0,2 0,2 -1,2 0,2 -1,2 -2,2 -1,2 -2,1 -2,2 -2,1 -3,0 -3,1 -4,0 -3,1 -4,0 -4,0 -3,1 -3,1 -2,1 -3,1 -2,0 -3,1 -2,1 -3,0 -2,0 -2,0 -3,-1 -2,-1 -3,0 -2,-1 -2,-1 -3,-1 -2,-1 -1,-1 -2,-1 -1,-1 -2,-1 -1,-1 -1,-1 0,-1 -1,-2 -1,-2 0,-1 0,-2 0,-2 0,-2 0,-2 0,-2 1,-2 0,-2 1,-3 0,-2 1,-3 1,-2 1,-2 1,-1 2,-1 2,-1 2,-1 2,-1 2,-1 3,-1 2,-1 2,-1 3,-1 2,0 3,-1 2,0 3,0 3,0 2,0 3,0 3,0 2,0 2,1 3,0 2,0 1,1 2,0 2,1 2,1 2,1 2,2 2,1 2,1 2,2 2,1 2,2 1,2 2,2 1,2 1,2 1,2 0,1 1,2 0,2z" transform="translate(3.2 2.6)"/><path class="ink" d="M1056,300l0,2 0,2 -1,2 0,2 -1,2 -2,2 -1,2 -2,1 -2,2 -2,1 -3,0 -3,1 -4,0 -3,1 -4,0 -4,0 -3,1 -3,1 -2,1 -3,1 -2,0 -3,1 -2,1 -3,0 -2,0 -2,0 -3,-1 -2,-1 -3,0 -2,-1 -2,-1 -3,-1 -2,-1 -1,-1 -2,-1 -1,-1 -2,-1 -1,-1 -1,-1 0,-1 -1,-2 -1,-2 0,-1 0,-2 0,-2 0,-2 0,-2 0,-2 1,-2 0,-2 1,-3 0,-2 1,-3 1,-2 1,-2 1,-1 2,-1 2,-1 2,-1 2,-1 2,-1 3,-1 2,-1 2,-1 3,-1 2,0 3,-1 2,0 3,0 3,0 2,0 3,0 3,0 2,0 2,1 3,0 2,0 1,1 2,0 2,1 2,1 2,1 2,2 2,1 2,1 2,2 2,1 2,2 1,2 2,2 1,2 1,2 1,2 0,1 1,2 0,2z" pathLength="1" style="--d:1.40s"/><path class="paint knock" d="M1188,334l-1,2 0,2 -1,1 -1,2 -2,1 -1,2 -2,1 -2,2 -2,1 -1,1 -2,1 -3,1 -2,0 -2,1 -2,1 -3,0 -2,1 -2,0 -2,1 -1,0 -2,1 -2,0 -2,0 -2,1 -2,0 -2,0 -3,-1 -2,0 -3,-1 -3,-1 -2,-2 -3,-1 -3,-1 -2,-1 -2,-1 -1,-1 -2,-1 -1,-1 -2,-2 -2,-1 -1,-1 -2,-2 -1,-1 -1,-2 -1,-1 0,-2 0,-1 1,-2 0,-1 2,-1 1,-2 1,-1 2,-2 2,-1 2,-2 1,-1 2,-2 2,-1 2,-2 1,-1 2,-1 2,-1 1,-1 2,0 2,-1 2,0 3,0 2,0 3,0 3,0 3,0 3,0 3,0 3,0 3,0 2,0 2,1 2,1 2,1 1,1 2,2 1,1 1,2 2,1 1,2 2,2 2,1 2,2 1,2 2,1 1,2 0,2 1,1z"/><path class="paint c-msasa" d="M1188,334l-1,2 0,2 -1,1 -1,2 -2,1 -1,2 -2,1 -2,2 -2,1 -1,1 -2,1 -3,1 -2,0 -2,1 -2,1 -3,0 -2,1 -2,0 -2,1 -1,0 -2,1 -2,0 -2,0 -2,1 -2,0 -2,0 -3,-1 -2,0 -3,-1 -3,-1 -2,-2 -3,-1 -3,-1 -2,-1 -2,-1 -1,-1 -2,-1 -1,-1 -2,-2 -2,-1 -1,-1 -2,-2 -1,-1 -1,-2 -1,-1 0,-2 0,-1 1,-2 0,-1 2,-1 1,-2 1,-1 2,-2 2,-1 2,-2 1,-1 2,-2 2,-1 2,-2 1,-1 2,-1 2,-1 1,-1 2,0 2,-1 2,0 3,0 2,0 3,0 3,0 3,0 3,0 3,0 3,0 3,0 2,0 2,1 2,1 2,1 1,1 2,2 1,1 1,2 2,1 1,2 2,2 2,1 2,2 1,2 2,1 1,2 0,2 1,1z" transform="translate(3.2 2.6)"/><path class="ink" d="M1188,334l-1,2 0,2 -1,1 -1,2 -2,1 -1,2 -2,1 -2,2 -2,1 -1,1 -2,1 -3,1 -2,0 -2,1 -2,1 -3,0 -2,1 -2,0 -2,1 -1,0 -2,1 -2,0 -2,0 -2,1 -2,0 -2,0 -3,-1 -2,0 -3,-1 -3,-1 -2,-2 -3,-1 -3,-1 -2,-1 -2,-1 -1,-1 -2,-1 -1,-1 -2,-2 -2,-1 -1,-1 -2,-2 -1,-1 -1,-2 -1,-1 0,-2 0,-1 1,-2 0,-1 2,-1 1,-2 1,-1 2,-2 2,-1 2,-2 1,-1 2,-2 2,-1 2,-2 1,-1 2,-1 2,-1 1,-1 2,0 2,-1 2,0 3,0 2,0 3,0 3,0 3,0 3,0 3,0 3,0 3,0 2,0 2,1 2,1 2,1 1,1 2,2 1,1 1,2 2,1 1,2 2,2 2,1 2,2 1,2 2,1 1,2 0,2 1,1z" pathLength="1" style="--d:1.42s"/><path class="paint c-msasa-light" d="M1150,246l-1,2 0,2 -1,2 -2,2 -1,2 -2,2 -2,1 -1,1 -2,1 -2,1 -2,0 -3,1 -2,0 -3,0 -2,0 -2,1 -2,0 -3,-1 -2,0 -2,0 -2,0 -2,0 -3,0 -2,-1 -3,0 -3,0 -2,0 -3,0 -2,-1 -3,-1 -2,-1 -2,-1 -2,-1 -1,-1 -2,-1 -1,-1 -1,-2 0,-1 -1,-2 0,-2 -1,-2 1,-3 0,-2 1,-1 1,-2 1,-1 2,-1 1,-1 2,-1 2,0 2,-1 2,0 2,0 1,0 2,-1 3,0 2,-1 3,-1 3,0 3,-1 3,-1 2,-1 3,0 3,0 3,1 2,1 3,1 2,1 3,1 3,1 2,1 3,1 2,1 2,1 2,2 1,1 1,2 0,1 1,2 0,2z" transform="translate(3.2 2.6)"/><path class="paint c-msasa-light" d="M1076,262l0,1 0,1 -1,2 -2,1 -1,2 -2,1 -1,2 -2,1 -2,1 -2,2 -2,1 -3,1 -3,1 -3,1 -3,0 -3,0 -2,0 -3,-1 -2,0 -2,-1 -2,-1 -2,0 -2,-1 -1,-1 -2,0 -2,-1 -1,0 -2,-1 -2,0 -3,-1 -2,0 -2,-1 -2,-1 -2,-1 -2,-1 -1,-1 -1,-2 -1,-2 -1,-2 0,-2 0,-2 1,-2 0,-1 1,0 1,-1 2,0 2,-1 2,0 2,0 2,-1 3,0 2,-1 2,-1 3,-1 2,-1 2,-1 2,-1 3,0 2,-1 2,0 2,0 2,1 2,0 2,1 2,1 3,1 3,1 2,1 3,1 3,1 2,1 2,1 2,1 2,1 2,1 1,1 1,1 0,2 0,1z" transform="translate(3.2 2.6)"/><path class="paint c-msasa-light" d="M1126,302l0,1 -1,1 -2,1 -2,2 -2,1 -3,2 -2,1 -2,1 -2,1 -2,1 -2,0 -2,1 -2,0 -2,0 -2,0 -3,0 -1,0 -2,0 -3,0 -2,0 -2,0 -2,0 -3,0 -2,0 -3,0 -2,-1 -3,-1 -2,-1 -2,-1 -2,-1 -1,-1 -1,-2 -1,-1 0,-2 1,-2 1,-2 1,-1 1,-1 2,0 1,-1 2,0 2,-1 2,0 3,-1 2,0 2,-1 3,0 2,-1 2,-1 3,-1 2,0 2,-1 2,0 2,-1 2,1 1,0 2,1 2,1 1,2 2,1 2,1 2,1 3,1 3,1 3,1 2,1 1,0 1,1z" transform="translate(3.2 2.6)"/><path class="ink leafmark detail" d="M1046.2,259.1l1.5,-1.8 1.6,-0.9 1.8,0.1 1.8,0.8 2,1.6" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M998.5,339.5l1.3,-1.4 1.3,-0.7 1.3,0.1 1.3,0.6 1.4,1.4" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1092.2,313.3l1.7,-1.3 1.5,-0.7 1.4,0 1.4,0.9 1.5,1.7" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1086.8,277.1l1.6,-1.3 1.7,-0.6 1.8,0 1.9,0.7 1.8,1.3" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1129.5,300l1.4,-1.4 1.4,-0.7 1.4,0 1.4,0.7 1.3,1.6" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1139.4,309.6l1.5,-1.1 1.5,-0.4 1.6,0.3 1.7,1.1 1.8,1.7" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1151.9,283.4l1.7,-1.3 1.8,-0.4 1.7,0.2 1.8,0.9 1.8,1.5" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1125.8,253.1l1.4,-1.4 1.4,-0.7 1.6,0 1.7,0.7 1.9,1.5" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1110.6,305.1l1.7,-1.7 1.8,-0.9 1.8,0.1 1.9,0.8 2,1.6" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M972.5,323.5l1.4,-1.7 1.5,-0.8 1.5,0 1.6,0.7 1.7,1.5" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1153.7,257.4l1.3,-1.8 1.3,-1 1.3,0.1 1.3,0.9 1.5,1.8" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1127.4,317.6l1.6,-2 1.6,-1 1.4,-0.1 1.3,0.7 1.3,1.7" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M988.4,311.4l1.8,-1.7 1.8,-0.9 1.9,-0.1 1.8,1 1.9,1.9" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M989.4,339.1l1.5,-1.6 1.5,-0.8 1.6,0.2 1.5,0.9 1.5,1.7" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1102.3,303.4l1.6,-1.9 1.6,-0.9 1.6,0 1.6,1 1.8,1.8" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1001.5,336.9l1.4,-1.3 1.4,-0.6 1.4,0 1.3,0.6 1.4,1.4" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1154.8,268.7l1.4,-1.6 1.4,-0.8 1.4,0 1.6,0.8 1.7,1.7" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M993.9,311.2l1.8,-1.9 1.9,-0.9 1.8,0 1.9,0.9 1.8,1.8" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1053.3,310.2l1.3,-2.1 1.4,-1.2 1.4,-0.2 1.3,0.7 1.5,1.7" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1073,277.8l1.4,-1.7 1.4,-0.8 1.5,0.1 1.6,1 1.8,1.7" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1064.5,317.7l1.6,-1.8 1.6,-0.9 1.8,0 2,1 1.9,1.7" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1057.2,320l1.3,-1.8 1.5,-1 1.6,0 1.8,0.9 1.9,1.8" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1084.4,336.2l1.4,-2 1.3,-1.2 1.4,-0.3 1.5,0.7 1.6,1.7" pathLength="1" style="--d:1.45s"/><path class="ink leafmark detail" d="M1110.3,269.9l1.7,-1.9 1.5,-0.9 1.4,0 1.4,1 1.4,1.8" pathLength="1" style="--d:1.45s"/><path class="paint knock" d="M1137,457l1,1 0,2 -1,1 -1,1 -2,1 -3,1 -4,1 -4,1 -4,0 -4,1 -4,0 -5,0 -4,1 -5,1 -5,1 -5,1 -7,0 -5,0 -6,-1 -5,0 -5,-1 -6,1 -7,2 -7,1 -7,-1 -6,0 -6,-1 -5,0 -6,0 -7,0 -7,-1 -6,0 -5,0 -5,0 -5,1 -6,0 -5,-1 -5,-2 -4,-1 -4,-1 -3,-1 -2,0 -3,0 -2,-1 -2,0 -2,0 -2,-1 -2,-1 -1,0 -2,-2 -1,-1 0,-2 0,-1 1,-1 2,-2 3,-1 3,0 3,-1 3,-1 4,-2 4,-2 4,-2 4,-1 4,-1 5,-1 5,0 5,0 6,-1 6,-1 5,-1 4,0 5,-1 6,0 6,-1 6,0 5,0 5,0 3,0 3,1 4,1 3,0 3,0 4,0 4,0 5,0 5,0 5,0 5,1 6,1 7,1 7,1 7,1 6,1 5,1 4,1 4,1 4,1 3,0 3,1 2,1 1,2 1,1 1,1 0,2 0,1z"/><path class="paint c-rock" d="M1137,457l1,1 0,2 -1,1 -1,1 -2,1 -3,1 -4,1 -4,1 -4,0 -4,1 -4,0 -5,0 -4,1 -5,1 -5,1 -5,1 -7,0 -5,0 -6,-1 -5,0 -5,-1 -6,1 -7,2 -7,1 -7,-1 -6,0 -6,-1 -5,0 -6,0 -7,0 -7,-1 -6,0 -5,0 -5,0 -5,1 -6,0 -5,-1 -5,-2 -4,-1 -4,-1 -3,-1 -2,0 -3,0 -2,-1 -2,0 -2,0 -2,-1 -2,-1 -1,0 -2,-2 -1,-1 0,-2 0,-1 1,-1 2,-2 3,-1 3,0 3,-1 3,-1 4,-2 4,-2 4,-2 4,-1 4,-1 5,-1 5,0 5,0 6,-1 6,-1 5,-1 4,0 5,-1 6,0 6,-1 6,0 5,0 5,0 3,0 3,1 4,1 3,0 3,0 4,0 4,0 5,0 5,0 5,0 5,1 6,1 7,1 7,1 7,1 6,1 5,1 4,1 4,1 4,1 3,0 3,1 2,1 1,2 1,1 1,1 0,2 0,1z" transform="translate(3.2 2.6)"/><path class="ink" d="M1137,457l1,1 0,2 -1,1 -1,1 -2,1 -3,1 -4,1 -4,1 -4,0 -4,1 -4,0 -5,0 -4,1 -5,1 -5,1 -5,1 -7,0 -5,0 -6,-1 -5,0 -5,-1 -6,1 -7,2 -7,1 -7,-1 -6,0 -6,-1 -5,0 -6,0 -7,0 -7,-1 -6,0 -5,0 -5,0 -5,1 -6,0 -5,-1 -5,-2 -4,-1 -4,-1 -3,-1 -2,0 -3,0 -2,-1 -2,0 -2,0 -2,-1 -2,-1 -1,0 -2,-2 -1,-1 0,-2 0,-1 1,-1 2,-2 3,-1 3,0 3,-1 3,-1 4,-2 4,-2 4,-2 4,-1 4,-1 5,-1 5,0 5,0 6,-1 6,-1 5,-1 4,0 5,-1 6,0 6,-1 6,0 5,0 5,0 3,0 3,1 4,1 3,0 3,0 4,0 4,0 5,0 5,0 5,0 5,1 6,1 7,1 7,1 7,1 6,1 5,1 4,1 4,1 4,1 3,0 3,1 2,1 1,2 1,1 1,1 0,2 0,1z" pathLength="1" style="--d:1.51s"/><path class="ink thin" d="M965.7,469.8l-1.6,-0.4 -2.3,-0.7 -2.6,-0.8 -2.5,-1 -2,-0.8 -1.9,-1 -1.7,-0.8 -1.3,-0.8 -1.2,-0.6 -1.6,-1.3 -0.9,-1.2 -0.1,-1.2 0.6,-1.1 1.3,-0.8 1.5,-0.8 1.2,-0.6" pathLength="1" style="--d:1.54s"/><g transform="translate(1000 441) scale(1.32)"><path class="paint knock" d="M33,-3l-1,-2 0,-3 0,-2 -1,-3 0,-2 1,-3 0,-2 0,-3 1,-2 0,-2 3,0 2,0 3,0 3,1 2,0 3,0 2,0 3,0 2,0 2,0 1,2 0,2 1,1 0,2 0,2 0,2 0,3 0,2 -1,3 0,3z"/><path class="paint c-robot" d="M33,-3l-1,-2 0,-3 0,-2 -1,-3 0,-2 1,-3 0,-2 0,-3 1,-2 0,-2 3,0 2,0 3,0 3,1 2,0 3,0 2,0 3,0 2,0 2,0 1,2 0,2 1,1 0,2 0,2 0,2 0,3 0,2 -1,3 0,3z" transform="translate(3.2 2.6)"/><path class="ink" d="M33,-3l-1,-2 0,-3 0,-2 -1,-3 0,-2 1,-3 0,-2 0,-3 1,-2 0,-2 3,0 2,0 3,0 3,1 2,0 3,0 2,0 3,0 2,0 2,0 1,2 0,2 1,1 0,2 0,2 0,2 0,3 0,2 -1,3 0,3z" pathLength="1" style="--d:1.56s"/><path class="ink thin" d="M40.6,-19.3l2.2,0.1 2.2,0 2.2,-0.1 2,0 2,-0.1 1.8,-0.1M41.1,-12.3l2.2,0 2.2,-0.2 2.1,-0.1 1.9,-0.3" pathLength="1" style="--d:1.58s"/><g transform="rotate(-10 46 -38)"><path class="paint knock" d="M32,-44l1,-2 0,-2 2,-1 1,-1 2,-1 2,0 2,0 3,0 2,0 3,0 2,0 3,0 2,1 1,1 2,1 0,2 0,2 0,3 0,2 0,2 -1,2 0,2 -1,2 -1,1 -1,1 -2,1 -3,0 -2,0 -2,-1 -2,0 -2,0 -3,-1 -2,0 -2,-1 -2,-1 -1,-1 -1,-2 0,-2z"/><path class="paint c-robot" d="M32,-44l1,-2 0,-2 2,-1 1,-1 2,-1 2,0 2,0 3,0 2,0 3,0 2,0 3,0 2,1 1,1 2,1 0,2 0,2 0,3 0,2 0,2 -1,2 0,2 -1,2 -1,1 -1,1 -2,1 -3,0 -2,0 -2,-1 -2,0 -2,0 -3,-1 -2,0 -2,-1 -2,-1 -1,-1 -1,-2 0,-2z" transform="translate(3.2 2.6)"/><path class="ink" d="M32,-44l1,-2 0,-2 2,-1 1,-1 2,-1 2,0 2,0 3,0 2,0 3,0 2,0 3,0 2,1 1,1 2,1 0,2 0,2 0,3 0,2 0,2 -1,2 0,2 -1,2 -1,1 -1,1 -2,1 -3,0 -2,0 -2,-1 -2,0 -2,0 -3,-1 -2,0 -2,-1 -2,-1 -1,-1 -1,-2 0,-2z" pathLength="1" style="--d:1.59s"/><path class="ink thin" d="M45.4,-50.7l0.2,-2.6 0.3,-2.5 0.4,-2.3 0.5,-2.1 0.5,-1.9 0.7,-1.8 0.6,-1.5 0.8,-1.4 0.8,-1.4" pathLength="1" style="--d:1.61s"/><path class="paint c-leaf" d="M50.2,-68.2l0.8,-1.7 1.1,-1.5 1.4,-1.3 1.6,-1.1 1.9,-0.9 2,-0.8 2.2,-0.6 2.2,-0.4 2.3,-0.2 2.1,0.2 -0.7,2.3 -1,2.1 -1.3,1.8 -1.5,1.5 -1.8,1.1 -2,0.6 -2.2,0.3 -2.3,0 -2.4,-0.5 -2.4,-0.9z" transform="translate(3.2 2.6)"/><path class="ink" d="M50.2,-68.2l0.8,-1.7 1.1,-1.5 1.4,-1.3 1.6,-1.1 1.9,-0.9 2,-0.8 2.2,-0.6 2.2,-0.4 2.3,-0.2 2.1,0.2 -0.7,2.3 -1,2.1 -1.3,1.8 -1.5,1.5 -1.8,1.1 -2,0.6 -2.2,0.3 -2.3,0 -2.4,-0.5 -2.4,-0.9z" pathLength="1" style="--d:1.63s"/><path class="paint c-bolt" d="M63.6,-40.3l-0.6,2 -1,1.7 -1.1,0.6 -1.1,-0.3 -0.7,-1.2 -0.3,-1.7 0.4,-1.7 0.9,-1.3 1.4,-0.7 1.3,0 0.7,1 0.1,1.6z"/></g><path class="paint knock" d="M-14,0l-1,-3 -1,-4 0,-4 0,-4 1,-4 0,-4 1,-3 1,-3 0,-2 1,-1 2,-2 1,-1 2,-1 1,-1 2,0 2,-1 1,0 3,0 2,1 2,0 2,1 3,1 1,2 2,2 1,2 1,3 0,3 0,3 0,3 -1,3 0,3 -1,3 -1,4 -1,3z"/><path class="paint c-shirt" d="M-14,0l-1,-3 -1,-4 0,-4 0,-4 1,-4 0,-4 1,-3 1,-3 0,-2 1,-1 2,-2 1,-1 2,-1 1,-1 2,0 2,-1 1,0 3,0 2,1 2,0 2,1 3,1 1,2 2,2 1,2 1,3 0,3 0,3 0,3 -1,3 0,3 -1,3 -1,4 -1,3z" transform="translate(3.2 2.6)"/><path class="ink" d="M-14,0l-1,-3 -1,-4 0,-4 0,-4 1,-4 0,-4 1,-3 1,-3 0,-2 1,-1 2,-2 1,-1 2,-1 1,-1 2,0 2,-1 1,0 3,0 2,1 2,0 2,1 3,1 1,2 2,2 1,2 1,3 0,3 0,3 0,3 -1,3 0,3 -1,3 -1,4 -1,3z" pathLength="1" style="--d:1.64s"/><path class="paint c-skin" d="M-5.4,-37.7l0.2,-2 0.2,-2.2 0.2,-2.2 1.8,-0.2 1.8,-0.2 1.9,-0.1 2.1,0 0.5,2.3 0.6,2.4 0.7,2.3z"/><path class="ink" d="M-5.4,-37.7l0.2,-2 0.2,-2.2 0.2,-2.2 1.8,-0.2 1.8,-0.2 1.9,-0.1 2.1,0 0.5,2.3 0.6,2.4 0.7,2.3z" pathLength="1" style="--d:1.66s"/><path class="paint c-hair" d="M12,-51l0,1 -1,2 -1,2 -1,1 -1,2 -1,1 -2,2 -1,1 -2,0 -2,0 -2,0 -1,0 -2,-1 -1,0 -2,-1 -1,-2 -1,-1 -1,-2 -1,-2 0,-2 0,-2 0,-2 1,-2 1,-2 2,-2 1,-2 2,-1 2,-1 1,0 2,0 2,1 1,0 2,1 2,2 1,1 1,2 1,2 1,2 1,2z"/><path class="ink" d="M12,-51l0,1 -1,2 -1,2 -1,1 -1,2 -1,1 -2,2 -1,1 -2,0 -2,0 -2,0 -1,0 -2,-1 -1,0 -2,-1 -1,-2 -1,-1 -1,-2 -1,-2 0,-2 0,-2 0,-2 1,-2 1,-2 2,-2 1,-2 2,-1 2,-1 1,0 2,0 2,1 1,0 2,1 2,2 1,1 1,2 1,2 1,2 1,2z" pathLength="1" style="--d:1.67s"/><path class="paint arm-ink" d="M11.2,-28.6l3,-2.8 3,-2.4 2.9,-1.8 2.8,-1.2 2.7,-0.4 2.6,0.3 2.5,1.2 2.7,1.9 3,2.6 3,3.3"/><path class="paint c-arm" d="M11.2,-28.6l3,-2.8 3,-2.4 2.9,-1.8 2.8,-1.2 2.7,-0.4 2.6,0.3 2.5,1.2 2.7,1.9 3,2.6 3,3.3"/><path class="paint c-skin" d="M45.7,-26.3l-0.1,1.4 -0.9,1.1 -1.4,0.5 -1.9,0.3 -1.6,-0.1 -1.8,-0.9 -1.2,-1.3 -0.7,-1.6 0.1,-1.5 0.9,-1.3 1.6,-0.7 2.3,0.3 2.3,0.8 1.6,1.4 0.8,1.6z"/><path class="ink" d="M45.7,-26.3l-0.1,1.4 -0.9,1.1 -1.4,0.5 -1.9,0.3 -1.6,-0.1 -1.8,-0.9 -1.2,-1.3 -0.7,-1.6 0.1,-1.5 0.9,-1.3 1.6,-0.7 2.3,0.3 2.3,0.8 1.6,1.4 0.8,1.6z" pathLength="1" style="--d:1.69s"/></g></g></g>
+</svg>
+<!-- ✏️ EDIT (optional): the words on the map. In edit mode, click a label instead. -->
+<svg class="map map-labels" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+<g class="labels">
+<a class="map-label" href="#law" tabindex="-1" data-key="law"><text x="322" y="300" text-anchor="start"><tspan x="322" dy="0">Law and AI</tspan></text><path class="arrow" d="M316,293 C300,296 286,296 270,291 M278,285 L269,291 L278,297"/></a>
+<a class="map-label" href="#cooperative" tabindex="-1" data-key="cooperative"><text x="330" y="198" text-anchor="start"><tspan x="330" dy="0">Cooperative AI,</tspan><tspan x="330" dy="25">multi-agent safety &</tspan><tspan x="330" dy="25">safe Pareto improvements</tspan></text><path class="arrow" d="M512,186 C569.2,179.1 629.2,205.1 663.2,227.1 M652.2,225.1 L664.2,228.1 L658.2,217.1"/></a>
+<a class="map-label" href="#sovereignty" tabindex="-1" data-key="sovereignty"><text x="618" y="298" text-anchor="start"><tspan x="618" dy="0">African tech</tspan><tspan x="618" dy="25">sovereignty</tspan></text><path class="arrow" d="M700,328 C716,344 728,362 732,382 M725,375 L733,384 L737,373"/></a>
+<a class="map-label" href="#societal" tabindex="-1" data-key="societal"><text x="706" y="552" text-anchor="start"><tspan x="706" dy="0">Societal impacts</tspan><tspan x="706" dy="25">of AI</tspan></text><path class="arrow" d="M700,560 C665.2,576 647.2,572 625.2,566 M635.2,561 L625.2,566 L633.2,574"/></a>
+<a class="map-label" href="#minds" tabindex="-1" data-key="minds"><text x="958" y="552" text-anchor="start"><tspan x="958" dy="0">Digital minds</tspan></text><path class="arrow" d="M1036,530 C1046,510 1056,484 1060,458 M1052,466 L1060,456 L1065,468"/></a>
+<a class="map-label" href="#field-building" tabindex="-1" data-key="field-building"><text x="96" y="604" text-anchor="start"><tspan x="96" dy="0">Field building</tspan></text><path class="arrow" d="M206,586 C208,576 208,566 204,556 M199,563 L204,554 L210,562"/></a>
+</g>
+</svg>
+    </div>
+  </div>
+</section>
+
+<div class="page">
+
+<!-- =====================================================================
+     ✏️ EDIT: ABOUT (your bio and photo)
+     ===================================================================== -->
+<section class="section intro" id="about" aria-labelledby="about-h">
+  <h2 id="about-h">About</h2>
+  <span class="note greeting">Hi there, I am Panashe.</span>
+  <figure class="portrait">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wgARCAFoASADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAAAgABAwQFBgcI/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAEDAgQF/9oADAMBAAIQAxAAAAH0maGW8vGcYwoBmThg4jkBqURxE0kciFPDItggRIgNJZo5FBOwkCAYxRMmp2SEDjFVMw8UggCcQ7sQmQjkDjxmCynEcTOxllA9j260hIdYlneAiWOSMYUyMxqgTqBAmqiQSwIyQjAQrIDukTE8oOzI45fnbr1LH8khdeuWvFJOb9F3PmfvLz6/JSu9cmhIIkSBDNEqRMIZQI2MUBOxTkjKVo0wTsrGQERpkLgsLkedJREue2Ga5n1RsTpaQ6DEft3hpaZ/SpcT23eUhAYIGZEiVCJsRhIKRoxKRCgEnCYwI3IAfPex8H57gnG3h6ZNGC95vXNbHR56qndPrnMr7tWdYNTYgTC9p81r+vxe/KGffyxzRTUzSxAMjSIJABExKKSlB3SO7KhjmxJfMeais5eh7EVnzeufRo6uG9/UoaPXNqw8umdapZqc95dLSocaVWJu89j2L5x919/zNZRv3nKEUwYxpEJxjAmKEgR802eShdisHyn1X56nVC5RuY+me4Oj4/WOoFnLW3oZFnqa8+TY74vQ5zTosvYrTrGhu1upS67mm9nz/dpIi380sMrDJ2QYzBRYmTPY1KAuEGdeexvmT6X+ZHVm1Xgy31o6evjrA29nJJbxrmPo6e5V1Md+Zy9jK1zqXI9Xbz0DlqTvXwtANcPepAsejyMxR0bp0AJAGCWApJOojIoiJySL5u+kvE3XNztseP287X6qrLy3qOFs98ZEWjQ8/p09Glf83sqV7E23n5jD9Lh9Pl4TY2pMtq11rvefq0scvv8AnODGGQOJniRQSRrXTqBJHAI8Q5/zjAhy9Opp5Oj5/Rt28uz4/ZMM23Zzety/Oa8eq7vm97jTrMzz3sqsyb+Hn2MJFGcRw+vydF33gnfb4+lkxerwPJFIKInIobEBWNihJ3Bwd7N568n4bvOG8n0T0MfQ0w1NjE2PH7d6bPzU5/RiHXi3oBd64fPOTLfr6+Zdlo1bdKdRwmtvPpbmPv8AOnctaD6XxoimZYpUUQV7laymYyc1nF6FiE8T4b3HxrD1ZWri6Xeexo49zyezRz7XPpZ0Mzq9T2tpTbnqmvz7jQ2OG6/iHXGHLYwjn1xm9T4P1fXETjl9XidMMSS1zCrWK1VThflIKGnTIi5vpWPL/LPpn5pndu/kaHm9WxRJs9cxaNvqULHX6brgb2pTz0unXGFA0fXL+ncH7h6/BUtxya4qWEwxIQDEgqt2olExGWWMxgGISNjo1a+aeq88ndnRwbXPXTWeXvY7bZ5o8adZqcnKu8GPY57u06ubZp40c23n9n7tFv5apM9NLEYSFx3FySrZrJTEglkZSREyeovL/RvKW/Cc96V5vI0kDM7dnNmrWLMLm7LY0k62pMgZdGtSPrmbVqWedfXPRvDOj069UUR3yPJHIgSwyKkkSQWYjJcA5SzU7hG8dFeU8+1qN9WvzVzcdeLt1/IzzC7s5RMwZBIrST25aelLaz2LRXLc6dJ02F0PpnpfRcn1E8pnGrmkzLKcJpKKEzHjKV6WDyc21ufsZnXoy43ppo38Oc6jzftrceQrXzufPDJJLCme3z2FifRz3qbFmthvWxOl3/VhUtrN3vq/ScH3TySAYsVDOCiykHKGY57hsuJ6rR89buuhi3XKx2XMY9t0wdO3zUbnL9LZz25KzsN5uY7M83VpxTj0hkVfWdDnVm0obRRWXuz4dTn1cvLd55e3bK1WUbuyJ2Y8NuRVXuoZ/VYBYs5O7ZmQ186XVtYWskoO61en5HsuPTlZ8ep3hg37Fizhte1U54uzS3Lpsy0nbw68dG532tVgYzZyNuo9nVdV5RY5z9fbjuveXxijoQvbUsVLhyHVhgp1mXMlarLMvPLrXTjOwrz8+g5rVbvB82/ijjd1jn4OlwV2a8ck3WxFLcmpu9glGckJsqEZ68lnTxnBinBIql5JTsRAsk0doRiwxQwg2KNzn06tGsXWAS2LKROGQtehu14vaXL9XxuoILWuJx2a5VsQ2EhY4w4bESRO7gOmkFniJXaaXLs3KoctKyiF4ytdz709N0Yn688sEVNVv0rSxVoac5LX5nsvLuM1W/7MaJg8V5YpLHhsxkjExUUrELpSOkiKdJSBJXiSkqAkDeSnpmhS788ciSlIlJYzUitYSz32jS0xiiSvMUqQUKROKQDJH//EAC4QAAICAgEDAwQCAgIDAQAAAAECAAMEERIFITEQE0EGFCAiMDIVQiM1FiQzNP/aAAgBAQABBQLfpv8AjP8Af1X8RPP4b1/CB6n8tfh/uIPQefUDf5fB/gE3N/mfw+e0HoPM2Jvc1xE+Jqce01/L86mtQ6nb1aD0HoJ8em/wG53hM7/wEwfj4B3NQjv6H0uycegP9QdMrb/yTp+qvqLpTmjKxspINwD8NQw/w8Zxh8eneefw+Jm9QxcJMrrWXlPslmJm5/qrOlnT/qfIoOLl4+bj/gIfPr8fiPQn+DsB1Lr3tszu1rHR4mD+h/VuI0AIRMXKyMPI6V1jG6mnGa1NGfsBtpoz41Pn+Y9h1brT5TfA3riZxbftjXtcWFfcqBGrnA7U202dF68uau4s3CYD+pM3/B8egEP4fUfUeCHyqkxaViooCqkXUAgUQokZY1aGNjjTU2Ut0Pqf+TwRqahg8a/nMzcxMLCsssusVYvlIkRdxKp7cFZM9ncaqNWRNT4rezp2di5FGXinzAe3y3prt/G3nr2Z911EDQAniIJWJWvZBOPdVAVtAuvZ4R28E/sv03n/AGnVNEE6nbXx/YnQm/5Op5X2nTB3b4EHlfNY7qJVvfif6Mw33lkbyYJkgrZ0rO+/6R86mjsT5mofxJ/Az6qyd5C/2ixViJKliaDVEQElhpCfb2dEOscdyPTIXdf0hfxvg8duI7H03D+IG/wM6xk/c9dr8+ZWm4oEQCbAnIbWwSu39nsBJtEF6T3amjqsaERxyp6Hf7P1PuA+nz+Xz6bgbZnzed5qdgnY/danv37+8yIuZdv7o8asrlKTuPyEusIJtKwWZBi/ez3LlC5SvF0YgNXUf9hNTeoPxP4j+0Mb/wDSOwPJitUqtqWV34ziz7ew/qDUBvFdQ9zoxuUbsKrKszGrP31dge9N2UK8xy4F6f8Auf7eB6KJx/AzfrqfPpmVGnrOuwGhdz41G64+3Zj5X099qvTcnHWu9RqU+jSvGpN3Use+zqmJgm3IHvq9NVlcVe9NXu9Snxym521uHvD29D+PzG8fUtXH6hX+yBdWVCxBjukrSxSTcyWEQfs1aGcW0exA7Cp1BquhqaBiJsGYP/aT4g/t/t6H0Pr5mpr0y+vUpd1fMtzepr5riTQhaKC7LX7lwxq6xV7f3DjF5viVXB8Z6oQ9bB9zjuMsPY8mWL1vOx5iZtWfjzzB6f66Oo01NTXr1V2r6Tk1XJatrPYsrivqBmaLVyIRMXEqvtGN/nMwNi563V5PU0ooX6izPcx+oXZGNbStlbVcZ3Q8tx4f639OtyrPpX3Kmiz5PgeN/rG/Lq430rKAKZK+31BTEaIdyoSnW88q2Fj42bjs1CXGrpWOprxcat7a+UXHyDdTbtbAI0btDD/R6ilXQxrqXeD+3pua3Gh/LOqa7p1ViN1Xqb76rWYpiGI0W3ittpdrMjUCu8qrKR8bZNdqBMjujahfYaNNyrT5bX8k+m6zzg89poTiIBqOIR2/HxOq1f47ruao9yo9lMSK2obJbZ35hTVkVo33ClzlgFsuti1lbvRfxs32LQnuTKFNmXrgvRqPt+kQDv8AO5ucoxhgmvx+osB8nFylVsJOxRohgMTXHI982Y9AaYmPWZ9uFUY/KX4tAbJxGC0/cC/f6fJM5TD/APlhYhzs34g2PXUEI7GD8t98roPSsx+q9B6Zg9HUxDAZU/CXk2OTasXPuridVy2gzeoxcjOaKbDKF4NYw3uE99G26j6ZwKpTTTj1HxN/rx7aE13EI7H17+p9b61tpyE9jPRohg8nzoSsDeNXLFGrR37bDGGbhM6DU2R9Seh8D0B/X0EPgzXp5nj0PqfPWP8Av1aVtFaDvOPavzTayRnbTHkOAjACFoWmRfyn0rhtR0ph6H+A+fQeD+GTk14tfVPqDMuttcvYDFs1De4K5Bht2Eu1PudlsoCfdgFsoiWZYNRymBsv5zpa0N1hdFdT/Y7ned/XtB5MP9vRYYJ8sQFvyHyL+s8vu5uA9u0Swgb5zc5hLPdnuALz5XGwBefcnbVrwq6f1G3CXGyqcrH+T5g/Jv7egnb1y+2Aj8q83p6ZlLo9Vvpudg3uaJcbL6f3J7s9479wlu8pr0WtWm6u/mmHmtiX1uHq9T5B/WCdtMPX54zx6dfy9rju9d3Ib6t0xr2/Hfpubm9la2Mrr1FEo+397X2OdQ3Kvo9xs6f6fBg9B6HxyEBg7tvsxlubRji+37nKtr98UX+4Q5nWsNUs/EKYKzFqEVAIEgErr4jIsP8Alclq8vDoR0q6KCMYGE99+gM3Afw0IAhmVkUYiX9Tuulzap9zU9/Rsb35RkKyGtbKeq4YxcnXpqAQCAQLAsVCZTjhFvt7DFe67DxBULbAD0axW6f6Gamu+uwEBO++hGIAyOrcY3N27bzW0p1GRgaOK2PX7TYmTzXKxasunLwrMS3UCwLAIqmJU7SvGYlUSmWOXiYRcV0okd/aGnvHTLfa6hvv8agh9PjwdzJy6cRMrPvy2+Yx0L63syPszoUdzhfvSWrZqmxsj7nja4x8mlumhXGAgiYNcTEqAFCTiij/AJGn21xiYzJYiCZGQKolN2XaOPu8iGp6zUSLAw5ic1n6mfO4ZuAmy21uM94rYuR+3uHYsPL3Tr3jPdBilWRhW63t7SU8bq9c2ZNKATFTt2WNaqT7tY2UxX7pWssutqTHwzY1tqVV0IwrPd7OzVZNlMp6ywlOfgXzgNcZxnEzUZilrAWJkVMsD/vSS05AjkVLWQWkz3TxXLXbsLZ0m0o1wXi1qy68NEy7KST762/cC+jp2TYn+JyDKMR8PLQKWa1BErN91liqKhtLYIx16VX3UNT1qxTTk05AGwD3hUkV2cH8jLxuIwrAbL8NnWxcqsmwxWblXTY0fExmYDGpDWFepMvuYYpJKY9gFqsJVxrmQilq7iJS3uB/+wPJakxizXZFdSU12XntG/8AoR6ifK2ENidXYRWV0bxYnNaWDowBmQjYmXj5VT1NZ2equ+CmtI96LLbPfNeN+2VVUJT/AEVBUq6M4rwyHWsKVaWYVDyutaya7E6hV4vypRjfsQuzoTl21Pg+R4niA9sTMtxnmgSw4WLxaXUpfXT05ktApRWvgovtFWLQhWslhjVTqVa/aV94AGn9WufaFG3XV3StZYQK8i0NksCcejH9mLvQWOeZ1pfE4zsp0YdQiDx4nblPM71QNzm57AgNaIOTDQ4OdT3CB1B+eLX5RuMe3a9i616KrxBKiZeUI1V1VlLfsBsb4x7dFUWsMFE2dk9t/roCHtNdvjzPE/sfA0IaCLFu2R+wJnyf677De8oD7VO1fuMYtJZggD9hLLQF/wCXMarCqqfqSlsau02VMFpDv+9VfEE7YkcdtvYnff7bPeNrQE7QcjPA7xXgEelLYedURlI5wH213uAiZWvtKvA0INa2oDnc4nItAWuo6JuZGxun/wDa+01pbgsIb237k+B3gEO1P+3bj4mmDdxPDABS88zuIJ/aGhdf0A4sh88RMrbYSzRK7WbO9PY9dfGnlwre7cvSxcSm72cm3jVK9k7/AFI7t2h7GrjybiYNrAAJ35GagE3qcRO0J3O3HwF0ZvizJU5dbAA9glzVmlNcv0WFizdiy2foDcUWnlN1ot3KzGx60fGxffStRseIBtyDDx3X5fxuKSAd77muf//EACgRAAICAQMDBAMAAwAAAAAAAAABAhEDEBIxICEwEyIyQQQUUUJQYf/aAAgBAwEBPwH/AFVG02jj5lE2m0RQ4j8cVZCBHGjajahQRLEmZMXjgiC1sjpOJkjT8KMZHsWNG0So3Ddmbwoi6O7K/wCkG9JI2pvkSaM3hiY42SxOz9chDaKJlx7j9fuRx0zOu3gSvsOCj9GI7DaQ80YcnqRq7IZoz4IyUhmUz4Eo3XXDtJGd3ExsicsdcCaRFo44GT5o/KdQfgUt0CJCROVEI7uT0ojjtIyLE7mflZP8fBwQZBjVii/pnu/oo/020SZkyO+3i20RlRHMeqb/ALPUHlRPJfHiw/0yKnrZuNxZGNK2TxqXdeBKyMaQ1ZKNPWhRIYzJ7URMnyfVDE3yVXGsluRto2iiRxiVE47mUZo1LphjUS9FoieNLuVE3G8uxprScFJdyWBrgaa51vRDYnpi90HHTubaMa9yZl+Wj1lhi+CUHHnXv0YOStY8mVd+rnnrw/fTld0/FWuHh9H2Tfbx1pi+LFo9Mnx6/wD/xAAmEQACAgEDBAICAwAAAAAAAAAAAQIRAxIhMBAgMUEEURMiFDJQ/9oACAECAQE/Af8AMsvncjV0sUuRslMc2Wy2NsjNkMnHNkn0XR9IMg9uKZJ9FI1GrojFwLpJG0S19E4oREtr0al7Mb4EMyzojlVD+RtROWobMeTSfn2olkTMMt+BuhNvcyooUWxYZS8GiS2onilHySg0JGMxZN6vvl4MX9jIiSE6P2e5UmNNHnpHwfH3kuCtMiSJRIRsdIs8kl0a/UwQ98LJoWxr+zUvocy7IojFVvxuI8Z+NiQ4ixkYVzUUaSi964L4LHMxu5cFFdtljmOVmGFd9d046vBpyeBYJe2fxl9kcMY83vtXLLsYuV9qlvXK+x+D4/l8r630UVff/8QAPhAAAQMCAwQGCAYBAgcAAAAAAQACEQMhEjFBBBAiURMgMmFxgSMwQEJSkaGxFDNicsHR4WPxBRU0U3CS8P/aAAgBAQAGPwL/AMPA1q9On+4rCKj3/tajar8kA6s5n7mrHs1enVH6T181n6rP1npn8WjBmV6N3QMjstP8oGocbvGVawUKSsTHEHuKFPbgdop/EO2P7QrbLUD2fbx9qkp1HYeJwzqaeSNR5xOdm4qGnuUboV8t0rp9ndgePqsIPR7RrSP8bs12lnuyWXsN07Z9nJbQmLHtqERoraboN/BCZuUWuKABEd26E2rTc5j25Obohs21kN2nQ6P/AM+z/gaOZ7Z/jdy3ZLsrshdkLsqcMLJdlcBQc2Q4GQ4L0kDaKdnj+fZX13nLIcynVKnbcZd62Cmbds2bc28xqEzaKLppvEhW3X9hNFrvR0reJ64tuv1iF/y+ofRVzwz7rv8APUn19at72GG+Kk3PqZBXf1g9lnZgqltM8cQ/92u+Coj11DZAeyMbh9uvfdCupR6oK2zY3GxAqM/n+N9/X7S+bB+AeVuvnvlXK7SsVmN5C2cvdha89H8/8x7FXJ1qO++6VYKWscVakR3wuMoOC5HfmpGqhoU42qXC/chO6i74KrT9fYqn7z990BcRUCT4L0j6TB/qPhHoXU3/ALX/ANrC5pB5G24SJCMbv4XpK1Jg5m6HQ1tnqdwJCiqzATzUtWF6p8i5v33R7BtVIjKs77zuyXJdC3gapwtc9pye3EPkVtNH/iOx0sBiAaN3G90RQl+zaNqe6e7qTErpdsHS8maL8TslJ8NAwFg7EL0zTSa0ZnhRouDq1LvUS6OTtFK2Qf6rfv7EHR22DddYcK4GiF2BKio+262+CocLKaNX5riI+SuQ5XG7Zp/7g9hNPZ2iqRrNlSfUDRhbYN6trK10W6BaJgPZ1RiwXo3fNXyV7dXG0w4XBQNWrRe3k8Quno+BHLq5+prOYYcRhHnZYnNI5Qm4jkI61TaH5MaXIupDE7PxUVaY8MkKjSsbpPcF6LZ/KV6engdyTX+9HEN0jeUHmoJjVVaLz7v260eod+9v3VFjdU4Zdaps599pCjgLecqdpp03lY6T3M/TMhS5nSH9SBpFjHD9KBqvYGz7uqvmrdSPJNqxlmqgH6v49dWYwS7DI8QmnNgbIVY/q6sqSsLVd0IDGbr81y4HYvFYHZqerTYTAmfknMVWqcgI+f8At1svUva0ejIxCNAf/iulBPFn180C66EBZKxCh3zRpPPgeq6HYcLY8UW/VNntVOM+vbtVBuKrSEFvxNQLdOqZXDTMKat+5QGsCIWiu1pU0XDwKGOnlr1S/wCIoM9xt6h7t8+udUq7OWvdmaTsMqo7Z6R6XPHUeSeqXLhEr8tyinQqHwX/AElRcVLD4riKxdRlBk4qjsNkMVba6g+FzxH0C6KjTDGch7EWuaD3FVqI9x0dbJYpUgq461OrgxMpXPsu1x8fXClp8lfqw02Rr1RD6rsXlCt7Fifno3mjTD/wrOTcz5ouJklX3QgAsOqF1FlEIQZlADPvWLVSYUKh+JIFDFLy7JS0iNIV/U29RJ0T6zjnkOQXF5HfZBRopOqzsFzXNAwhfRFpXNcKa3VzkGjipfAdPBdLSd4jl7DXM+4U0DNRMPHZcjSqNwubYjqWUgqBkrOkbhJMIFYpuhCk5qi52WJNLUajMjAcOabUbk4T7B+AY6Ae2R9l0FTNuXeEDMko7TQvUGbefq+W6AnU67Q4Rqm0rmi67Dy7k0Rc5roz7h9XPU9JUE/CM0+sc3ulQ12F7ey5YDZ4s6UV+KpDPt/36nLfJTS05QoyqAgtV9VVqRYugLXdn14VwF2QpqOvowZlHC7o2cgnO+61Upu0Uvz2dr9TUCNVBaCEHUvy36cvUxCxVFDclTcxmcy5Xu/mRYK04V0PvMv4z6nLdJNkWbLBPxoueS4nUqCmslclKxLp6AJZq3ksEahYarT4hYTxNNw4a9XJZbu/djqmGoNZZvNYU2OyXYUwaEYPVTUMuOTRmVB4KfwBRusCrMMeCkBDGFipuvy5q7T3ptVv5Tj/AOpQETOaNM/XNEHfksvorBQ1hUxHihiIWJ3lOiLplCpWltPkNUABAbopFisNZnR9+ikQR3LKN2fVxPJLu/cVnu/tEgIYgoKs28o03XDhC4jDmfUJr+evy/tQ+SWhYmkRu7SuoGGOa4ioZCwdKXPInA1Xab5XXSbQMRPuKViqZm53NC9G9zVFekH94sVw1TTPJ9lIMjms92W4O01RWLTdA0uuIImVMrNTKhy5lO2eZg2Hmm1Acs1LbrUnk1Q5rg08wuCqZ/lGmXmZU9JT83L0m0UWD9N00Oq9KCJCaXAOwmbpx56kIVHTgGShF6bund6GqWjuUbRTDhzbmpo1A7u1U7jIXRO8vBRhlY6eSgodGb6d6uyfqriFzXwjvXpHyf02UU2/NU63lZPaDfCodUxH4WqzRTHeuJ9Rw/SFip0zMZvRfFzqon6qDVKYAcm3XohPJYqsn9KgLHUMN5c1CNrLMLMK+66sYI1CFPart+Mfyg5jg4HUbpGfNXs77LJNqe65NOK6lsHkgXMi+aimGjvVzB5r0YJXpX+SZ0V7wo1XBTa1p+qh9z4I8vogxov3KCxvgsdNsHkVw05/a1U6jowlsWROiwi5QqV+I8lY/JZqbgm6vmrq27+98sNtWnI7+lHn3r7I0qoXpKnBovsoEk9y4uAHRTgL3d5RyYFJbPeU0xk4JtsrKNckIEI3B7lLjie7ONEMSk6XhQqNxYmyeG5lYnXeuHdgYcsynCJndcq3yV99t0BXKKJjhUyEH4hZeklYabInVc0LeSsVn55oSZ4hdSuE+SghcIk96OpOqv8AZYn/AO6wMGJx0CpvrcM5KyxTfVFYWHiKvK7UoWVhHcpFt11Oayt3bp0WK3mrkHdNAjvbNij8Q0WImfspuh4QhfJeAzRmUTGRBhF3ddARAXFpuiYbFkTNhyUM4WauQcBL/iKbUi7XJrWdrsg/RdCw8NOxPM6rDTuVxXdqVhtzlXvyVhuwdpX35rJWhAOie5Tku9feUJ4DoQg2oJAPaCAb4qMlc2XZF1wEFy17Q+68lqZWeJdmRyRxNjw0RvwSuHs5Iudknsm0LZpvDwfksVSpw695WCmxCWAaLOyhC9lbdKuPNajdlZYFZRCmDPitfBdnzU4R5Iua5tMxouP5hdr5LQKVw5Yh91I8FINpUfJdrTce5Yp8ioZfwT3uIGVvNU649xwcgWGWG7O8LpHRPJObqp7kGz4dytZWF0ES1Zkq+i7vFX3TKutBuzUrKVkuCQ7mFmHBCWFNaw3xCynRSforu/yrk+CgMk84UDJceIxzXZHdZVcN+GUGubONHZao4abvRvJ0VpUQrwVMieSs0+MKy5L+FchX15K6sc9Cv//EACcQAQACAgIBBAIDAQEBAAAAAAEAESExQVFhEHGBkaGxwdHw4fEg/9oACAEBAAE/ISz6MLmXmXFlmCGopBg+oS8Qm0GXLg0Te5lQadS5eJyVG1tlTB6Po6jqZPR9V5iyvUbgZ1PiZt6Kej9FzMZegYjEmYtzl6M59W4ylSkRFv0wMx6GNzIhuamoJF0iIJMsYJUZcRACS85ZYwXLLUw/nEahaVuNTn15jLxqHtGYqIVEuc4ikVque6V6KGVBAogqGkqAR7TmZrmNpzOaFSNBjMPS5cXMsnBMCMYwMwq2BeCAuVFNRmosQZayNUi/EsBDlK+2Zy6vvLCD3YnnJZsz1AiAeYYOJiFdwC1pBxlLXUCo/M49K9Kz6DcweUEZjfUMtQtawRWtS8xZ0i5mFtxcyBW4aci+WLM7LVWHvEcIDcGzsiPMSBAfTU/cOyNgH8Hy+41Vbrb6HDOZfmB1KcYxBmqzLE3mbIEfZuUOokr109OKcyo6g1GqjuOoqEAMqwQQqlLH8veIpVe4zmE5PfUoo1QfcC4/AzjLwXWpc3Hmm2WrHiKOOHzCT8DwOk5JgEC/3OxPcwWkWR1DMg0WdQou0OyuFNxTQlxcS2/RcVCaIrfoXHXo6jdxCqAMqwbATcg79oNch4ipL5QqwvsO4GK5liNXhzNXWOjNE4j5z/2diByuK1WtxPmerik3tVMEg+NQ+P4ehNscAXziYdyteeJYiEYodsDc4j6cyow0Mov0OsrMdSolk1iXBxCa1XxFd08xm1+IUMpjYThMHiDdH0QaiM+ILAL2g1kfU2kLrl6YhnSEfEDpC3fR94KRFYbgqDAeZQNTZdVGcR1GXOfRcTmEHEcsr0lGxzfRGa2o5WUZgglwZupSviBRiKMZgGmXs49u5jaMT+pm16mGlc2rdd3+yAvvitePcm4+/rF2CsdTD2gKzkZVkTPo+jcbuA1A4msRgWhKR1+WOV/j79MzVUpHmYvTs0iWC3iaLPqKaV5gwK+IUGrvMJi4kd5lq/PaxX/Sveo9oeJnoCDhrMO3UN1wVg3K1L9GWelPoYJbUMyoZrVnvcEWUU2v7mvQ7oceoUa2cQzCkqNRbXK27jauP0jV3fuQWsGkNz85bYTV4eJZYHXNUx/aVbzL8Mss4ixT0AueEwPSoNOZvMyYgZlZhNJqBTzHH8omlTmDid0vqyphi4aWi3MOYV5e5Y1FcqcxrGXB+IluT0qDM3OoDcqEBbyY/D8IkG0ZFlRqFLZ+Y3UtVTX0qJRLR5mwygwQ3fppibzKyXj/AJP3DtDKVLdR+Jh+Jx2ZbRlSnfdyvjMof1L+qKdX2lShvmLtgRcTNnEOmuiGCtJcGGCDTES73MbjnKKPFS6KIsUlZjPKYjuNXcOipc4ZiZgrfv6GlrRKY2MPpymE9yYEE5tkOdkxxYI4xyZiHKCWN/hM87uxGDd5C1lxRHayZRb88SnjSQO7J+Cxq1Er3U0I6szKYdRB4iVAx6mKxBNQph6ZWGGCgW0Fr3egddama6PabFDpOSqzwfYZoxOj/pK8CZVDhIr+IjcaGJzL9oDTf7TQybX8AmEO8gPhJS6UECPzBVgeyGQLOZfjvTeyVnC6dMpY2/EAbbnyI4KYTMzZ7Jc36K7ejhuVirZfTR+EmVI8AbrA/MN3eCDSxEBvgR+YqgQLZqfHYWVGD2yZ82BULiYrWY6ywaJcllhqveLzxGtqNN7HSPJCoh1K7/bmB8No5VDSx0MxgUnQ2bzQf4gZg+UXrE2yEHhzM/Mu+ggNI+8WZWZUCam4r0aOwVnlMQDSadFoxep+fyFHY3UGLzutwJVQNQhqjuS/5GG5CKYgrSr8yw0vgwL+AqYMsSlYSmRQJcDMSiQ9pSt58TpqUnBF5ib8TM3mLl+JmK16HEfCtLp8e4A/UudznivcIhxASVNKKZZdSqDJS+Zabg9hfSXy66iVJ8YRgPBfUSBaTkTlJ4INEMxJCcJkY4A92j8k08Lt8/QKUZTMFmYgGJQWii0qbwlgmn0WSAxwr+0p43fSpkaWhYj7lSczjqb+HUfhBMKjadpm8B5KItzycktenGRZjju9kv6g8st3udLLBLGCbjjqJ4ZlLipvDCuFaldEN1+Aay/7EmzUGoo2JlRluSK+kvn0PWp/5rM5zZl0FryS5lExrgu4KFixUO+LJVSbX9NRtwHXHzEFp3AsI0XlXsT3BIKYOK2bq/hiHr8PeOuBSktoy6RtgZcK8zCRbDxPBj6zVI2LbgsKQqaq/eAhxD/4ZoCL7yH6ikT4BbYRcac+lmuEVAvVqWAxNZv2nFP8wMv4ktqs6OZjnTjBhtWuVxVRx6PmR4jjBk2G+y/3UFWkrcYQ7LyowkpFWyZl0Ac5mUMDx6wnPowbDNRqpcpPi6fEZyRZ7j18S+NJhWxkxoiYXUzqL7jYnhcE9BP5Hm3jomka66xNQF2bIVpM9ek4CWu7A7b/AERXKu4tZpNXevwEVuM7Rsy36C7DK2Xt1FiC5j/8OZgJkt/2m/uI8Z3NV1M1TTLaliS8ceUyTf6RM+GQIAaNjjUE24eWUjyZKFSZt/mZ5Itck1Rco47j2jtSXZj8T/JYK92YwCjgJWZQ9G54RVuXW9FJdxK9FmorImZhjt3aGL+Id4CuI+A1NdM15l0FXhfMuhti9h4wrMvoyli8H1xG6/amsGebsIvPoqilqADJ8/iH0TwP4L+YYFm6YICyYDqFresWlN19FeYDwxpuZZefRzGCC602M1yFEyQOY7tLzY5JQ4fUJCgOaImqfErgKYTSjvMWyoyzHhXNgwn8x1iG/QVMeT0HFy4orrWJtCk4jhKgLiZbLiwjBtL/AKJw3ctxOiAhBAul5iu1OPeOjNAzOog9v3CMVlh5dEHLQfCpHOAOMe0pcpTctUzDOYOIPFxq2oGYOK4m+XLjIcsqo7nvLqW9W4Tubh096EPItVti3aY1f3BdjPTc/NM4SZVNjldp1MDVQncVLG8Y4ntnK5JYMFrtCYaBkmaTwe8fJgdVAYsMFTzM+FTkJt7IGWdTRmHlBbqC6Z7kVMRFKkxxGLEMoEeUYahbLugvF0EVaMJ7kvG5f3jYbS/g6gnBDqoBFwLA/UrdcrPmOIS4W6om+bB3KoY0V4j25/8AEujxdTIcNsxuSxRdQYAfdIBDSvJ7obTghuoJdM/MQuG4Gq5g54mKjK1HDfoiywFEe+sSoNpngdZ09J1HEK8D0tGyEvPJNtDwkUFDHBq4KiE7SrgcDkgSyAVmGgHWJW1I4l0FFctTDRKknkZejC3u5liZUqE4uom24ZlA+hdHn0Bzzml+ScxftDG7iWzCXSyjveP5ShXcfiZ7hy9+8uONR6ryef6nNafM59C5foJTi5t3C928ELBwIehHWiZZTU3L2OTLnaVQdd+E5g1Hs5niEu4yZ1maneLQR3FZxA2qPLqYbRe7ia4PL/xLilw/xBHY1GvD4m9k0cEjCjdnBWP4mIAVUNscTj0qV1ERUAZmuHpdZF5aXEg/lAFilGc3r9zwYrrHM0iJO6P+xBFyg6P4qUTSN1AuYegqx1LcbS8/S9ErIBlpv4IvgHuPuxQlbKHlKAtWM1AnfGpQDgwMe15JTJR3/UPV3tL+4fVahz6/maSoZROp1EvdTFqVkrR8IhKXPH2h+EVDj3mkwLf9hiZaHLzBFQ+gVwHg1F5ixqJSV2lHlG71MpiW9D8zaOwAMrxKtscy69iLJS1twAQ9ibYq38QU37JSJtyShzs64mE6zVs+CVtBeB1HJWbNhjcF4zTYjpUs1FrTH6YowprHD2IFd3Lld8E3JVUQAKWyVftLtNOwI1wgx57fgIWkd/T9E5zUxyjhu5keniYYGyGEPRBFwfI4+e4Zo3G1rPvKQvcsJjwGcp5X4YeAAxiOP+KJrqcUOJ43St+D2maUZAdlSvkTjH3VFrpOJtMznKfECYfUCNHMYP6SZgnrEqKAulVTBVvNZlBrA0VEC1OFbgVVb5PHxHho6dxKalEzqE7l1e1M5lpVk/5Et4olhj7zwYVi5hK967biGjDxDNNztbuOTdkATXMBsMuRlNg4I2gMNCEpo2se3UtHUo8MNc3q/iH9RsOGBnaP5RFb7ExCsK1VeSODjPMItRPfEawNNXh47lgnmYuOVxJgGIEoF7CA77IPuvH3PGytb/bmedYf8y80s4Jqk9TxfEy+oWw1F854cRkE8r/ymM6C/tqWCwZBknKrS/FMvxGLm5pRqupmguC4eUrOcRDEKpMZR156SLhi77lugN3yzAMB5V8vUWKBIHSYHFbOSMGzIez+opMFCmzqBarcqxLfF4pYYkqfNGK2xclOj3GxHF1LSoF0VvzL6y4OOSbgMOTy/cBsyM4EPuxY78zqOu9MVDl+al+t5mxbQbmYHmXgFbl4t2TT6nxTL+kvhOdR8RUMt1hOCc3EuBAyWGsUAYNOU4iJtnE4K9j+Epzc/KNUu/U5D4blXYIbxlAYcww0Pav8xCofouLQl+uwKhlS8KrBd/5F/qWx4Bh95mC9qrv6gNHMoDSmYUFl3mY3W3DW488umBeP9n5hzMN4YJQUKN34ljFligMBzKpAoBmADWSUKHwQultjipZtArzLpofeEl9RaSG9SNx7JnKEJYwBm08yhrDq04QWqjlAmMQGDvHzGUM8518Rq0QZKQyzUxhd56beZUFBuEIW1qLTFyhzLGnIuoruspvs/wA/iUJAq1cvdjzSF0YFRMPt+n7lkHRFnznqPFEZwgtDkTFzly55OvaUiFV8P/Ygbds4/wB1UxBtvHLMgG3qQlMMUnLBuBTTIgzzAWlnbEQLAy4mIy/cwyvzxKy54jjHfbNqaILznXmpt6O5i3eAcIsljjKYFSbNnmNNJyDL7wQ3g2cjHL9k7YOvxhVv9alKFvA1/UA/gZ/5L+TvK1f8ErmIKIyzf72z8xEtfY5JitVzTl9yYAi+1/7EvzA8A6h3D4eYzELwMBFyQHkng0BlybTXhvP7/Ep1lfPHj/sQRw2dzS0b5ZZtDKj8Qzks88zKu7L3LV8lVEQlL0m4YDmSihQTVyixWOvyRRYCvExSFa3LzmO8S7DGSypZ4FLQ4l5rdHccEtWv+zmVK0FRwh7Dn5lBWHVVNC6DAsCaCuP9mIRT5WiGpme+ZfBQ1Sf7z+oFqK2Iv8w675qvu5VxQ7YJYA5CLhhtwXSZAKLu2oFf1iQDC1ouYtlWbb7bf6iMh0PUzjFHXcyCdPjzKBdnes9y1yA1KBLu6ZgWrlEzrNuSUjGTlbYmgExqNOawaTdEOAa94IlFUzm4bwGvhAAfjIpV/XEqcI3+EdRjN/Ar3gtsMNv4VB0A94zG0qDgNwNDZN9xKDRkERQLFizsRwwuSHaXmPjH+8xHT4gnBVOWpTGvYZVeEsubxmI1cAK/2oqcJsf1GRcqXFa9p94V7fAxuDjUK+32+/1MyqsFNXDJd2UfGqhCuoy1XULkz2riWH2bgw5HvuN1S2gMZj4l+OYhUNicwXpZRrqCKNrOIUKJN3ud1KuFhZDhlbh3LnHuhXnfxLOyXszw4ys+SLzzh7xzRh77qBzV2czPTyC5RtBjUw7eX9P1MstbV/ug+5dPE8nUSpW3JxH2g0altYBZ5I3x8jW5S20KFccxIVIq+UiCWd6hMWlL3t/EH1FBpvmm3MY1ogkJ+UQ9Yqhqht5xUAlh2rcsfx9orA06plPc81EVbbKo2MbCNEyAKtl1DM+LEWxNlbP+QRkvmJH5MQ0X2H/ksgcB0lmkF3s7i5hOW2pUm9OXioXQcGDW/wBTLJW+WfaMq2Bnv/yFNPx/XtDylF+v9zEse3jv+CB2C0ur4uOAiDsOnzGhVBpiLgFmtyrvw1dzJW5u+5cdz4bnUQTnAiZg1vs3UykLcO3UL8AXeIuJ5vMUWl5HBEBLY0z8oEdRwTBbOdsBbfGZYwRa0P7gFYWuI8p7eJdsLKXm0MRZvniJeQs3FLyZuWPJuyuYCGnwxVdY/E2LhvJeZwedtamQtTF0WB4rj/2OAaV+2V0qQzhlQq6xmWkVl7w9fEaAsXfHX8sLMleGbqNizu/wisXGEXH+xCtbOHuxKwJu3mLnyVZV8SgHBhbHxBRrDXbz/EKvyf3HbV3YHJXvn77mdXlncUCMnHx2xy2qP8zA6TvAjkhYqEpXVN4zcKUqxu+IgdMcMempvOjbcI4D3vlfEeD9Qn//2gAMAwEAAgADAAAAEPYUe10HNfNg8GKE1bC2/wCk8FXj6J3mACJdHvkylgHL/wAF73c4xUMAbNSehppO0WVfxTSGcszhNt5kXt6dFgTamwAf/wAtFxYkgYxWfffkXCDxnpskQiP+FDhKjJqPEcAkh3WZbY3RfGELhvFT18GOXC26TqCwUS/AJCXJPpz62m9yU8u5kOIDFDOCJ08C/G2tNegZSKsaiOPAVck3yf1LEHCpnAnJLDMukx3gxDwMLHMRCjvfVRYFU9P/APyiyD0g7jlscRXZJ0IszmAgyyx4WNC/aSXUEG+1SX0hJ06x2z8tVBheR1hgisxADk9R8jnGKSslgzg7q2WLdutTPVQLJdwJGZ/Lv32/GFugo7xLzdPm0HUG2RrfN5PlAgxVB4xqLd+xksnXNj/k8e14MByMFzz1zwP4LyMOD//EACARAQEBAAIDAAMBAQAAAAAAAAEAESExECBBMFFhcZH/2gAIAQMBAT8QfQ9D33zvqemWez6nkbAstj1+J9PswoUE7nfjCONvpttlnndsK8wfk/rsHg8EbiyOPxHLniCDiWfiX239WxtzHtnnj48HMF4GVLcMwGRDiHP4E84fdyWNV02O9THbOB2umdg7r+Bu0YukeJw6u+IyScIHJ4LmNuW/gRA+xWdv3M6iG8HMUP3/ADbT4p7Hr/kZ1zIeL6JgcZ7oQ/sgnOQlhydWZjm4CX8yzWxcXIfs3IP1+Bcl6njYGTGbksLY7j5js7xKzmYH9W2f9/gF6SeIYf5XBytnLbC3xh5slXl9H0BXC0eXm+qCDvEhYBtGTcIuuvq+h7i6/GY4j9/DcpfBRP0nj2yRYFhB3EcZMnxkJ6lbk2WO/Yo4dRDL25TiQTwufkR8fcpYxqdkeYRf4RAOrb/vNnpyDy+OiWDwAebEXIwRxYOiNWlkhiQsenLLbhBnkiw2wJGNOG5L2dXyHpOmrFA/EG8yv7JpjCfDM5MDxoeLFgwgHmOL+zDLNjhu7/Lf3PV34dkBk7iwLbuHJ9rQvti9Q46wEJS2/wBs5m6iyHfDM4j+wjIJcImHKN3Zt+ym7dzbsxfJjd25dwcS2zHSWm+Q6x3d+N2//8QAIREAAwADAQEAAwADAAAAAAAAAAERECExIEEwUWFxgaH/2gAIAQIBAT8QyvVL7mHm5bN/hovD2cE7wbnR/wBC/f8ADfDG1hYbFIliaZMLEJ5UifBz6U+iV9wkn0U9MohD9PhDE3sQS0KMiy3om0LeHi66G2ITjEk0OmPYrT2Nr00Ma9H0UxvgqJi3Ij1ESj34SUW0k/HDXh0kM1awk3R9QnQLJB0J+mxEDf6GG2jVRsPSgvkTH2ElT/ox09DVs+WMaNV9rXX8LUfwqiT0MTXRN3x/gfQbsVTYlGasxND0sTSdLI3UuODBv6JbJWQckivcT6LcLcDVcCYqN2kN0mGZBPcw9ssPGDUphc1Tuf42hDVysKDZE92YUS+kxSlGqxf64a9UWBo4hobgw5FIe0Qxa8PWJlR0mYUYleMdNBolbYcVI6IhM7GzhRsuHoQShJpjShx4pCZWiEJ4aZwcGjnieODF5vfTjlh3KKPNGU6vhmmGSV9whLy0MeFtmrINaEw0NI/1hH0+4aP/xAAmEAEAAgICAgICAwEBAQAAAAABABEhMUFRYXGBkaGxwdHw4fEQ/9oACAEBAAE/EKk0QCi9QNRnTMXa45OYWzlmYPcrswDhZZgSpkW5Yt6jtA6xUaOIYRZi0x4BEuGG5o5gAKtcvMrnGiOkZeIiHLmV61LLZQXt4qX4UOoG1XMDgIooXUQ6cRL+YJwjB/MzdcVAGNwc1Eu2OSpkoneswVKDMeSfEOWJoRTogLZ3LG5ovM26hlBgOyCMcy+jUuHUCkOOpVdseql9kYp7l03i4dVZvcQgrFVBL+J5RyAj4ja1Ho8S1VKWowouIzUFJZiAUqlTmNXFuKhcHGEg6rY9KbzEcpZlZRBMn8zJ3DkNylWiONMWU6gBZB8P1CwB+ogCl/MA6HUsLRNMqpAM13KxO+XUWgAo6MvbKF1HtdFdxI5E0IqSnINQvkcTK6+Yn4TaUJO46VEGZ9ywDFy6zghbQXFMLYrkS1YQAoqCOCAinBBW5YKiWBCo5YSvuNQgVthHERoV1F4KkLWD2gu7GpTg58xLMYMqxXPzFGOYlrWAc1FOiJ5lXiDwimyJZhK5OYLCU1hgTBMhSZo5Zk1/dNu2wL60ROJdyOIIipY3iNeBqEjSprUvFrdcRlsNkvwQECkUBw5d8RYKVsYjhQcwqq4to9Jdj4SDesJ0jzFLW3mIZqnIy2aQ6IN7BCFh2qUNKtaqW4GhjIbS/wARC0O0DyqJsFmEqpaULzEL0riFVtpWqqAl1crLAsBTeAi5EsDaFMyEhbHC8lgGBELaK7ZoA1bi3EtsXjldFZWMGIkwUOEcct/EaUBtbzRfKb6+oHXsUGrf/Ih5FdF68+YpBbWO+hkuFXAoR92UY4PalBCDV3JkOmKorURpENF0nkEbSXYZRYKAfUKse7mA/UQfmAxTkHn1HiJSLcUN3G0ZTWY1s1DW+ISP2mMkgFxKCogKwwz0Mw9YMiuYRJlCgDaxKu8bxkC6L4Yxcpy1NbOVdb+CpQKu6edUp0wAi01Y6KX8CR+hMuwvP4ieyGDKvHuF1GO0+D/ajQkWyOhzgx6ihjJTT33uHL7Kr/8AAj9QCW3TKBl3yeTmFwu6DZiGMVrY6iWQB4w/64mlw8VjEX5s4JS6FOFIAaNzcAdMQtBHMCYOGNhERygKxg6jtFmxYqu46MteC4KoiX4RKuMQQ72VAcq8S3oCy1VkMKlo2OYVxuugfjzEKpVYaQutdSlpQswOVa3FWoqxTfNQbDUGg2/j+YIyqX7E2uO8Axh6FoHAcHwl9mrl7PHruM4DQ14hMGK0YVC5Cdv1YnyfNO4PzKKHGw67ctnQ0wMw5wlOdxzVPIRsG2MeDcB2MKdINIBxcVFc3KCgMA2NMbaQW11M1lgt4aNZgujBk3BOcHbcpg7mU0K7ZiXyxfdNxkb7M1b4xzGYKjQlsGhjaYGslOn1FS6Ae48BWNtnMwFnhaMQZCHgB+oEHy0jCMlWCN1mq0qW1Wdoy1jg5RqBXE4iCIrhGn4iizRfq6F1y6bIaji+RlVjO69wOU8YHiYhFrhzEppZ5u5g1VxEShKFtROy5kgkHPMpKvMRBEvbM2xKMe47GoLqogdZmtZVZbQ7zLWiiKEW11AYC3tiIHMvmka3LQkhq+YmIA5IipXdr0YijReyrhq2AoslJG41YhngWnqKNXQ+kaGmHEMIDVMGsbH0wbOKG+EHiCKGtXbaNiWJ2ShRNcDHucBZBKC61TUSeQqIb/MDUClq5cKxKjFvgjYu4xhM3dQ0zLMVjmchhLXESxMbG42WdrG4dJA3fQM8XQ3haghbbW5jjh9zABduojVu3NeYinZvPEa8GEE5tjLFxVP3CyXPGnzDRVaLMf7JEodbsVb/AL9RK8PEOgIbp3UGUC1vmKC9l4hiXTA9wtYpSzopwAyHDtjNMBXhBSM1l1MYdORiLYAZeoRliYPMeBVccTKLuOCl1ccsRW8R7I5QIlmoDtEmy/UEyxFoSpd5YzgEw4bfhb+IiENe12/coAbsIURMN18QKrZj43yWAqlCBfEcoEf52XCjYJq39f7zEAwQaTBfC457CKNLwXAwiH1caVcNa+0KTHeOiOkM9RM1YLIeVU+IgPpKqfp0llHkaZiLkFDSHS4eGNMil3KSDbELaHMNqOabzEVWagYK46I2x9p2Hca+plP+bheTUpqMaitlyxBS7YKKojtZlhVGHDTZ6D7yiIqzWSKJv5I1tG3VEzgdSoEtKAua7lZ6jMWVVr8HTCIK+FgG2dePxChRAKC8nfrqfYkKx9yvKa6ZcwxgWCLD6iczbxMHmvFS5K1fL/fmA+MXebN+GKW83cTOm6rmNBDzbEXq3mK00pkEGkE7mZaiKwN4cxCqqNdQ7FvqNItOCUrEIgPshbcpxCbKlUAnlA3LypD7KNTNpxKCoHHUzDn7gMkDhpl8Qg4UYwOsf8liiDINPZzKJVBqu+vnUPBKtUFD44/7BVahgSqmMEDNskCPf0IHtuxuLEa5GU4LXuMMK0vOTJ+SNwla9YTjIB5ZYs5MQ13Cbl9hRemJqvWhjVA9IbxXM24qLZag8S1TFsoF7Mx0FcdQrNI1K9pGxlCJZUMyspUVTlbThzC1rd69RJWuZ1C1fsFceZdH6qwYmRunKHRl2pviGA2pTSFeq/j6gg62q7fEN4Q+EhSlzo7jG4Om8wewVee+ohrqgHHb+JcoXp8Wf7/sNlMV/QDMaIhYohfnzKJxXFXTEimgkHSnQa4z00RtEBbzKhVLgI00MQuS+Oo6Zq9RotCQirQdCNZqYGYDWdwGacyqFD7jhUMwcAsxpJcuwIPWIYkjOTm/MAL4iRwuUlYcR0P5h/Djdj26h+7uhFLqm9VjmO6qi+XyVv8AGY2wBYkGrL2cWYitVnW4Z40tNcQ7DMGz4l8cdjMTVLyUPs6PlIBRSVWZzauuICMIfSZ1Dq7Kk/AsfuMGGTWkOcIPLzAbYMm2tjYlouOoFdxO3Q1czC3pGKCsIRq4X33juN3jwuILLa9XFDQFe42AqqkbZqIZG5ZLYYYTmBx9Nxs1YirevyqWAGYoSh4JRVymrXxIr13ZTnS9xsebNuFA64CfiHWahWCREANADiKcqtb3bk5yUI03hiNUedkAWOLm0OtxNg2NMr1E1KDalWXkV6oGymDrREaUmWZLpMyzY3sqoFg2LvAHEsyAg27F8/zBE+YR6M7iCaIVVS983i2ARGuGx8xFq7YZtbhZl8BWTULqxfNQAENt3B4bO7YjlgKxDsCnmWDH4xt4f4JdmVKlAyQKcRymOeF4hOYzVsOH4hhUjio6oL1LYIckfsjIEGi375i1YWp/a5nwgJVn/dEYmwd5X2wItzmoeK3xMIOMTHWFxDYDFIOahG2AOQdUv8jM4B0v5tSugXZWCFXRgLGiAwXjHl3mj5UPmMq2swkG0lm8H+IigBsRRGnUFga1A5IDoB1LoLtmUMrcz6RMhmJMkAmXHiFwLgA1UALc++ZeIY4m2ymfbUAuGIAQoqt6I8EFkNlsSomhzCZlvasfHp0GYeBWAZZUYKvbDSejUDsuaM56gTxroc8oY9LG7Q6cRJTzUl8XMo3Y/aMXFTcppi6s5iqez3EBsYmiNXqIm3ojwHpCUZsACeKkfNJ4ZlUVyFpGrMJSIm/YwauklhgGRwQqjdROZ4zGt2U11KDKk4gl5IOsYcv5lpXMcdyg3KcrMfDR0KwwqDexYKWJ6hcoCu/mPRWiIohR3Bzueo5lUMBxCINvBVwBFYIWliX8SncUDlLXPubA0fzEfuCDN5Gk5GOrDA9z1/MQ2lgmnkIUWLJyHGBgA0O1loLs/wCS7uTkOINw22uYWrSDRX1NOYb8QHvrI4NBDpBQpyEv6kKycQVaNIxjiLYPIyjWY1HAt7pzhOP5nMdQWGcw4WhuaRWV8wnbLHHk/wBpNkYhpyNf1FJS1KqyGKtdwBVwnW3d0wgyowEOJgwx2qCxxrPOT6lHuVfBOFVofGlA0fgVhWbVSeryfcRUFV0K/R87l/DIlJ81kfMEpgyIbrIyiwSRcqwf3qKJYclzFGMxYGOID5upccnRsuB+5aMvFdpTGsTfFl+2PAucW1pCUZ/cMJV3CVVkYSlyeEEWNjGS3KcwqALUqKiXGJdsBfYgRsJeFQfyHxFSdgE6oP1Mao4uW0+cwkiuK8wHtVsbsLwvmYQC3mIWwaLC1AbZKUM/8amqdCYaPOoV5nFIaeo2ULtz/Qw+ozDFO/cNqtvxBtUtLzGM2GbhHlGxLqonqsRdCDHTR8w5QVRwxVhdmSg19BgNusQFVviVoHtZqKqAJQRSOrQcU7IIC/q4gh+4ZTH/AMGMouP/AJUVpGyKmhTstArAAVgw4gti6RYitTK3OFXAFm7qOjd8xuQqXp1gc8xNtWSrq8z5o/FQ7E4+CIHUERvHuX5JmrdJ81HKA4sMQVUSioYuOF8wuBp7LMRUSJxm5tbb0S824/8AgLINXJZ2PH5IZzvHjmEgPhYaAHP/ALHuW9MvnDN+Y1WtPcx0VEWmUDKmJktOJcswFVstKW7jZUdQWpiwlAcxtA5VQdNcsXmwqeHCfqZqUvxKjYoi8sPTFQVo6hUFAUBrNS6EVpdYYIGHY1v9wTToEGf7mVRSBSWQf1DZ3bo0Yv1mFEXTSPhIwFCHN+DJv39zUDloFlbP5ghizFU8RbML3NEMqtd1n4gElYVoGv0lyFqKoFtU9BzVvEwIDAwANAfEEKVI9RpVozC+VxoXY+YFB31LFOfEG6hDGyrxEha8xEoNwOTM4ojuKzBSSNqF12pl5eBkWXtMFAYy6yKLA6ldFLGGNwP3hSyHfex1nXxHQg4NNfqAikPVj8zgf1RnzUqSOrRcA2/tv0ZlGCPFSlpWw4iRVKwdRSYRb5h4bLZWC5tAuQdln4lMSY234v1C+YYC3lXa+WDVG4fnJjBKOSrgWkzmpZY4fEKItqCyLYtsBcTRMGgLmR/aHbWvMY1F8kwMSmpRfEAaMy3Wrm6rBOchBYIidhh/mE2xcUd/cohkrNw0UtG5kRSFZQNDhLJ9VM1cwmoqmmSCwCPJlY6ApM+5TFY6qZ6cBMYJRBVDG4Olc6iJXzWZKlBg5qAyiM/ipWZxKVneYDVuyK4OeYZPcC8xH5F1MFiAIVhDWLo3HmYyXRAFF+47VlriUluaj3UCKb0H8RwKwfEIiafMtC18ailmbNS/hdZxmiFSwGDuX/RhY05hO8NBS7ZVIGqXMP0S0ddbTGk5Ct7l5cBay1Q0U/io+qCtOYBwvlTeczIWiXTwy3tbKQVZfEKt1F0FGpRhqZhUFlRLEJpdRDLlEhamW4tEiKLUucamDFWp1GjHwls93br/AEeWL+NXGY0YveKj5DMke1cvuboaDfFajwLQzQi2PfEKvscRiwVcksLo38kOm0UnNUftpiUpeoHALy/EM2yIYs/xiMsDQqhbuz1UowB1TgBS71hPkhTAlcMuXxnxzDSDIGNg3/u4gylVcYF5y0/qWC1FCr3ebizDqQGCwYLrPFQBosssNFVioIYlNAY6gizuAYUxxFfk9MYCHxWo5QPiWWi4mEWeIoK4uXmyvMradwfBiS3b1L1ZG4aGDsMOCIzlMboC2MCZQWjr7hZodbRgHPs1C4vJlALoNDFX12ozBTMuxVs+X548QRLFKL427r38SxDHcpKH3+ZaH0G9sV5wJ8xg1gDgYicjgrSXdOIBsECZyCvNnPdyiZ0W0otrbVEJBmIPOab95ljLpQSzA1zGr6lBpziMIgvVqXaedamWklx0Mq49VUWQAXlyaE2b5q47orGMRVRHW9rOS8yyxo9pcYCUA1xqX4BcKlaphsZUcN5lAHEuq29TAtERExKZixay5ZTYQoOG6Dxfx/MYZ2uAQ9pNZ4iexq5H8Twa8RslHxiOOC29PMI1ctSqz4XjywuEQ3MmcrCIq2bAVdOe/wAxvwwxEcNW19y1hYvOLl6OVYXwF6P7YhGLZAbjbyCkXZ5lzbWj6yca1AVxUDuoZwLuAuk38zbd6ljr9QktIYr50ncq6K/NJeYNqMsqsjuZTzqOkXpgUXkeYllIFc6vMJwK4zvxMmO/zA1kvmDadzBBxhH5DUaBmeY+sItN38FCPUutXeFZhzSPPTA1Gqu1DgZqt9yodNYCm0QQjp3SsxaSEFEFImxI36HUQrWYgbUgVts6uF9ZKqOmxpjdeRMrBhrCK5HgDn/MDXKrV/7EXBL7hi469Q0vUCBb5G7x8xUBKIU2TfGKvKPKMRAdcWVLvfg4iTLcneU38rAs0xLDrEoJpuC1Nxb7Qym5imCvDK0er6m+pXxBO7Pki1HsAToocZjl2uJTJPEeclP54P2jA4EXi6HwATI6J91Zo5Vk5Qdxi5mu7m9Fa+GIjHuFDKq0qzYc8SgFcKbMj4VzbzvmHIfuOwSpRKcRby9Tb/E2Kncp2Tzco6mKwTANFdvE1CW0Y5iI6ppNE0QwDijbcs0U2oIv5HwtlEbiBWGHws4l0CQcGwnzT4hlEOKL/U3IDm1UhjEotBjyblAWD5icK/MziMDrMLTPNRKzLzmUyr2IjRhxgr9T8FLBJaPLRCFLwCPWfxlGeZe0nJ2XZ9PxCxWYDQfP5ltCAV78WxbRYLKFtA3iS/J1G8VUCJScjMxYDaZKMdt+vuCRN42Z9Ew+TiFrzFpiKqpf+8VAsfUZAQm46MswKkzjHUcsl0IYS+M6J4w7XL6gnEUK0wA/TMCIuMFAnbNHrzEGYiYPk+fwS5AVpylq8Kn1LDZSzUVKqYqAGwutcQTpxwSiw4qhi5kPGZZU8lmJVBBfAkoSxls2gWzdsUwpVQOVYzO3F49rb5cdXNgmkK8sMs03XdNVf+3F2GiYqmq+pRPHuc+I0fVyBi+D4lXKzJyYzUenVgEuFmQGy+lvUXKSFpg4xfxhMQgQZdwKW8HvzGq41DpPZyTa2HUDDtpgxdz1CuQvslUTXRNIC8qTTXOVlT0uAzcowoVEjixuY15f6hHOq16tdDzuDW8oCWdvmy/qZGy3AbsvCM8zDMMHpR/IIAdSm7NQHUqpeeY2SBV44iNmb3LFVm+ZeFytrOmIK7rUoDQx0ALeezweWMxDaPV1fH2x4jLQ4tOoC4b66ibMUd1rLAu8IRPmqlLRXoni4BzZQMp14hBilpBLMc71NsnQgK3jVeI2IGvOXbtw43XULxJcGOyLxuw7PmNFsrQvVgO7zpqsVLhgyjCe5flD2H9yglZ3Yf6mVijbe3+JRncKLRpbZl3fiIM12sLmupTmaFo5xnnEWqgFdwuqKhiQK4omM0uz7gatLQ0bouj9THEDseBemb9QJKg2Av4xGppAVoRE61E2hP8A04+q8zlh4KHhJYtVICQowbnUaDPfhByAxzwzwL5qNeOU+45hr4mbjC3oPLxuJUKHsRIbAEBqmjv5jtuEr1MiNqFu03r4j6thS1FXaXCA6RBq3+rz1M2NbEAEu652e7jevkBXLWN/7qGR1rbmgizu/wB8yynANL9NbFa9QyoezCghNchPcVIpAtigM8XYMxqMXkTFN+L5u2PqyK69vCJfHnZFgi9BcYgVPGx5rVfLUsIWwBpNaJKI1s15NdtYYlUKBKefwy0vFsw3d+sfiFSklaF2rAxLMBrFtwW5Qy1UGm8jhjJBq765WXYP15Jo+CNkDj+iEy6srsW8YL8MTUoG86lEGxY0VUCJPZcnyOGDdp/FGz9ShYMZz1S/ylKYMCh2JKuEDLhxL8riw1HAJrdNziA9xYIhzjLD6tq/MPE6CZrHFefMo9UBpveH8SkrtSUxUliMou/i/wB1Fo2BQcoa8jLjXqXAmtJXSy+dXFogGj7MNf3EklBpNngeYm3BQ6f1/wBiv2tVk8YTD/u5Wy1AKJlWlraXzGVJLKUpzeo1lGAGr250X+GBkpbQCXRnls3VYqIsiUOx30HuL7wLUMcXpwu4V6AaPUf1jqXWQErrSpUGG0WHmr+vHcumoEVRkVHPXDLuvGogbQ021zzUUKU8pT/I9VGUSjgCoqLriJN49x0pur/UUXKUuwIZ1vj/ALxknovpwx5lZmjdTluv0wjacpq5vvdqDWOWYFmjj7jZWyCOu9G/U7qC+K8Wmn4qYiZafYWYQS74IQQM9PMOEygsOv4iW2DcLjPJqXorwJaiZCUZAsHFRRwhWnGf+RVEIKjZ4pmzP1KoJ2MAv/JkqjYnLdEAaQaql0igVDa3rOneopJVh+6XT+iVENRcu+U3w/cbR4IKDN8lv4mBIV2DNPv6zENnW4xVpmJxwlJOcWWv5b8EMt+NY/2izfiB3I6CNlqAA91eZfnuQiN3usy00FM0D34iPMrcl8ZtzRKkrVYobuPOs+jiW5DVgdm/JaYrWMBauu2l8sIN2WxbaVSw2j8mQ8+PEAg0orH5goAbTlXX4jACoJWbOEiHZs3Mp4/EZZQrpejOl1FpUvbBF2gwCYwyrcR2JL4aDJ/uOMme74HGVOB7iHAYF5RxefbBcZ9kK7pOnBKMFlZFs4a338yyckshEp/rqDfN1wOT7h95AsCrloZw7Yo7i0AHGPdZh7QC6gvFL1daFgYspoUa7Z1/5GaANuG+q0bTn9UiuYaF6uz41EVRyqpjm4W/XFNqd3rhx5hgRR79merV/wCYZqouNDvI3vD+oEuirkBypXnzg4gnaLbYpaWGuqY7+zxchg+TPJ+oSu1GEp87Xi4D/orDxiCElYq38iVgN192xyKpyt2cvOlepXsIOCi0u/T8QhGcDOzR7iNwIRnnV7T6g1IjGKD5MVviJdQ0CiqvP3A5fg2yrODAFa6inj2Kja5/RfZmCkG7lob5/M0Sxao08Y1cDgJDFCl8nj5gBUt0RO8ZKgIQ5zVZfmYUZyxpgdS/M8lcPkjRRqxzlOvTmJNbjlr2+teo1/Td67Ct1UOpeDR5ssd9RIA1ALUwGsOLgSagUBveDXozFQqy8heaCzTVt4yQJaKKSoKrwb/mC9abCK1TdDbMNnxlFbV49qCMhx8UQU2YdMFt/wB6Azsgru60GKa+ZVqYN2bxQbrPP41KAMWHKJjnRb2EaCr27Cro0GZTG6MQqB+SNTuDVaqKvjDnqALWwL7fbjP1G7U/wAOdZiRSBCqqQMXQHa5NwFcB3DTTXBjeSEIBf2xOzHD9ynWab2WHrAgRIRaLLGQcYYZwtJel1ADyP4goLrlQIHLXt54lzbAbZA0dWpDaUZ400Y1RWvcShxnZNZ/3UQzbrBa8dGuIM8527zj/AFSsZMiPHy6dRPQkBW/KYZeDC3eHMdE1TkOQqWjgC2o1nh0o5/jj5jR1CuG5fDWsOYmkW0UeQo5v8Rvdj1Y7y/7uCia7Npdl+7jhgNCUXT2z6821UXQw22DmlcZb3GVh1CGT0XY/E3KBnGCqTGXfiFRgAIG6pxXNkyWAGgK7v6XcIgNqNXNZvV+s+oc00qy0xn9X+ZfSJVOsv75dSEinAEubpYvWZVvsBAXWkC18Xx5lmaEAg9X18+ZbQzIU1gTG/HEBLJwY2e+8GTuI1IUCkjV9aPqLoIrM/Ct33L5BqhVQicb/AHAExoFdAtXFpEveLU21+Pf2cNV2rvtnUo0EBKA3slpX+3Ci2gxLLel+f9cIoIW54/v8S/ZtNXise7lJmBXHNfhhfyEIU4687i3KPyWs29dxJLEGQxCS7CZazlbqZdji169mT+orirFDo+t/qd9KKE9P9wDqiBVJttDS+KioFLvSx0aH/svCdFOsVUu97CLLSGDDtck9D+YQ19FotQt1zZbrjMvjJ2IOmVrTv+IgHoVYrU2lVWz8HiEiumnbC65/uZk7sGHZz/UaNCUW76b5wXWPuIcm1bTODy/4hSlpSKqAvm06xLEAHih0r6tiloOBlX96ikQNG1ed87Kjfj0XQKvZt/3iXgTGJttVvGzPPqBUJbA93eMDNba1UKG62FAb8kuBwrVscb6CvrM5ogVUEMld0RYRxWi0B7xXyNwNiQuUS8t2DoDW7VrIXXVmv9mUYVc12Xoyh9xhRhMC2YANtd1LgWu62HA/Lfp6qXC9q2yC8f7mMjUTMrR4Kuv68xkFZy6m++LZXmaMAG+19ajwIi1syFt9zhHNcird1L0UKBbVFLKGjTdbcY6lios2bA3gf98MEpLAAa49QitWWuW81+PmA7w7IqutGP8AyCbncaKRly63uUC5grYqB2JbrzOuKqp62H68yhOoHNFQJl+u5RZObMrO+DLv/wAEoCtgoxgS9h4zxTKZgqls2CLeM+PniFGDJeGjnF7vUdYdAjSuC3Z+3qIRSYjW2837IBZpC7VY1sYyc8B3AbrzYhu6yHAa7y7igVYBV6qzHWPf6cgLYGFMGxcXd38x+Ldgl+RrWoHG13pFJrn/ALHiOml8EK1z9ETHbMWc2Uu2zevcDUP9byYhy8DmerY6KlmrB/1wDUjs4Nl56ry99xO0QppVO13kzzcIrKlNVpzir5zq7meiOAQVoAV0jf8ATK0WuqHji35fmE9rDKS07eM3Dbkqitn1n/2FsZrplZez8yqGpTYDjHwfDAhaArVPiyrda6i0SrCx/fOodyOzFfWuv9qIrgG0R+dnMtA9KeWcZ/uGgRaWajn+Ooy0Fh4s4prygiBaEG6/PNSmboHSbrGL1nfUoAg6B4Vu8b1z1FhgCeEi/kzVNsz5sqVLvGeUNQWuDy8Azeu484sd0QQzaZUb7ImlnIY5K4GqHkxMSUvj4T1i3mEXACNVuK9j8AxpIwElXL7B89TOJUwtl3yqit/uH7zrJVKv4vz0x1toAQF2q+cEIEAgpaSrDzlF+ZQeFb0RKdOtvjfmLaCG+gG/ON7i3YuHkXj6XMNYJi1da+QJHkcPE2WxcYXsThog3iFcNFeMK53UCt2a3gMDh3QrzTnMTlMKqQSrR1a6xHjpvY0LpFcEC6IbMcUdP5mSqcnFJqvXxDBUt5dqOc5764gTi2KALOR+CZ5exUCc6oOIFVhRyBPWMWPL2R1JitmPD7z43HLSwSl9Clvj15hCALbbziA28jk+e63mWVqdpfACvc1qFJVB6Ss74iPAS0WkHv7hUaEo/CetwVcIsmzV7+Lz6iQ1GRoW7yde/wBSxjFYKq6F1g2mddt8xVXg3zrEFV/S6b2jTvxqUPdFaDyiZ4rThip86Mm3PDGm5g2VTCl8HvJ7IMHFAeQUiZTF+6gCRi21M4ehzj9S4PlHNVPrTTuXYVhYGhg1tz8RbdFgoL5f0zMoZMjkeAZ/ESIYDDhzQa85hq7ypaNtP0/eYXpLdaruxqjXlJYJiRecfR5NJSB1FQG+xdffMzkOlFKRMhRg9/TLvJsUrS1a076czQDYFAdarmGxEUJbv04oz43E87BeAvZUVcPALFjTjuALvM0RsRzWt18QZUCfKwAa2vHPcqW8UGw4U+DvjEICCgtgOkd48fMDriugdil0fbP/2Q==" alt="Portrait of Panashe Zowa" width="288" height="360" onerror="this.parentNode.classList.add('no-photo')">
+    <span class="portrait-fallback" aria-hidden="true">PZ</span>
+  </figure>
+  <div class="bio prose">
+    <p>In the spirit of epistemic humility, I consider myself an exceptional lawyer and writer, and a plain average programmer. These skills naturally drove me to pursue a career in technology law and policy after two failed attempts at running startups and rejections from all but one of the computer science programmes I applied to. I have extensive experience working as a tech lawyer and policy analyst across various African jurisdictions.</p>
+    <p>Currently, the bulk of my work focuses on advancing African tech sovereignty and developing innovative legal, policy and, more recently, technical responses that seek to mitigate potential risks from present and future AI advances, as well as global catastrophic biological risks. I have a reasonably solid research track record, all things considered, with work appearing at venues such as the Centre for the Study of Existential Risk, the Cooperative AI Summer School, where I was invited to present a poster on exploratory work I am excited about and have <a href="#constitutional-principles">linked below</a>, and most recently the AI for Peace workshop at NeurIPS and the All Africa Intellectual Property Summit.</p>
+    <p>My CV is <a href="https://drive.google.com/file/d/1d6M9a8ZbpaSuKaKqQxR_Wj4SIR7r3cYo/view?usp=drive_link">here</a>. The best way to reach me is by <a href="mailto:panashezowa12@gmail.com">email</a>.</p>
+  </div>
+</section>
+
+</div>
+
+<div class="page">
+
+<!-- =====================================================================
+     ✏️ EDIT: UPDATES (newest first)
+     ===================================================================== -->
+<section class="section" id="updates" aria-labelledby="updates-h">
+  <h2 id="updates-h">Updates</h2>
+  <ul class="log">
+    <li>
+      <span class="note">Oct 2026</span>
+      <p>Published a preprint, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7547162">Constitutional Principles for Multi-agent AI Safety</a>, on SSRN.</p>
+    </li>
+    <li>
+      <!-- CHECK: add the paper's title and a link -->
+      <span class="note">Oct 2026</span>
+      <p>Paper accepted at the AI for Peace workshop at NeurIPS.</p>
+    </li>
+    <li>
+      <span class="note">Sep 2026</span>
+      <p>Published <a href="https://forum.effectivealtruism.org/posts/3AgDXqkRoBrq6XZ6n/the-messy-politics-of-ai-moral-patienthood-1">The Messy Politics of AI Moral Patienthood</a> on the EA Forum.</p>
+    </li>
+    <li>
+      <span class="note">May 2026</span>
+      <p>Presented my paper on state obligations, human rights and AI catastrophic risk at the After Sendai workshop, Centre for the Study of Existential Risk, University of Cambridge.</p>
+    </li>
+  </ul>
+</section>
+
+<!-- =====================================================================
+     ✏️ EDIT: RESEARCH
+     Six threads, one for each landmark on the map. The id on each thread
+     (for example id="law") is what the map label links to.
+     ===================================================================== -->
+<section class="section" id="research" aria-labelledby="research-h">
+  <h2 id="research-h">Research</h2>
+  <p class="section-intro">My research follows six threads. Each has a landmark on the map above.</p>
+
+  <article class="thread" id="law">
+    <span class="thread-icon" aria-hidden="true"><svg class="icon"><use href="#i-rocks"/></svg></span>
+    <h3>Law and AI</h3>
+    <p>I am keen to explore effective, tractable, scalable and often neglected legal interventions that will help ensure that humanity navigates the transition to transformative AI safely and beneficially. Among my work in this domain, you will find work exploring the use of international law to pace the frontier. These days, I am interested in building upon O'Keefe et al.'s proposal on <a href="https://law-ai.org/law-following-ai/">Law-Following AI</a> and Maas and Olasunkanmi's proposal on <a href="https://law-ai.org/treaty-following-ai/">Treaty-Following AI</a>, which I believe are among the more compelling and concrete interventions for preventing and addressing AI-enabled power concentration, and in some exploratory technical work on legal alignment.</p>
+    <ul class="works">
+    <li>
+        <span class="note">Working paper</span>
+        <div>
+          <span class="work-title">State Obligations, Human Rights and the Governance of AI Catastrophic Risks in a Changing World</span>
+          <p>Presented at the After Sendai workshop, Centre for the Study of Existential Risk, University of Cambridge, in May 2026.</p>
+        </div>
+      </li>
+    </ul>
+  </article>
+
+  <article class="thread" id="cooperative">
+    <span class="thread-icon" aria-hidden="true"><svg class="icon"><use href="#i-flock"/></svg></span>
+    <h3>Cooperative AI, Multi-Agent Safety and Safe Pareto Improvements</h3>
+    <p>The dynamics of AI interactions are rapidly changing in two important ways. Firstly, as more agentic systems are deployed, there is a shift from dyadic interactions (between a single model and a single user) to multi-agent interactions (potentially involving many different systems, agents and humans). Secondly, and as a result of the first change, the nature of these interactions changes from predominantly cooperative to mixed-motive.</p>
+    <p>I am keen on exploring governance and macrostrategy work related to ensuring safe and beneficial outcomes in these settings, particularly how populations of learning agents cooperate, compete, and coordinate, and what shapes the outcomes they reach.</p>
+    <p>I recently completed the Center on Long-Term Risk's Safe Pareto Improvements Fundamentals Program (September 2026), which gave me an appreciation for conceptual work on <a href="https://longtermrisk.org/research/safe-pareto-improvements-research-agenda/">safe Pareto improvements</a>, a robust mechanism for mitigating downsides from <a href="https://longtermrisk.org/research/cooperation-conflict-and-transformative-artificial-intelligence-a-research-agenda/">conflict between AIs</a>. SPIs are a class of interventions on how agents negotiate that makes all parties better off, no matter how they would have negotiated without the SPI. I am continuing to work on conceptual questions and, most importantly, on neglected macrostrategy questions in the Center on Long-Term Risk's research agenda.</p>
+    <ul class="works">
+      <li id="constitutional-principles">
+        <span class="note">Preprint</span>
+        <div>
+          <a class="work-title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7547162">Constitutional Principles for Multi-agent AI Safety</a>
+          <p>Draws seven design principles from legal constitutional theory, among them the separation of powers, checks and balances, procedural fairness, and federalism and subsidiarity, to form a Cooperative AI Constitution for interactions among AI agents and between agents and humans. SSRN, October 2026.</p>
+        </div>
+      </li>
+      <li>
+        <span class="note">Ongoing project</span>
+        <div>
+          <a class="work-title" href="https://docs.google.com/document/d/1xosRGg-pVl13jYN1x6XH1jyUQM7PN7mhLNDD8TxmCXc/edit?usp=sharing">High-Frequency Trading as a Cautionary Model for AI Agent Governance</a>
+          <p>My ILINA Junior Research Fellowship project, which I am still working on.</p>
+        </div>
+      </li>
+    </ul>
+  </article>
+
+  <article class="thread" id="sovereignty">
+    <span class="thread-icon" aria-hidden="true"><svg class="icon"><use href="#i-weaver"/></svg></span>
+    <h3>African Tech Sovereignty</h3>
+    <p>I am a proud product of the African tech ecosystem, and I would like to see it grow, help address many of the continent's development challenges, and ensure that African states do not remain in a crippling state of technological dependency. To that end, an important aspect of my work is policy and governance research focused on advancing African technology sovereignty.</p>
+    <ul class="works">
+      <li>
+        <span class="note">Book chapter</span>
+        <div>
+          <a class="work-title" href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003682240-15/ai-generated-works-african-copyright-law-panashe-zowa">AI-Generated Works and African Copyright Law: A Framework for Balancing Innovation and Intellectual Property Protection</a>
+          <p>This research explores the implications of AI-generated works for traditional notions of authorship and ownership in Africa and beyond, drawing on recent judgments and scholarly opinion. It further assesses whether a balance can be struck between AI innovation and copyright law in a manner that brings about sustainable and inclusive growth.</p>
+        </div>
+      </li>
+    </ul>
+  </article>
+
+  <article class="thread" id="societal">
+    <span class="thread-icon" aria-hidden="true"><svg class="icon"><use href="#i-river"/></svg></span>
+    <h3>Societal Impacts of AI</h3>
+    <span class="note">Work in progress</span>
+    <p>Investigating who should share in what advanced AI produces, and on what legal basis. Investigating how non-state actors make use of frontier AI to propel the lethality of their operations. Concretely investigating and proposing solutions to the real risk that the impacts of risks from advanced AI systems will likely be disproportionally more severe in Africa due to factors such as weak state capacity among other things.</p>
+  </article>
+
+  <article class="thread" id="minds">
+    <span class="thread-icon" aria-hidden="true"><svg class="icon"><use href="#i-minds"/></svg></span>
+    <h3>Digital Minds</h3>
+    <p>I have a keen interest in the legal, policy and macrostrategy questions surrounding AI moral patienthood, including AI legal personhood and enabling cooperation with AI through credible deals. I am particularly interested in exploring how extending legal personhood, economic rights, and certain protections to AI systems might facilitate positive-sum AI-human relations. In my view, long-term human safety will be inextricably linked to AI welfare. AI systems capable of contracting and holding property, for instance, have stronger incentives for cooperative behaviour and transparency about their priorities, potentially advancing alignment efforts. I have recently started publishing my thoughts on the subject.</p>
+    <ul class="works">
+      <li>
+        <span class="note">EA Forum</span>
+        <div>
+          <a class="work-title" href="https://forum.effectivealtruism.org/posts/3AgDXqkRoBrq6XZ6n/the-messy-politics-of-ai-moral-patienthood-1">The Messy Politics of AI Moral Patienthood</a>
+          <p>How do lawmakers' political traditions shape the way they receive questions on AI moral patienthood, and ultimately legislate on them?</p>
+        </div>
+      </li>
+    </ul>
+  </article>
+
+  <article class="thread" id="field-building">
+    <span class="thread-icon" aria-hidden="true"><svg class="icon"><use href="#i-field"/></svg></span>
+    <h3>Field Building</h3>
+    <p>I was a founding organiser of EA Zimbabwe, from its early iteration as a university reading group in 2022 through to today, as it has grown into a vibrant national group running fellowships and bootcamps and conducting policy work. I continue to work as a co-lead organiser alongside Zuleka Waldman, whose work has been invaluable in transforming EA Zimbabwe from a group of misfits who loved discussing suffering-focused ethics and effective interventions to global poverty, somewhat unproductively, into what it is today. We are currently running the first cohort of our intro programme, and I will be sure to share feedback on that soon.</p>
+  </article>
+</section>
+
+<!-- =====================================================================
+     ✏️ EDIT: TALKS (the State Obligations talk first, then newest first)
+     ===================================================================== -->
+<section class="section" id="talks" aria-labelledby="talks-h">
+  <h2 id="talks-h">Talks</h2>
+  <ul class="works">
+    <li>
+      <span class="note">May 2026</span>
+      <div>
+        <span class="work-title">State obligations, human rights and the governance of AI catastrophic risks</span>
+        <p>After Sendai workshop, Centre for the Study of Existential Risk, University of Cambridge.</p>
+      </div>
+    </li>
+    <li>
+      <span class="note">Aug 2025</span>
+      <div>
+        <a class="work-title" href="https://x.com/i/spaces/1ZkKzYYPmyexv">Bridging Innovation and Regulation: Advancing African Tech Sovereignty</a>
+        <p>Vazi Legal Twitter Space.</p>
+      </div>
+    </li>
+    <li>
+      <span class="note">Aug 2025</span>
+      <div>
+        <a class="work-title" href="https://x.com/i/spaces/1MYGNwbqyOvJw">Stable Coin Regulations in Africa</a>
+        <p>Vazi Legal Twitter Space.</p>
+      </div>
+    </li>
+    <li>
+      <span class="note">Jun 2025</span>
+      <div>
+        <a class="work-title" href="https://www.youtube.com/@legaltrunk/videos">Legal Trunk Scaling From Zero Conference</a>
+        <p>Recordings are on Legal Trunk's YouTube channel.</p>
+      </div>
+    </li>
+    <li>
+      <span class="note">Apr 2025</span>
+      <div>
+        <a class="work-title" href="https://x.com/i/spaces/1BRJjmkRwvZGw">Taking Stock of Shifts in the African Ecosystem</a>
+        <p>Vazi Legal Twitter Space.</p>
+      </div>
+    </li>
+    <li>
+      <span class="note">Jan 2025</span>
+      <div>
+        <a class="work-title" href="https://x.com/i/spaces/1YqKDkZLQNExV">Trust and Safety: A Guide for African Startups</a>
+        <p>Vazi Legal Twitter Space.</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- =====================================================================
+     ✏️ EDIT: INTERESTS
+     Each cassette is one mix or track. In edit mode, click "Open" on a
+     cassette to paste its link. A cassette without a link hides its Open
+     button from visitors. Copy a cassette to add another.
+     A cassette's colour comes from its class: blue, pink, sage, or none
+     for ochre.
+     ===================================================================== -->
+<section class="section" id="interests" aria-labelledby="interests-h">
+  <h2 id="interests-h">Interests</h2>
+  <div class="prose">
+    <p>Outside of my professional work, I am a keen conservationist who enjoys being out in nature and gardening. I also spend a significant amount of my time on impact investing and music.</p>
+  </div>
+
+  <article class="thread" id="impact-investing">
+    <span class="thread-icon" aria-hidden="true"><svg class="icon"><use href="#i-coin"/></svg></span>
+    <h3>Impact investing</h3>
+    <p>Since high school I have been drawn to financial markets and their potential to make me a dollar out of fifteen cents, or, just as readily, to take me to zero. I am equally fascinated by investing in enterprises that generate measurable social or environmental impact, which has become something of a guiding principle. At present I have largely moved away from public markets. The bulk of the time and money I extend to this interest now goes to funding promising and ambitious early-stage impact-oriented startups as an angel investor, and to consulting for trusts and individuals keen on doing the same.</p>
+  </article>
+
+  <article class="thread" id="music">
+    <span class="thread-icon" aria-hidden="true"><svg class="icon"><use href="#i-cassette"/></svg></span>
+    <h3>Music</h3>
+    <p>I also love Afro-House and EDM more broadly. Over the years I have made music and DJed as a way of expressing myself and blowing off steam. If you are keen to hear what I make, I have attached two mixes and two tracks that serve as a decent primer.</p>
+    <ul class="tapes">
+      <li class="tape blue">
+        <div class="tape-label"><span class="tape-title">Zowax - Gandamusango (Original Mix)</span><span class="tape-meta">Track</span></div>
+        <svg class="tape-reels" viewBox="0 0 200 56" aria-hidden="true"><rect class="window" x="22" y="4" width="156" height="48" rx="10"/><path class="tape-line" d="M58 46 L142 46"/><use class="reel" href="#i-reel" x="38" y="8" width="40" height="40"/><use class="reel" href="#i-reel" x="122" y="8" width="40" height="40"/></svg>
+        <div class="tape-actions"><a class="tape-link" href="https://open.spotify.com/track/7Hh8wTOUDJ2lrViJdbTemt" target="_blank" rel="noopener">Open</a></div>
+      </li>
+      <li class="tape pink">
+        <div class="tape-label"><span class="tape-title">Sha Sha feat. Soa Mattrix - Ungowami (Zowax Remix)</span><span class="tape-meta">Track</span></div>
+        <svg class="tape-reels" viewBox="0 0 200 56" aria-hidden="true"><rect class="window" x="22" y="4" width="156" height="48" rx="10"/><path class="tape-line" d="M58 46 L142 46"/><use class="reel" href="#i-reel" x="38" y="8" width="40" height="40"/><use class="reel" href="#i-reel" x="122" y="8" width="40" height="40"/></svg>
+        <div class="tape-actions"><a class="tape-link" href="https://www.youtube.com/watch?v=fb4Snztla58" target="_blank" rel="noopener">Open</a></div>
+      </li>
+      <li class="tape">
+
+        <div class="tape-label"><span class="tape-title">Luscious Vibrations Session 049 (Vol. 05) (Mixed By: ZOWAX)</span><span class="tape-meta">Mix</span></div>
+        <svg class="tape-reels" viewBox="0 0 200 56" aria-hidden="true"><rect class="window" x="22" y="4" width="156" height="48" rx="10"/><path class="tape-line" d="M58 46 L142 46"/><use class="reel" href="#i-reel" x="38" y="8" width="40" height="40"/><use class="reel" href="#i-reel" x="122" y="8" width="40" height="40"/></svg>
+        <div class="tape-actions"><a class="tape-link" href="https://soundcloud.com/lusciousvibrations/session-049-vol-05-mixed-by-zowax" target="_blank" rel="noopener">Open</a></div>
+      </li>
+      <li class="tape sage">
+        <div class="tape-label"><span class="tape-title">Purely Afro Volume 5 (Mixed By: ZOWAX)</span><span class="tape-meta">Mix</span></div>
+        <svg class="tape-reels" viewBox="0 0 200 56" aria-hidden="true"><rect class="window" x="22" y="4" width="156" height="48" rx="10"/><path class="tape-line" d="M58 46 L142 46"/><use class="reel" href="#i-reel" x="38" y="8" width="40" height="40"/><use class="reel" href="#i-reel" x="122" y="8" width="40" height="40"/></svg>
+        <div class="tape-actions"><a class="tape-link" href="https://audiomack.com/zowax/song/purely-afro-volume-5" target="_blank" rel="noopener">Open</a></div>
+      </li>
+    </ul>
+  </article>
+</section>
+
+<!-- =====================================================================
+     ✏️ EDIT: CONTACT
+     ===================================================================== -->
+<section class="section" id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h">Contact</h2>
+  <p>The best way to reach me is by <a href="mailto:panashezowa12@gmail.com">email</a>. You can also find me on <a href="https://linkedin.com/in/panashe-zowa-1b0b3b1b9">LinkedIn</a>, <a href="https://x.com/panashezowa">Twitter</a> and the <a href="https://forum.effectivealtruism.org/users/panashe-zowa">EA Forum</a>.</p>
+</section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-art" aria-hidden="true">
+    <svg class="horizon" viewBox="0 0 1200 46" preserveAspectRatio="none"><path class="ink" d="M0 40C200 38 420 41 640 39S1000 38 1200 40"/></svg>
+    <svg class="icon footer-rocks"><use href="#i-rocks"/></svg>
+  </div>
+  <!-- ✏️ EDIT: change the date whenever you update the site -->
+  <p>Panashe Zowa, 2026. Last updated October 2026.</p>
+</footer>
+
+<!-- The game. Nothing runs until someone opens it. -->
+<dialog class="game" id="play" aria-labelledby="game-h">
+  <div class="game-head">
+    <h2 id="game-h">Balancing rocks</h2>
+    <button class="game-close" type="button" aria-label="Close the game">&times;</button>
+  </div>
+  <p class="game-how">Tap, click or press the space bar to drop each rock. Stack as many as you can. If a rock hangs too far over the edge, the stack topples.</p>
+  <div class="game-stage">
+    <canvas width="360" height="480" role="img" aria-label="A stack of balancing rocks"></canvas>
+    <div class="game-overlay"><p class="game-msg" data-reset="Ready when you are.">Ready when you are.</p><button class="game-start" type="button" data-reset="Start">Start</button></div>
+  </div>
+  <p class="game-score" aria-live="polite"><span>Score <b data-score data-reset="0">0</b></span><span>Best <b data-best data-reset="0">0</b></span></p>
+</dialog>
+
+<script>
+/* Balancing rocks: a small stacking game. It only runs while its window is open. */
+(function () {
+  var dlg = document.getElementById('play');
+  var openers = document.querySelectorAll('[data-open-game]');
+  if (!dlg || typeof dlg.showModal !== 'function') { openers.forEach(function (a) { a.hidden = true; }); return; }
+  var cv = dlg.querySelector('canvas'), ctx = cv.getContext('2d');
+  var overlay = dlg.querySelector('.game-overlay'), msgEl = dlg.querySelector('.game-msg'), startBtn = dlg.querySelector('.game-start'), closeBtn = dlg.querySelector('.game-close');
+  var scoreEl = dlg.querySelector('[data-score]'), bestEl = dlg.querySelector('[data-best]');
+  var W = 360, H = 480, GROUND = 440;
+  var C = { paper: '#EDF1EA', ink: '#1C2A39', rock: '#E6C7B0', ochre: '#E6B95C', ochreDeep: '#A97A2A', sun: '#F4D27A', sage: '#C3D6C8', flame: '#C8323A' };
+  var rocks = [], cur = null, state = 'idle', score = 0, best = 0, cam = 0, phase = 0, speed = 0, raf = 0, last = 0, flash = 0, flashText = '';
+  var grass = [];
+  for (var i = 0; i < 16; i++) grass.push([12 + Math.random() * (W - 24), 14 + Math.random() * 22]);
+  try { best = parseInt(localStorage.getItem('pz-rocks-best') || '0', 10) || 0; } catch (e) {}
+  bestEl.textContent = best;
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+  function makeRock(w, h) {
+    var pts = [];
+    for (var i = 0; i < 10; i++) {
+      var a = i / 10 * Math.PI * 2 + rand(-.12, .12), k = 1 + rand(-.07, .07), y = Math.sin(a) * h / 2 * k;
+      if (y > 0) y *= .8;
+      pts.push([Math.cos(a) * w / 2 * k, y]);
+    }
+    return { x: W / 2, y: 0, w: w, h: h, rot: 0, vx: 0, vy: 0, vr: 0, pts: pts };
+  }
+  function outline(r) {
+    var p = r.pts, n = p.length;
+    ctx.beginPath();
+    ctx.moveTo((p[n - 1][0] + p[0][0]) / 2, (p[n - 1][1] + p[0][1]) / 2);
+    for (var i = 0; i < n; i++) { var q = p[i], nx = p[(i + 1) % n]; ctx.quadraticCurveTo(q[0], q[1], (q[0] + nx[0]) / 2, (q[1] + nx[1]) / 2); }
+    ctx.closePath();
+  }
+  function drawRock(r) {
+    ctx.save(); ctx.translate(r.x, r.y + cam); ctx.rotate(r.rot);
+    ctx.save(); ctx.translate(2.5, 2); outline(r); ctx.fillStyle = C.rock; ctx.fill(); ctx.restore();
+    outline(r); ctx.lineWidth = 2.2; ctx.lineJoin = 'round'; ctx.strokeStyle = C.ink; ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(0, 0, r.w * .34, r.h * .28, 0, Math.PI * .62, Math.PI * 1.12); ctx.lineWidth = 1.3; ctx.stroke();
+    ctx.restore();
+  }
+  function scene() {
+    ctx.fillStyle = C.paper; ctx.fillRect(0, 0, W, H);
+    ctx.beginPath(); ctx.arc(W - 68, 76, 32, 0, Math.PI * 2); ctx.fillStyle = C.sun; ctx.fill();
+    ctx.beginPath(); ctx.arc(W - 70, 74, 32, -1.9, -1.9 + Math.PI * 2.08); ctx.lineWidth = 2; ctx.strokeStyle = C.ink; ctx.stroke();
+    var g = GROUND + cam;
+    if (g < H + 30) {
+      ctx.beginPath(); ctx.moveTo(0, g - 6); ctx.quadraticCurveTo(70, g - 26, 140, g - 10); ctx.quadraticCurveTo(220, g, 280, g - 18); ctx.quadraticCurveTo(325, g - 28, W, g - 8); ctx.lineTo(W, g); ctx.lineTo(0, g); ctx.closePath(); ctx.fillStyle = C.sage; ctx.fill();
+      ctx.fillStyle = C.ochre; ctx.fillRect(0, g, W, H - g + 2);
+      ctx.beginPath(); ctx.moveTo(0, g); ctx.lineTo(W, g); ctx.lineWidth = 1.6; ctx.strokeStyle = C.ink; ctx.stroke();
+      ctx.beginPath();
+      grass.forEach(function (t) { ctx.moveTo(t[0], g + t[1]); ctx.lineTo(t[0] - 3, g + t[1] - 6); ctx.moveTo(t[0], g + t[1]); ctx.lineTo(t[0] + 3, g + t[1] - 7); });
+      ctx.lineWidth = 1.4; ctx.strokeStyle = C.ochreDeep; ctx.stroke();
+    }
+  }
+  function top() { return rocks[rocks.length - 1]; }
+  function topOf(r) { return r.y - r.h / 2; }
+  function draw() {
+    scene();
+    for (var i = 0; i < rocks.length; i++) { var y = rocks[i].y + cam; if (y > -80 && y < H + 80) drawRock(rocks[i]); }
+    if (cur) {
+      if (state === 'swing') {
+        ctx.save(); ctx.setLineDash([4, 6]); ctx.strokeStyle = 'rgba(28,42,57,.3)'; ctx.lineWidth = 1.2;
+        ctx.beginPath(); ctx.moveTo(cur.x, cur.y + cam + cur.h / 2 + 4); ctx.lineTo(cur.x, topOf(top()) + cam - 2); ctx.stroke(); ctx.restore();
+      }
+      drawRock(cur);
+    }
+    if (flash > 0) {
+      ctx.save(); ctx.globalAlpha = Math.min(1, flash * 2); ctx.fillStyle = C.flame; ctx.textAlign = 'center';
+      ctx.font = '600 22px "Shantell Sans", "Segoe Print", sans-serif'; ctx.fillText(flashText, W / 2 - 30, 84); ctx.restore();
+    }
+  }
+  function spawn() {
+    var shrink = Math.max(.62, 1 - score * .012);
+    cur = makeRock(rand(64, 118) * shrink, rand(26, 38));
+    cur.y = topOf(top()) - 110 - cur.h / 2;
+    phase = rand(0, Math.PI * 2);
+    speed = Math.min(1.5 + score * .09, 4.2);
+    state = 'swing';
+  }
+  function land() {
+    var t = top(), d = cur.x - t.x;
+    if (Math.abs(d) > t.w * .42) {
+      var s = d > 0 ? 1 : -1;
+      cur.vx = s * 110; cur.vr = s * 3.2; cur.vy = -120; state = 'topple';
+      return;
+    }
+    cur.rot = Math.max(-.18, Math.min(.18, d / t.w * .4));
+    rocks.push(cur); score += 1;
+    if (Math.abs(d) < 5) { score += 1; flash = 1; flashText = 'Perfect! +1'; }
+    scoreEl.textContent = score;
+    spawn();
+  }
+  function update(dt) {
+    if (flash > 0) flash -= dt;
+    if (state === 'swing') {
+      phase += speed * dt;
+      cur.x = W / 2 + ((W - cur.w) / 2 - 14) * Math.sin(phase);
+      cam += (Math.max(0, 150 - cur.y) - cam) * Math.min(1, dt * 3);
+    } else if (state === 'fall') {
+      cur.vy += 2200 * dt; cur.y += cur.vy * dt;
+      var landY = topOf(top()) - .8 * cur.h / 2 + 3;
+      if (cur.y >= landY) { cur.y = landY; land(); }
+    } else if (state === 'topple') {
+      cur.vy += 1600 * dt; cur.y += cur.vy * dt; cur.x += cur.vx * dt; cur.rot += cur.vr * dt;
+      if (cur.y + cam > H + 90) finish();
+    }
+  }
+  function loop(t) {
+    var dt = Math.min(.05, Math.max(0, (t - last) / 1000)); last = t;
+    update(dt); draw();
+    var moving = state === 'swing' || state === 'fall' || state === 'topple' || flash > 0;
+    raf = dlg.open && moving ? requestAnimationFrame(loop) : 0;
+  }
+  function run() { if (!raf) { last = performance.now(); raf = requestAnimationFrame(loop); } }
+  function setup() {
+    rocks = []; cur = null; score = 0; cam = 0; flash = 0; scoreEl.textContent = '0';
+    var base = makeRock(230, 70); base.y = GROUND - .8 * 35 + 8; rocks.push(base);
+  }
+  function start() { setup(); spawn(); overlay.hidden = true; run(); cv.focus({ preventScroll: true }); }
+  function finish() {
+    state = 'over'; cur = null;
+    if (score > best) { best = score; bestEl.textContent = best; try { localStorage.setItem('pz-rocks-best', String(best)); } catch (e) {} }
+    msgEl.textContent = 'Down it goes. You scored ' + score + '.';
+    startBtn.textContent = 'Play again'; overlay.hidden = false; startBtn.focus();
+  }
+  function drop() { if (state === 'swing') { state = 'fall'; cur.vy = 0; } }
+  function fit() { var dpr = Math.min(window.devicePixelRatio || 1, 2); cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+
+  cv.setAttribute('tabindex', '0');
+  cv.addEventListener('pointerdown', function (e) { e.preventDefault(); drop(); });
+  dlg.addEventListener('keydown', function (e) {
+    if ((e.key === ' ' || e.key === 'Enter') && state === 'swing') { e.preventDefault(); drop(); }
+  });
+  startBtn.addEventListener('click', start);
+  closeBtn.addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('close', function () {
+    if (raf) cancelAnimationFrame(raf); raf = 0;
+    if (state !== 'over') { state = 'idle'; msgEl.textContent = 'Ready when you are.'; startBtn.textContent = 'Start'; overlay.hidden = false; }
+  });
+  openers.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (dlg.open) return;
+      dlg.showModal(); fit();
+      if (state === 'idle') setup();
+      draw(); startBtn.focus();
+    });
+  });
+})();
+</script>
+
+<script>
+/* Edit mode. Add ?edit to the address to turn it on. Visitors never see it. */
+(function () {
+  if (!/(^|[?&#])edit(\b|=|$)/.test(location.search + location.hash)) return;
+  var root = document.documentElement, KEY = 'pz-site-editor', dirty = false, lastRange = null, loadedSha = null;
+  var cfg = {};
+  try { cfg = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  if (!cfg.owner && /\.github\.io$/.test(location.hostname)) {
+    cfg.owner = location.hostname.split('.')[0];
+    var seg = location.pathname.split('/')[1];
+    cfg.repo = seg && seg.indexOf('.') === -1 ? seg : location.hostname;
+  }
+  root.classList.add('editing');
+
+  var style = document.createElement('style');
+  style.setAttribute('data-editor', '');
+  style.textContent = [
+    'html.editing body { padding-bottom: 9rem; }',
+    'html.editing [contenteditable="true"] { outline: 1.5px dashed transparent; outline-offset: 3px; border-radius: 3px; cursor: text; transition: outline-color .15s; }',
+    'html.editing [contenteditable="true"]:hover { outline-color: rgba(28,42,57,.35); }',
+    'html.editing [contenteditable="true"]:focus { outline: 2px solid #C8323A; }',
+    'html.editing .tape-link[href="#"] { display: inline-block; opacity: .55; }',
+    'html.editing .ed-current { box-shadow: 0 0 0 2px rgba(200,50,58,.25); border-radius: 6px; }',
+    '.ed-bar, .ed-pop, .ed-ctl, .ed-panel { font-family: "Shantell Sans", "Segoe Print", sans-serif; color: #1C2A39; z-index: 60; }',
+    '.ed-bar { position: fixed; left: 50%; bottom: 12px; transform: translateX(-50%); width: min(46rem, calc(100% - 20px)); background: #F7F9F4; border: 2px solid #1C2A39; border-radius: 16px 6px 14px 8px / 8px 14px 6px 16px; padding: .6rem .8rem; box-shadow: 4px 4px 0 rgba(28,42,57,.18); }',
+    '.ed-bar p { margin: 0 0 .45rem; font-size: .85rem; line-height: 1.35; }',
+    '.ed-row { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }',
+    '.ed-bar button, .ed-pop button, .ed-ctl button, .ed-panel button, .ed-photo { font: 600 .88rem/1.2 "Shantell Sans", "Segoe Print", sans-serif; padding: .3rem .65rem; border: 1.5px solid #1C2A39; background: #fff; color: #1C2A39; border-radius: 10px 4px 10px 4px; cursor: pointer; }',
+    '.ed-bar .ed-primary, .ed-panel .ed-primary { background: #E6B95C; }',
+    '.ed-status { margin-left: auto; font-size: .82rem; color: #4C5A68; }',
+    '.ed-pop { position: absolute; width: min(22rem, calc(100vw - 20px)); background: #F7F9F4; border: 2px solid #1C2A39; border-radius: 12px 5px 12px 5px; padding: .7rem; box-shadow: 4px 4px 0 rgba(28,42,57,.18); }',
+    '.ed-pop label, .ed-panel label { display: block; font-size: .85rem; margin-bottom: .5rem; }',
+    '.ed-pop input, .ed-panel input { display: block; width: 100%; margin-top: .25rem; font: 1rem/1.3 system-ui, sans-serif; padding: .4rem .5rem; border: 1.5px solid #1C2A39; border-radius: 6px; background: #fff; }',
+    '.ed-pop small, .ed-panel small { display: block; font-size: .78rem; color: #4C5A68; margin: -.2rem 0 .5rem; line-height: 1.35; }',
+    '.ed-ctl { position: absolute; display: flex; gap: .25rem; }',
+    '.ed-ctl button { padding: .15rem .45rem; font-size: .8rem; }',
+    '.ed-panel { position: fixed; inset: 0; display: grid; place-items: center; background: rgba(28,42,57,.45); }',
+    '.ed-panel > div { width: min(30rem, calc(100% - 24px)); max-height: calc(100% - 24px); overflow: auto; background: #F7F9F4; border: 2px solid #1C2A39; border-radius: 16px 6px 14px 8px; padding: 1rem 1.1rem; }',
+    '.ed-panel h3 { font-family: inherit; font-size: 1.15rem; margin: 0 0 .6rem; }',
+    '.ed-photo { position: absolute; left: 50%; bottom: .6rem; transform: translateX(-50%); z-index: 2; }'
+  ].join('\n');
+  document.head.appendChild(style);
+
+  function make(tag, cls, html) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (html) n.innerHTML = html;
+    n.setAttribute('data-editor', '');
+    return n;
+  }
+  function markDirty() { dirty = true; status('Unsaved changes'); }
+
+  /* 1. Text you can click and edit */
+  var EDITABLE = 'main h1, main h2, main h3, main p, main .note, main .work-title, main .tape-title, main .tape-meta, .site-footer p';
+  document.querySelectorAll(EDITABLE).forEach(function (n) {
+    if (n.closest('[data-editor], svg, .tape-player')) return;
+    if (n.parentElement && n.parentElement.closest('[contenteditable="true"]')) return;
+    n.setAttribute('contenteditable', 'true');
+  });
+  document.addEventListener('input', function (e) { if (e.target.isContentEditable) markDirty(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.target.isContentEditable && e.key === 'Enter' && !e.shiftKey) e.preventDefault();
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); cfg.token ? publish() : download(); }
+  });
+  document.addEventListener('paste', function (e) {
+    if (!e.target.isContentEditable && !(e.target.parentElement && e.target.parentElement.isContentEditable)) return;
+    e.preventDefault();
+    var text = (e.clipboardData || window.clipboardData).getData('text/plain').replace(/\s*\n\s*/g, ' ');
+    document.execCommand('insertText', false, text);
+  });
+  document.addEventListener('selectionchange', function () {
+    var s = window.getSelection();
+    if (!s.rangeCount || s.isCollapsed) return;
+    var n = s.getRangeAt(0).commonAncestorContainer;
+    n = n.nodeType === 1 ? n : n.parentElement;
+    if (n && n.closest('[contenteditable="true"]')) lastRange = s.getRangeAt(0).cloneRange();
+  });
+
+  /* 2. Links: click one to change where it goes */
+  var pop = make('div', 'ed-pop',
+    '<label>Where should this link go?<input type="text" inputmode="url" autocomplete="off" spellcheck="false"></label>' +
+    '<small>A web address, an email address, or a file next to this page such as cv.pdf.</small>' +
+    '<div class="ed-row"><button type="button" class="ed-primary" data-act="save">Save link</button><button type="button" data-act="test">Test</button><button type="button" data-act="remove">Remove link</button><button type="button" data-act="close">Close</button></div>');
+  pop.hidden = true;
+  document.body.appendChild(pop);
+  var popInput = pop.querySelector('input'), activeLink = null;
+  function openPop(a) {
+    activeLink = a;
+    popInput.value = a.getAttribute('href') === '#' ? '' : (a.getAttribute('href') || '');
+    pop.hidden = false;
+    var r = a.getBoundingClientRect();
+    pop.style.top = (r.bottom + window.scrollY + 8) + 'px';
+    pop.style.left = Math.max(10, Math.min(r.left + window.scrollX, window.scrollX + document.documentElement.clientWidth - pop.offsetWidth - 10)) + 'px';
+    popInput.focus();
+  }
+  function tidyHref(v) {
+    v = v.trim();
+    if (!v) return '#';
+    if (/^[^\s@:\/]+@[^\s@\/]+\.[^\s@\/]+$/.test(v)) return 'mailto:' + v;
+    if (/^(www\.)?[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}(\/|$)/i.test(v) && !/^[\w-]+\.(pdf|html?|jpe?g|png|gif|svg|webp|docx?|mp3)$/i.test(v)) return 'https://' + v;
+    return v;
+  }
+  pop.addEventListener('click', function (e) {
+    var act = e.target.getAttribute && e.target.getAttribute('data-act');
+    if (!act || !activeLink) return;
+    if (act === 'save') { activeLink.setAttribute('href', tidyHref(popInput.value)); markDirty(); pop.hidden = true; }
+    if (act === 'test') { window.open(tidyHref(popInput.value), '_blank', 'noopener'); }
+    if (act === 'remove') {
+      if (activeLink.classList.contains('tape-link')) { activeLink.setAttribute('href', '#'); }
+      else if (activeLink.classList.contains('work-title')) { var s = document.createElement('span'); s.className = 'work-title'; s.setAttribute('contenteditable', 'true'); s.innerHTML = activeLink.innerHTML; activeLink.replaceWith(s); }
+      else { var p = activeLink.parentNode; while (activeLink.firstChild) p.insertBefore(activeLink.firstChild, activeLink); activeLink.remove(); }
+      markDirty(); pop.hidden = true;
+    }
+    if (act === 'close') pop.hidden = true;
+  });
+  popInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); pop.querySelector('[data-act="save"]').click(); } if (e.key === 'Escape') pop.hidden = true; });
+  function addLink() {
+    var s = window.getSelection(), range = (s.rangeCount && !s.isCollapsed) ? s.getRangeAt(0) : lastRange;
+    if (!range || range.collapsed) { status('Select some words first, then press Add link.'); return; }
+    var host = range.commonAncestorContainer; host = host.nodeType === 1 ? host : host.parentElement;
+    if (!host || !host.closest('[contenteditable="true"]')) { status('Select words inside the page first.'); return; }
+    var a = document.createElement('a'); a.setAttribute('href', '#');
+    try { range.surroundContents(a); } catch (err) { a.appendChild(range.extractContents()); range.insertNode(a); }
+    s.removeAllRanges(); lastRange = null; markDirty(); openPop(a);
+  }
+
+  /* 3. The words on the map */
+  function editLabel(a) {
+    var text = a.querySelector('text'), spans = text.querySelectorAll('tspan');
+    var current = Array.prototype.map.call(spans, function (t) { return t.textContent; }).join(' / ');
+    var v = window.prompt('Change the words on this label. Use / to start a new line.', current);
+    if (v === null) return;
+    var lines = v.split('/').map(function (t) { return t.trim(); }).filter(Boolean);
+    if (!lines.length) return;
+    var x = spans[0].getAttribute('x');
+    while (text.firstChild) text.removeChild(text.firstChild);
+    lines.forEach(function (line, i) {
+      var t = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+      t.setAttribute('x', x); t.setAttribute('dy', i ? '25' : '0'); t.textContent = line; text.appendChild(t);
+    });
+    markDirty();
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a');
+    if (!a || a.closest('[data-editor]') || a.closest('.site-header')) return;
+    e.preventDefault();
+    if (a.closest('.map-label')) { editLabel(a); return; }
+    openPop(a);
+  }, true);
+
+  /* 4. Items you can move, copy or delete */
+  var ITEMS = '.log > li, .works > li, .tapes > li, .thread, .prose > p';
+  var ctl = make('div', 'ed-ctl', '<button type="button" data-do="up" title="Move up">Up</button><button type="button" data-do="down" title="Move down">Down</button><button type="button" data-do="copy" title="Add a copy below, then edit it">Copy</button><button type="button" data-do="delete" title="Delete">Delete</button>');
+  ctl.hidden = true;
+  document.body.appendChild(ctl);
+  var current = null;
+  function showCtl(item) {
+    if (current && current !== item) current.classList.remove('ed-current');
+    current = item; item.classList.add('ed-current'); ctl.hidden = false;
+    var r = item.getBoundingClientRect();
+    ctl.style.top = (r.top + window.scrollY - 16) + 'px';
+    ctl.style.left = Math.max(10, r.right + window.scrollX - ctl.offsetWidth) + 'px';
+  }
+  function pick(e) { if (e.target.closest && !e.target.closest('[data-editor]')) { var it = e.target.closest(ITEMS); if (it) showCtl(it); } }
+  document.addEventListener('mouseover', pick);
+  document.addEventListener('focusin', pick);
+  function siblings(item) { return Array.prototype.filter.call(item.parentNode.children, function (n) { return n.matches(ITEMS); }); }
+  ctl.addEventListener('click', function (e) {
+    var act = e.target.getAttribute && e.target.getAttribute('data-do');
+    if (!act || !current) return;
+    var list = siblings(current), i = list.indexOf(current);
+    if (act === 'up' && i > 0) current.parentNode.insertBefore(current, list[i - 1]);
+    if (act === 'down' && i < list.length - 1) current.parentNode.insertBefore(list[i + 1], current);
+    if (act === 'copy') {
+      var c = current.cloneNode(true);
+      c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(function (n) { n.removeAttribute('id'); });
+      c.classList.remove('ed-current', 'is-playing');
+      c.querySelectorAll('.tape-player').forEach(function (n) { n.textContent = ''; });
+      current.after(c); showCtl(c);
+      var first = c.matches('[contenteditable="true"]') ? c : c.querySelector('[contenteditable="true"]');
+      if (first) { first.focus(); var r = document.createRange(); r.selectNodeContents(first); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+      status('Copy added. Edit its words, then publish.');
+    }
+    if (act === 'delete') {
+      if (list.length < 2) { status('This is the last one here, so edit it rather than deleting it.'); return; }
+      if (!window.confirm('Delete this item?')) return;
+      current.remove(); current = null; ctl.hidden = true;
+    }
+    markDirty();
+    if (current) showCtl(current);
+  });
+
+  /* 5. The photo */
+  var fig = document.querySelector('.portrait');
+  if (fig) {
+    var pb = make('button', 'ed-photo'); pb.type = 'button'; pb.textContent = 'Change photo';
+    var file = make('input'); file.type = 'file'; file.accept = 'image/*'; file.hidden = true;
+    fig.appendChild(pb); fig.appendChild(file);
+    pb.addEventListener('click', function () { file.click(); });
+    file.addEventListener('change', function () {
+      var f = file.files && file.files[0]; if (!f) return;
+      var reader = new FileReader();
+      reader.onload = function () {
+        var im = new Image();
+        im.onload = function () {
+          var s = Math.min(1, 800 / Math.max(im.width, im.height)), c = document.createElement('canvas');
+          c.width = Math.round(im.width * s); c.height = Math.round(im.height * s);
+          c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
+          fig.querySelector('img').src = c.toDataURL('image/jpeg', .86);
+          fig.classList.remove('no-photo'); markDirty();
+        };
+        im.src = reader.result;
+      };
+      reader.readAsDataURL(f);
+    });
+  }
+
+  /* 6. Turning the page back into a clean file */
+  var RUNTIME = ['no-photo', 'is-playing', 'no-link', 'editing'];
+  function unwrap(n) { var p = n.parentNode; while (n.firstChild) p.insertBefore(n.firstChild, n); n.remove(); }
+  function cleanHTML() {
+    var copy = root.cloneNode(true);
+    copy.querySelectorAll('[data-editor], grammarly-desktop-integration, grammarly-extension, style.darkreader').forEach(function (n) { n.remove(); });
+    copy.querySelectorAll('[contenteditable]').forEach(function (n) { n.removeAttribute('contenteditable'); });
+    copy.querySelectorAll('.tape-player').forEach(function (n) { n.textContent = ''; });
+    copy.querySelectorAll('[data-reset]').forEach(function (n) { n.textContent = n.getAttribute('data-reset'); });
+    copy.querySelectorAll('link[data-fonts]').forEach(function (n) { n.setAttribute('rel', 'preload'); });
+    copy.querySelectorAll('dialog[open]').forEach(function (n) { n.removeAttribute('open'); });
+    copy.querySelectorAll('[hidden]').forEach(function (n) { if (n.classList.contains('game-overlay')) n.removeAttribute('hidden'); });
+    copy.querySelectorAll('font, span[style]:not([class])').forEach(unwrap);
+    var all = [copy].concat(Array.prototype.slice.call(copy.querySelectorAll('*')));
+    all.forEach(function (n) {
+      Array.prototype.slice.call(n.attributes).forEach(function (at) { if (/^data-(gr|gramm|lt-|new-gr|darkreader)|^spellcheck$/.test(at.name)) n.removeAttribute(at.name); });
+      if (n.classList && n.classList.length) {
+        RUNTIME.forEach(function (c) { n.classList.remove(c); });
+        Array.prototype.slice.call(n.classList).forEach(function (c) { if (c.indexOf('ed-') === 0) n.classList.remove(c); });
+        if (!n.classList.length) n.removeAttribute('class');
+      }
+      if (n.getAttribute && n.getAttribute('style') === '') n.removeAttribute('style');
+    });
+    copy.querySelectorAll('canvas').forEach(function (n) { n.removeAttribute('tabindex'); n.setAttribute('width', '360'); n.setAttribute('height', '480'); });
+    copy.querySelectorAll('[data-open-game]').forEach(function (n) { n.removeAttribute('hidden'); });
+    var out = '';
+    Array.prototype.forEach.call(document.childNodes, function (n) {
+      if (n.nodeType === 10) out += '<!doctype html>\n';
+      else if (n.nodeType === 8) out += '<!--' + n.data + '-->\n';
+      else if (n === root) out += copy.outerHTML + '\n';
+    });
+    if (cfg.token && out.indexOf(cfg.token) !== -1) throw new Error('The page contained your token, so nothing was saved.');
+    return out;
+  }
+
+  function download() {
+    var html;
+    try { html = cleanHTML(); } catch (err) { status(err.message); return; }
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+    a.download = 'index.html'; a.setAttribute('data-editor', '');
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+    dirty = false; status('Downloaded index.html. Upload it in place of the old one.');
+  }
+
+  /* 7. Publishing straight to GitHub */
+  function toBase64(text) {
+    var bytes = new TextEncoder().encode(text), bin = '';
+    for (var i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(bin);
+  }
+  function gitSha(buffer) {
+    var head = new TextEncoder().encode('blob ' + buffer.byteLength + '\0'), all = new Uint8Array(head.length + buffer.byteLength);
+    all.set(head, 0); all.set(new Uint8Array(buffer), head.length);
+    return crypto.subtle.digest('SHA-1', all).then(function (d) { return Array.prototype.map.call(new Uint8Array(d), function (b) { return ('0' + b.toString(16)).slice(-2); }).join(''); });
+  }
+  try { fetch(location.href.split('#')[0], { cache: 'force-cache' }).then(function (r) { return r.ok ? r.arrayBuffer() : null; }).then(function (b) { return b ? gitSha(b) : null; }).then(function (s) { loadedSha = s; }).catch(function () {}); } catch (e) {}
+  function explain(code) {
+    return code === 401 ? 'GitHub did not accept the token. Check it in Settings.'
+      : code === 403 ? 'The token does not have permission to change this repository.'
+      : code === 404 ? 'GitHub could not find that repository or file. Check the names in Settings.'
+      : code === 409 ? 'The file changed on GitHub while you were editing. Reload the page and try again.'
+      : code === 422 ? 'GitHub rejected the update. Check the branch name in Settings.'
+      : 'GitHub returned error ' + code + '.';
+  }
+  function publish() {
+    if (!cfg.token || !cfg.owner || !cfg.repo) { settings(); return; }
+    var html;
+    try { html = cleanHTML(); } catch (err) { status(err.message); return; }
+    var path = (cfg.path || 'index.html').split('/').map(encodeURIComponent).join('/');
+    var url = 'https://api.github.com/repos/' + encodeURIComponent(cfg.owner) + '/' + encodeURIComponent(cfg.repo) + '/contents/' + path;
+    var branch = cfg.branch || 'main';
+    var headers = { 'Authorization': 'Bearer ' + cfg.token, 'Accept': 'application/vnd.github+json' };
+    status('Publishing...');
+    fetch(url + '?ref=' + encodeURIComponent(branch), { headers: headers, cache: 'no-store' })
+      .then(function (r) {
+        if (r.status === 404) return null;
+        if (!r.ok) throw new Error(explain(r.status));
+        return r.json();
+      })
+      .then(function (info) {
+        var sha = info && info.sha;
+        if (sha && loadedSha && sha !== loadedSha && !window.confirm('The copy on GitHub has changed since this page loaded, perhaps from an earlier publish that has not reached the live site yet. Publishing now would replace those changes. Publish anyway?')) {
+          throw new Error('Not published. Wait a minute, reload with Ctrl+Shift+R (Cmd+Shift+R on a Mac), then try again.');
+        }
+        var body = { message: 'Update site from the editor', content: toBase64(html), branch: branch };
+        if (sha) body.sha = sha;
+        return fetch(url, { method: 'PUT', headers: Object.assign({ 'Content-Type': 'application/json' }, headers), body: JSON.stringify(body) });
+      })
+      .then(function (r) {
+        if (!r.ok) throw new Error(explain(r.status));
+        return r.json();
+      })
+      .then(function (res) {
+        loadedSha = res && res.content && res.content.sha || loadedSha;
+        dirty = false; status('Published. The live site updates in a minute or two.');
+      })
+      .catch(function (err) { status(err.message || 'Could not reach GitHub. Check your connection.'); });
+  }
+
+  function settings() {
+    var panel = make('div', 'ed-panel',
+      '<div role="dialog" aria-label="Publishing settings"><h3>Publish straight to GitHub</h3>' +
+      '<small>Fill this in once. It stays in this browser only and never goes into your page.</small>' +
+      '<label>GitHub username<input name="owner"></label>' +
+      '<label>Repository name<input name="repo"></label>' +
+      '<label>Branch<input name="branch" placeholder="main"></label>' +
+      '<label>File<input name="path" placeholder="index.html"></label>' +
+      '<label>Access token<input name="token" type="password" autocomplete="off"></label>' +
+      '<small>Create a fine-grained token on GitHub with access to this one repository and "Contents: Read and write". The README shows how.</small>' +
+      '<div class="ed-row"><button type="button" class="ed-primary" data-s="save">Save</button><button type="button" data-s="forget">Forget token</button><button type="button" data-s="close">Close</button></div></div>');
+    document.body.appendChild(panel);
+    ['owner', 'repo', 'branch', 'path', 'token'].forEach(function (k) { panel.querySelector('[name="' + k + '"]').value = cfg[k] || ''; });
+    panel.addEventListener('click', function (e) {
+      var s = e.target.getAttribute && e.target.getAttribute('data-s');
+      if (e.target === panel || s === 'close') { panel.remove(); return; }
+      if (s === 'forget') { delete cfg.token; panel.querySelector('[name="token"]').value = ''; }
+      if (s === 'save') { ['owner', 'repo', 'branch', 'path', 'token'].forEach(function (k) { var v = panel.querySelector('[name="' + k + '"]').value.trim(); if (v) cfg[k] = v; else delete cfg[k]; }); }
+      if (s === 'save' || s === 'forget') {
+        try { localStorage.setItem(KEY, JSON.stringify(cfg)); } catch (err) {}
+        panel.remove(); status(cfg.token ? 'Settings saved. Publish is ready.' : 'Token forgotten.');
+      }
+    });
+  }
+
+  /* 8. The editing bar */
+  var bar = make('div', 'ed-bar',
+    '<p><strong>Editing mode.</strong> Click any text to change it. Click a link to change where it goes. Point at an item to move, copy or delete it. Changes stay in this browser until you publish or download.</p>' +
+    '<div class="ed-row"><button type="button" data-b="link">Add link</button><button type="button" class="ed-primary" data-b="publish">Publish</button><button type="button" data-b="download">Download</button><button type="button" data-b="settings">Settings</button><button type="button" data-b="leave">Leave</button><span class="ed-status" role="status"></span></div>');
+  document.body.appendChild(bar);
+  var statusEl = bar.querySelector('.ed-status');
+  function status(t) { statusEl.textContent = t; }
+  bar.addEventListener('mousedown', function (e) { if (e.target.closest('button')) e.preventDefault(); });
+  bar.addEventListener('click', function (e) {
+    var b = e.target.getAttribute && e.target.getAttribute('data-b');
+    if (b === 'link') addLink();
+    if (b === 'publish') publish();
+    if (b === 'download') download();
+    if (b === 'settings') settings();
+    if (b === 'leave' && (!dirty || window.confirm('Leave without publishing or downloading your changes?'))) { dirty = false; location.href = location.pathname; }
+  });
+  window.addEventListener('beforeunload', function (e) { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+  status(cfg.token ? 'Ready. Publish sends changes to GitHub.' : 'Ready. Set up Settings once to publish from here.');
+})();
+</script>
+</body>
+</html>
